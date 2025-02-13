@@ -15,3 +15,10 @@ https://www.curseforge.com/minecraft/mc-mods/parcool
 
 # Zombie Players replacement
 https://modrinth.com/mod/zombified-player/versions?l=forge
+
+
+# Create
+Mechano
+
+# Other
+https://www.curseforge.com/minecraft/mc-mods/the-midnight/gallery

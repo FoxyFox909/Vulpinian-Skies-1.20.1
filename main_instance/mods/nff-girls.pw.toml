@@ -1,0 +1,13 @@
+name = "NFF: Girls (Previous Days with Monster Girls)"
+filename = "nffgirls-1.20.1-0.2.28.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "b62814a7169c25f7c6ce90e306c713778950640e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6182144
+project-id = 838733

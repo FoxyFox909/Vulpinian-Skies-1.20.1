@@ -1,0 +1,13 @@
+name = "Ranged Wireless Redstone"
+filename = "rangedwirelessredstone-1.20-4.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "6703df6cf4f705c20004a1a067a7b0388b047fe9"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4594334
+project-id = 530779
