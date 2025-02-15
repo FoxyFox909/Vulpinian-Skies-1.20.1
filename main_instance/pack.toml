@@ -1,12 +1,12 @@
 name = "Vulpinian Skies"
 author = "Aurora_Luciri"
-version = "0.0.1b"
+version = "0.0.2b"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "9525857764ecf1596fd490a29ffb56a941288e3678b915b2d57dba0dd6153db2"
+hash = "5142fc5c7d62377dbf9b26df88884f815a9d89f9b049b804c5b0f78786fcee11"
 
 [versions]
 forge = "47.3.29"

@@ -1,0 +1,13 @@
+name = "Inline"
+filename = "inline-forge-1.20.1-1.0.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d0af458dc34737db8a0f7e00bc41d11419bbc4f4"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5937020
+project-id = 971167

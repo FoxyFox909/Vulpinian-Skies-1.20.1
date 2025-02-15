@@ -165,7 +165,6 @@
 -  [Spark](https://www.curseforge.com/minecraft/mc-mods/spark) (Dev Only, not in main pack, used to profile perormance)
 -  [TellMe](https://www.curseforge.com/minecraft/mc-mods/tellme ) (Client/Dev Only, not in main pack, used for debugging)
 -  [Simple Backups](https://www.curseforge.com/minecraft/mc-mods/simple-backups)
--  [Chunk-Pregenerator](https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator)(Used only for server convenience)
 -  [WorldEdit](https://www.curseforge.com/minecraft/mc-mods/worldedit)
 -  [Spawn Balance Utility (SBU)](https://www.curseforge.com/minecraft/mc-mods/spawn-balance-utility)
 -  [FancyMenu](https://www.curseforge.com/minecraft/mc-mods/fancymenu-forge/) (Client-side Only)
@@ -213,15 +212,18 @@ The mods after the arrow are the dependents of the library.
 -  [Apothic Attributes (AttributesLib)](https://www.curseforge.com/minecraft/mc-mods/apothic-attributes) -> Gateways to Eternity
 -  [Bookshelf](https://www.curseforge.com/minecraft/mc-mods/bookshelf)
 -  [Balm](https://www.curseforge.com/minecraft/mc-mods/balm) -> Cooking for Blockheads
+-  [Caelus](https://www.curseforge.com/minecraft/mc-mods/caelus/) Elytra mechanics -> Hexcasting
+-  [Citadel](https://beta.curseforge.com/minecraft/mc-mods/citadel/) -> Ice and Fire
 -  [Cristel Lib](https://www.curseforge.com/minecraft/mc-mods/cristel-lib/) Enables config of structures -> Towns and Towers
 -  [CorgiLib](https://www.curseforge.com/minecraft/mc-mods/corgilib) -> Oh The Biomes We've Gone
+-  [Inline](https://www.curseforge.com/minecraft/mc-mods/inline/) -> Hexcasting
 -  [Kotlin for Forge](https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge)
 -  [Rhino](https://www.curseforge.com/minecraft/mc-mods/rhino) -> KubeJS
--  [PAUCAL](https://www.curseforge.com/minecraft/mc-mods/paucal)
+-  [PAUCAL](https://www.curseforge.com/minecraft/mc-mods/paucal) -> Hexcasting
 -  [YUNG's API](https://www.curseforge.com/minecraft/mc-mods/yungs-api)
 -  [ExpandAbility](https://www.curseforge.com/minecraft/mc-mods/expandability)
 -  [Placebo](https://www.curseforge.com/minecraft/mc-mods/placebo) -> FastFurnace
--  [CoroUtil](https://www.curseforge.com/minecraft/mc-mods/coroutil)
+-  [CoroUtil](https://www.curseforge.com/minecraft/mc-mods/coroutil) -> Weather
 -  [GeckoLib](https://www.curseforge.com/minecraft/mc-mods/geckolib/)
 -  [Collective](https://beta.curseforge.com/minecraft/mc-mods/collective) -> GUI Clock, GUI Compass
 -  [Curios API](https://www.curseforge.com/minecraft/mc-mods/curios)
@@ -233,7 +235,6 @@ The mods after the arrow are the dependents of the library.
 -  [Melody](https://www.curseforge.com/minecraft/mc-mods/melody)
 -  [OctoLib](https://www.curseforge.com/minecraft/mc-mods/octo-lib) -> Not Enough Recipe Book
 -  [Oh The Trees You'll Grow](https://www.curseforge.com/minecraft/mc-mods/oh-the-trees-youll-grow/) -> Oh The Biomes We've Gone
--  [Citadel](https://beta.curseforge.com/minecraft/mc-mods/citadel/)
 -  [Moonlight Lib (Selene)](https://www.curseforge.com/minecraft/mc-mods/selene/)
 -  [Pollen](https://www.curseforge.com/minecraft/mc-mods/pollen)
 -  [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config)
@@ -242,6 +243,14 @@ The mods after the arrow are the dependents of the library.
 -  [Obscure API](https://www.curseforge.com/minecraft/mc-mods/obscure-api/) -> Aquamirae
 -   [Zeta](https://www.curseforge.com/minecraft/mc-mods/zeta/) -> Quark
 
+# Server
+Server-side-only mods in the official Vulpinian Skies server BUT NOT INCLUDED in modpack releases!
+ -  [Chunk-Pregenerator](https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator)
+ -  [Mc2Discord](https://www.curseforge.com/minecraft/mc-mods/mc2discord)
+
+
+
+---
 # Resource packs
 -  [YUNG's Better Dungeons Resource Pack](https://www.curseforge.com/minecraft/texture-packs/yungs-better-dungeons-resource-pack)
 -  [Create Guns](https://www.curseforge.com/minecraft/texture-packs/create-guns)

@@ -17,8 +17,18 @@ https://www.curseforge.com/minecraft/mc-mods/parcool
 https://modrinth.com/mod/zombified-player/versions?l=forge
 
 
+# Dynamic Surround replacement
+https://www.curseforge.com/minecraft/mc-mods/charmonium
+https://www.curseforge.com/minecraft/mc-mods/atmosfera/files/all?page=1&pageSize=20&version=1.20.1&gameVersionTypeId=4
+
 # Create
 Mechano
 
 # Other
 https://www.curseforge.com/minecraft/mc-mods/the-midnight/gallery
+
+https://modrinth.com/mod/hexsky
+
+https://www.curseforge.com/minecraft/mc-mods/wilder-wilds/gallery
+
+https://www.curseforge.com/minecraft/mc-mods/rubidium-extra

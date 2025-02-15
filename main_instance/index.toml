@@ -121,6 +121,11 @@ hash = "dad35c9ae77d98a29167227bf61213101aef4533ecc80e48336d71334401fe1a"
 metafile = true
 
 [[files]]
+file = "mods/caelus.pw.toml"
+hash = "5155ae1ca2c606df2001422a48cd167d2449160d5fe12a302753dee69af7fe92"
+metafile = true
+
+[[files]]
 file = "mods/canary.pw.toml"
 hash = "e5df83a3dd1686106741d1d61da5869aed0537c2931a40234e1b3bd2d09e1971"
 metafile = true
@@ -188,6 +193,11 @@ metafile = true
 [[files]]
 file = "mods/corgilib.pw.toml"
 hash = "81781a2ccd1c5062eabaa5c84798d805698b14e4ce1eab24e628e1165a4429c3"
+metafile = true
+
+[[files]]
+file = "mods/coroutil.pw.toml"
+hash = "9f2bb57e05bad305f03c25c275c6d11e952835a41b2da68dba10a0bd1f3f6261"
 metafile = true
 
 [[files]]
@@ -296,6 +306,11 @@ hash = "e58257e27b7fce3399b38ca94a953728879d288757957521975ecc5044218fe0"
 metafile = true
 
 [[files]]
+file = "mods/embeddium.pw.toml"
+hash = "a1575677daaaf6ea6dac12e5a10073e34025e5ca2c35b6d36ad4a5a0edbc0e82"
+metafile = true
+
+[[files]]
 file = "mods/enchantment-descriptions.pw.toml"
 hash = "2f30de9a0d70d37a56c283c98c69e0d264515d5876b7e2a9d78d1f1941692a3f"
 metafile = true
@@ -376,6 +391,11 @@ hash = "5bd0506bc0be25116b234f2b5af9447f60d82ae1cb6c5be4e12d8841f6c2501c"
 metafile = true
 
 [[files]]
+file = "mods/forgified-fabric-api.pw.toml"
+hash = "4afe9f677fe18062bf189d7693811d791ea11fb22e9e774c5b29c019a42a9ef9"
+metafile = true
+
+[[files]]
 file = "mods/framedblocks.pw.toml"
 hash = "f0985d39c6bb45984378049516de43f8faa6ee52ac74487d67442452cbf84d60"
 metafile = true
@@ -446,11 +466,6 @@ hash = "8493ff8fad0fb676ad92e89abeaa3498da14dfccdf073f700b7beceb9f596b07"
 metafile = true
 
 [[files]]
-file = "mods/ice-and-fire-dragons.pw.toml"
-hash = "94c7c45a70d0cea86695ecd467f8e5c22510442c53c44291a570986e234428e5"
-metafile = true
-
-[[files]]
 file = "mods/immersive-paintings.pw.toml"
 hash = "9bd757c1ac41f77280b388da33a76fec9712c8f15cf914a13e5e664773191d1a"
 metafile = true
@@ -458,6 +473,11 @@ metafile = true
 [[files]]
 file = "mods/infinitybuttons.pw.toml"
 hash = "b1c65e423034d9339fa6d1af991386b294cb8ce398233b9d7dad1ec0973ac60e"
+metafile = true
+
+[[files]]
+file = "mods/inline.pw.toml"
+hash = "a50800ca332e855c902ecf49a78515dd31c86b5da71a1c25ce4cfdad9b96565f"
 metafile = true
 
 [[files]]
@@ -666,6 +686,11 @@ hash = "dec2bc011d4ca1d451aaa3eea477f13366bfb13beba0716018f47d9331a50d8e"
 metafile = true
 
 [[files]]
+file = "mods/paucal.pw.toml"
+hash = "d545e2d90446465d26dfef1c6777edde1fa9d2b873674834dd761342a40088bf"
+metafile = true
+
+[[files]]
 file = "mods/placebo.pw.toml"
 hash = "0f807372e11d5a8a28266ab214fd243fa7558fe3f5a0cc6505090faede8c2dd6"
 metafile = true
@@ -716,11 +741,6 @@ hash = "ca4411ac6d8a9a892948bb63cd0ba52ae5523ca5e257632d6ae8c933b660c5ee"
 metafile = true
 
 [[files]]
-file = "mods/rubidium.pw.toml"
-hash = "561dd511de15a2a35535bad21196df592095f1405ec84456b6db74ae0881a3a6"
-metafile = true
-
-[[files]]
 file = "mods/scorched-guns.pw.toml"
 hash = "ca8d27ef699ec4e8b5543669a6f6a1ee2e08430308b1b59820ed31ad9f54d22b"
 metafile = true
@@ -748,6 +768,11 @@ metafile = true
 [[files]]
 file = "mods/simple-backups.pw.toml"
 hash = "7ae23612abc6bf86cc256a71972a0b7d11be7042e8f3d8cc833e73796be405d0"
+metafile = true
+
+[[files]]
+file = "mods/sinytra-connector.pw.toml"
+hash = "0eab5a7036d1f06d6a7d4679685eaec5723a5c21469f519de1cd1e0ff416ade3"
 metafile = true
 
 [[files]]
@@ -872,7 +897,7 @@ metafile = true
 
 [[files]]
 file = "mods/yungs-better-mineshafts-forge.pw.toml"
-hash = "300c2683c952e1cf056ae2de44135fdab00e90310ad95aa84c1b55c5fdcd50be"
+hash = "5ded53795031472b64e165faf04adc21d7181854e4d9d2c83fea7b7b12ab3ddf"
 metafile = true
 
 [[files]]
