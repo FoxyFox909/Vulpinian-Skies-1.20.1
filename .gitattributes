@@ -1,2 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Leave packwiz hashes and other config files alone.
+*.toml -text
+
+# In case we have to cursedly host a jar in the repo, such as for Modpack Core Mod.
+*.jar -text
