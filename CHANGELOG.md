@@ -47,3 +47,7 @@ Vulpinian Skies has taken its first steps to being updated to 1.20.1. The decisi
  - ModernFix was added to the list of performance mods.
  
  The result of testing is that 100+ fps can be steadily reached in my machine, and the modpack loads in about 1 minute 15 seconds (before Modern Fix, it wa about 2 minutes 45 seconds, a significant performance increase),
+ 
+ ## Configs
+ 
+ - Finally configured Quark
