@@ -1,0 +1,13 @@
+name = "Pufferfish's Attributes [Fabric & Forge & NeoForge]"
+filename = "puffish_attributes-0.7.3-1.20-forge.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5dd312f09880afee3a9e4804f6f275f80f490dda"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6319584
+project-id = 991341

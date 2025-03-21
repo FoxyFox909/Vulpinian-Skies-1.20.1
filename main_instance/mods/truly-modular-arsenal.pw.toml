@@ -1,0 +1,13 @@
+name = "Truly Modular: Arsenal"
+filename = "Truly-Modular-arsenal-arsenal-forge-1.12-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "9dc6b35dacfa6c2e6b3b5ac83de6f01cca66d1cb"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5998589
+project-id = 929832

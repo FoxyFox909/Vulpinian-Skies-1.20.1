@@ -48,6 +48,80 @@ Vulpinian Skies has taken its first steps to being updated to 1.20.1. The decisi
  
  The result of testing is that 100+ fps can be steadily reached in my machine, and the modpack loads in about 1 minute 15 seconds (before Modern Fix, it wa about 2 minutes 45 seconds, a significant performance increase),
  
- ## Configs
+ # 0.03b Modlist Enhancement
  
+ ## Overview 📝
+ 
+ - The modlist has received some new life, as I have taken the time to peruse all the lovely mods that are now available to us at this point in 1.20.1.
+ - There are a number of additions, and a few deletions.
+ - The essence of the modpack remains the same, but the modlist should be more refined now.
+ 
+ ## Mod Additions ➕
+ 
+ ### Magic
+ 
+ - Biomancy: A lovely magic mod that fills a niche I didn't know  Vulpinian Skies needed. Very unique and polished.
+ 
+ ### Tech
+ 
+- Create: Metallurgy has been added to fill the void left by the removal of Tinkers Construct. We can still melt and cast metals, and now it's integrated with Create!
+- Create: Optical is a lovely mod allowing us to use electromanetic waves, including visible light, to transfer data and small amounts of rotational power in create. Has really nice visuals and goodies inside!
+- Create: New Age has been added to allow us to access late game power via thorium-fueled Nuclear Reactors, among other electrical goodies such as beautiful dynamo contraptions to actually generate the power.
+- Botarium, a dependency of New Age, has been added.
+- Create: Destroy has been added as an extremely unique and extremely in-depth mod about Chemistry! It will be used to gate the New Age nuclear reactor, by requiring an elaborate thorium enrichment process.
+- Petrol's Parts adds a variety of beautiful and flexible mid-to-late game parts that can transmit rotational power in new ways, such as a planetary gear.
+- pquality basically implements Quality from Factorio into the game.
+- Petrolpark Library has been added as a dependency to Destroy, Petrol's parts, and pquality
+
+
+### General
+
+- Pufferfish's Skills has been added, as the modpack will implement its own custom skill trees!
+- Pufferfish's Attributes are added to have more attribute to play with.
+- Sophisticated Backpacks have been readded to the modpack. Forgor to add these. However, we will not be adding Sophisticated Storage, due to Create 6 basically making it redundant. If players want a sophisticated, automated storage system, I would like them to interact with Create. However, backpacks are still too good and useful on their own, so those stay.
+- Sophisticated Core is added as Bacpacks dependency.
+- Soul fire'd has been readded. Forgor about it, oops.
+- Cobweb added, which is the dependency of Soul fire'd.
+- Truly Modular Item API has been added as a replacement for Tinker's Construct. This is a modern, very polished, powerful, and vanilla-friendly alternative which is also a lot easier to use and does not require multiple in-game books to learn! For the fans of casting and melting metals, worry not! For Create: Metallurgy has been added to fill that hole and badass mechanic of Tinker's. Tinker's has served well.
+     - Archery
+	 - Arsenal
+	 - Armory
+
+## Food and Drink
+
+- Vinery has been added because the modpack needs more booze. This mods adds beautiful  vineyard capabilities, placeable winebottles, and more goodies.
+- Spice of Life: Carrot Edition has been added... forgor to add it previously, oops.
+
+### Mobs and Worldgen
+
+- Alex's Mobs and Alex's caves have been added!
+- As such, their dependency Citadel has been added. I have concerns about Citadel's performance, but these mods are too high quality, and it's kind of a disservice to Forge players to deny them of them.
+- Mobs from these mods will have their spawns configured and balanced as time goes.
+- The Midnight is back! A 1.12.2 classic, it is back on 1.20.1, and its environment is beautiful and breath-taking!
+- Lucent has been added, a Midnight dependency. There will be a close watch on this mod for performance. It has potential for compat with Create Dynamic Lights
+- SmartBrainLib has been added as a midnight dependency. It enables advanced mob behavior.
+- Nullscape; although Vulpinian Skies wants to have a more lively rather than barren End, the landscapes created by these gen rules are just breathtaking and fantastic..
+
+### Utility
+
+- CrashAssistant. It is not a matter of if, but a matter of when the modpack crashes. This will increase our tools to fix whatever caused the crash.
+- Just Enough Resources to allow viewing mob, loot, and plant, drops and more.
+- No Chat Reports is added because Vulpinian Skies values privacy and self-sovereignty.
+- EntityJS has been added for some custom entity, arrow, and projectiel toomfoolery.
+ 
+ ## Mod Deletions ➖
+ 
+ - Tinker's Construct: See above about Truly Modular and Create: Metallurgy. It has served well o7
+ - Mantle, Tinker's Dependency thus is also removed (I don't think anything else depends on it at least...)
+ - Enlightend: It started feeling a bit off, as a sort of abandoned MCreator mod. The upper mini islands were getting in the way a lot and not looking the best.
+ - Pam's mod suite is getting removed, as the mods honestly prioiritize quantity over quality and feels rather bloated. Not to worry, some new food mods will be added in a future update, which are of higher quality (even in the textures alone) and have much better intergration and fun mechanics.
+ - Cooking For Blockheads is also getting removed sadly, as it is no longer needed since no Pam's. There is still a whole suite of Create food-related add-ons to help with automated food, though, and more coming... (Bitterballen is one)
+ 
+ ## Configs ⚙
+
  - Finally configured Quark
+ - Tweaked BetterCombat so that combat is more vanilla-like.
+     - Buffed default sweeping edge (but not too much, so Sweeping Edge enchant is still relevant.
+	 - Also made it so the aoe damage is reduced less, relative to the number of entities struck (more damage to more entities will be dealt now).
+	 - Buffed movespeed multiplier while attacking from 0.5 to 0.85.
+	 

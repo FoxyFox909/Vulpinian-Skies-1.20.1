@@ -1,0 +1,13 @@
+name = "Crash Assistant"
+filename = "crash_assistant-forge-1.4.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "926b171fe3572d98662f00e13aef488569d90887"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6222807
+project-id = 1154099
