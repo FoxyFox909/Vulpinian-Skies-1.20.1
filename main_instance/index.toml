@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/bettercombat/server.json5"
+hash = "26fbf3d1b28f6e15a034c330d37eb4402aeb24386627b6d790b6c6790dc93da0"
+
+[[files]]
 file = "config/quark-common.toml"
 hash = "31f7dbb1aa9c589106b073c2116518db09120c550b7f86ba822724d2f6efefd5"
 
@@ -296,7 +300,7 @@ metafile = true
 
 [[files]]
 file = "mods/create-new-age.pw.toml"
-hash = "daf1255fbd2312eaef5aed51d659c4db0d5bd99ff193dfd9425b5cf0e2121ab9"
+hash = "cb0bcd00d8111a03564a831b4f438857208dfca14bfaa2700a8074c5629c5728"
 metafile = true
 
 [[files]]
