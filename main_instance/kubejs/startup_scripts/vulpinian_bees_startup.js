@@ -2,7 +2,65 @@
 global["beeChrysalisBlockServerTick"] = (entity) => {
     let data = entity.serializeNBT().data
     // Utils.server.tell("Block says helo: " + entity + " Countdown: " + data.Countdown);
-    data.Countdown -= 1;
+    if (data.Countdown > 0) {
+      data.Countdown -= 1;
+    } else {
+      const newBee = entity.level.createEntity("minecraft:bee");
+      
+      let reserializedNbt = NBT.toTagCompound(data);
+
+      // Utils.server.tell("Popped! " + reserializedNbt.getCompound("essence_data").getCompound("essence_data").getUUID("entity_uuid"));
+
+      // Utils.server.tell("Popped! " + data.essence_data.essence_data.entity_uuid);
+
+      // Utils.server.tell("Popped! " + UUID.toString(data.essence_data.essence_data.entity_uuid));
+      const stringUuidFromBlock = reserializedNbt.getCompound("essence_data").getCompound("essence_data").getUUID("entity_uuid")
+      newBee.setCustomName(Text.of(stringUuidFromBlock).darkGray());
+      newBee.addTag("SoulBoundBeeUUID:" + stringUuidFromBlock);
+      newBee.addTag("randomtag");
+      newBee.addTag("randomtag2");
+      let uuidStringFromTag;
+      for (const tag of newBee.tags) { 
+        if (tag.startsWith("SoulBoundBeeUUID")) {
+          uuidStringFromTag = tag.split(':')[1];
+          Utils.server.tell("Found the UUID: " + uuidStringFromTag);
+          // Utils.server.tell("Found the UUID: " + UUID.fromString(uuidStringFromTag));
+          break;
+        }
+        // Utils.server.tell("next tag: " + tag);
+      }
+      // newBee.setUUID(stringUuid);
+      newBee.setUUID(stringUuidFromBlock);
+      // newBee.setUUID(UUID.fromString(data.essence_data.essence_data.entity_uuid));
+      // newBee.setUUID(data.essence_data.essence_data.entity_uuid);
+      // let beeNbt = NBT.compoundTag(
+      //   {
+      //     type:"productivebees:diamond",
+      //     isBaby:true
+      //   }
+      // );
+      // newBee.nbt.putInt("Age", -24000);
+      // newBee.nbt.merge(beeNbt);
+      
+     
+      Utils.server.tell("tags = " + newBee.tags);
+      newBee.position = entity.blockPos;
+      // newBee.nbt.putInt("Age", -24000);
+      
+      // Utils.server.tell("Age = " + newBee.nbt.getInt("Age"))
+
+      // Utils.server.tell("UUID TEST = " + UUID.fromString("fdsf a"))
+      
+      // Utils.server.tell("UUID TEST = " + UUID.fromString())
+      // newBee.markHurt();
+      newBee.setAge(-24000);
+      newBee.spawn();
+      // newBee.age = -24000;
+      // newBee.set
+
+    }
+
+
 
 
 }
@@ -11,7 +69,7 @@ StartupEvents.registry('block', event => {
     event.create('vulpinian_skies:example_block').blockEntity(be => {
         be.initialData(NBT.toTagCompound(
             {
-                Countdown:50,
+                Countdown:5,
                 essence_data: {}
             }
         ));

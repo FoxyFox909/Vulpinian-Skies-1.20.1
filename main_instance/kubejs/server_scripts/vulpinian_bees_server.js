@@ -90,8 +90,14 @@ ServerEvents.commandRegistry(event => {
 
 
 EntityEvents.spawned(["productivebees:configurable_bee", "minecraft:bee"], event => {
+    if (!event.entity.hasCustomName()) {
+        return;
+    }
     const stringUuid = event.entity.customName.getString();
-    Utils.server.tell(" Hi bee UUID: " + event.entity.customName.getString());
+
+
+    // Utils.server.tell(" Hi bee UUID: " + event.entity.customName.getString());
+    
     // event.entity.nbt.put("Passengers", NBT.toTagCollection(
     //     [{id:ArmorStand,Invisible:true,Marker:true}]
     // ));
@@ -191,7 +197,6 @@ ServerEvents.recipes(event => {
         return result.withNBT(nbt);
         // return Item.of("vulpinian_skies:chrysalis_arrow", nbt).strongNBT();
       }).id("vulpinian_skies:chrysalis_arrow_manual_only");
-    
 });
 
 
@@ -254,12 +259,6 @@ ItemEvents.entityInteracted("minecraft:diamond", event => {
     const NbtCopy = event.item.nbt.copy()
     event.item.count -= 1;
     player.giveInHand(Item.of("vulpinian_skies:example_block", NbtCopy));
-
-    
-    // Utils.server.tell("essence dat: " + (isBabee < 0));
-    
-    // if itemNbt
-    
 });
 
 
@@ -285,6 +284,7 @@ function registerSoulboundBee(player, bee) {
 
     bee.setCustomName(Text.of(bee.getStringUuid()).darkGray());
     Utils.server.tell("Custom name: " + bee.nbt.CustonName);
+    bee.addTag(bee.getStringUuid());
 
    
 
@@ -328,20 +328,14 @@ EntityEvents.death(["productivebees:configurable_bee", "minecraft:bee"], event =
 
 });
 
-BlockEvents.placed("vulpinian_skies:example_block", event => {
-    // const itemEssenceData = event.block.getItem().getNbt();
-    // const itemEssenceData = event.block.item.getNbtString();
-    // const itemEssenceData = event.entity.item
 
+BlockEvents.placed("vulpinian_skies:example_block", event => {
     const player = event.player;
     if (!player) {
         event.cancel(true);
         return;
     }
 
-    // const itemEssenceData = Object.keys(event.block.item)
-    // const itemEssenceData2 = event.block.
-    
     /** @type {Internal.ItemStack} */
     let itemStack;
     if (event.block.item.id == player.mainHandItem.id) {
@@ -366,22 +360,6 @@ BlockEvents.placed("vulpinian_skies:example_block", event => {
         return;
     }
 
-    // Utils.server.tell("Bruh " + );
-    // Utils.server.tell("Bruh " + itemEssenceData);
-    // Utils.server.tell("Bruh2 " + blockItemEssenceData);
-    // Utils.server.tell("Bruh3 " + event.block.entity.serializeNBT());
-    // const blockEntityData = event.block.serializeNBT().getCompound("essence_data")
     const blockEntityData = event.block.entity.serializeNBT().data;
-    // Utils.server.tell("Bruh4 " + blockEntityData);
     blockEntityData.essence_data = blockItemNbt;
-    // Utils.server.tell("Bruh4 " + event.block.entity.serializeNBT());
-
-
-    
-
-    
 });
-
-// BlockEvents.rightClicked("vulpinian_skies:example_block", event => {
-//     Utils.server.tell("right clicked: " + event.item.nbt);
-// });
