@@ -181,6 +181,7 @@ https://www.curseforge.com/minecraft/mc-mods/embers-rekindled
 
 https://www.curseforge.com/minecraft/mc-mods/wonderful-enchantments **
 https://www.curseforge.com/minecraft/mc-mods/arcanus
+https://www.curseforge.com/minecraft/mc-mods/feywild
 
 # Wild/Corruption
 https://www.curseforge.com/minecraft/mc-mods/sculk-horde/gallery

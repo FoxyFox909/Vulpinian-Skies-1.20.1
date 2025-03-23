@@ -226,7 +226,7 @@ The mods after the arrow are the dependents of the library.
 -  [Bookshelf](https://www.curseforge.com/minecraft/mc-mods/bookshelf)
 -  [Botarium](https://www.curseforge.com/minecraft/mc-mods/botarium) Useful for tech mods -> Create: New Age
 -  [Balm](https://www.curseforge.com/minecraft/mc-mods/balm) -> Cooking for Blockheads
--  [Caelus](https://www.curseforge.com/minecraft/mc-mods/caelus/) Elytra mechanics -> Hexcasting
+-  [Caelus](https://www.curseforge.com/minecraft/mc-mods/caelus/) Elytra mechanics -> Hexcasting, Modular Item API
 -  [Citadel](https://www.curseforge.com/minecraft/mc-mods/citadel)  -> Alex's Mobs, Alex's Caves
 -  [Cristel Lib](https://www.curseforge.com/minecraft/mc-mods/cristel-lib/) Enables config of structures -> Towns and Towers
 -  [Cobweb](https://www.curseforge.com/minecraft/mc-mods/cobweb) -> Soul Fire'd
