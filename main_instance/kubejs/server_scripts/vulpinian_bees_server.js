@@ -1,34 +1,39 @@
 ServerEvents.loaded(event => {
     // Player UUIDs are the keys of this.
-    event.server.persistentData.SoulboundBeeList = null ?? {};
+    // event.server.persistentData.SoulboundBeeList = null ?? {}; // DO NOT USE. ALWAYS runs, clearing all data...
+    if (!event.server.persistentData.SoulboundBeeList) {
+    // This one works instead.
+        event.server.persistentData.SoulboundBeeList = {};
+    }
 });
 
-PlayerEvents.loggedIn(event => {
+PlayerEvents.loggedIn(event => {  
+    if (event.level.isClientSide()) {
+        Utils.server.tell("CLIENT SIDE");
+        return;
+    }
+    Utils.server.tell("LOGGED IN")
+    let serverSoulboundBeeList = Utils.server.persistentData.SoulboundBeeList;
+    if (!serverSoulboundBeeList[event.player.uuid]) {
+        serverSoulboundBeeList[event.player.uuid] = {};
+    }
 
-    event.server.scheduleInTicks(80, () => {
-        Utils.server.tell("LOGGED IN")
-        let serverSoulboundBeeList = event.server.persistentData.SoulboundBeeList;
-        if (!serverSoulboundBeeList[event.player.uuid]) {
-            serverSoulboundBeeList[event.player.uuid] = {};
-        }
+    // let playerRecord = serverSoulboundBeeList[event.player.uuid]["BeeSlots"]
 
-        // let playerRecord = serverSoulboundBeeList[event.player.uuid]["BeeSlots"]
+    if (serverSoulboundBeeList[event.player.uuid]["MaxBeeSlots"] == null || serverSoulboundBeeList[event.player.uuid]["MaxBeeSlots"] < 0) {
+        Utils.server.tell("Initializing Max Bee Slots");
+        serverSoulboundBeeList[event.player.uuid]["MaxBeeSlots"] = 0;
+    }
 
-        if (!serverSoulboundBeeList[event.player.uuid]["MaxBeeSlots"] || serverSoulboundBeeList[event.player.uuid]["MaxBeeSlots"] < 0) {
-            serverSoulboundBeeList[event.player.uuid]["MaxBeeSlots"] = 0;
-        }
+    // The actual map of bees
+    if (serverSoulboundBeeList[event.player.uuid]["Bees"] == null) {
+        // serverSoulboundBeeList[event.player.uuid]["Bees"] = {"DummyBee1":{"test": "blah", "testprop2": "blahh"}, "DummyBee2":{"test": "blah", "testprop2": "blahh"}};
+        Utils.server.tell("Initializing Bee List");
+        serverSoulboundBeeList[event.player.uuid]["Bees"] = {};
+    }
 
-        // The actual map of bees
-        if (!serverSoulboundBeeList[event.player.uuid]["Bees"]) {
-            // serverSoulboundBeeList[event.player.uuid]["Bees"] = {"DummyBee1":{"test": "blah", "testprop2": "blahh"}, "DummyBee2":{"test": "blah", "testprop2": "blahh"}};
-            serverSoulboundBeeList[event.player.uuid]["Bees"] = {};
-        }
-
-
-        // serverSoulboundBeeList[event.player.uuid]["PlayerName"] = event.player.displayName();
-        serverSoulboundBeeList[event.player.uuid]["PlayerName"] = event.player.name.getString();
-    });
-    
+    // serverSoulboundBeeList[event.player.uuid]["PlayerName"] = event.player.displayName();
+    serverSoulboundBeeList[event.player.uuid]["PlayerName"] = event.player.name.getString();
 });
 
 ServerEvents.commandRegistry(event => {
@@ -52,22 +57,22 @@ ServerEvents.commandRegistry(event => {
             .then(Commands.argument('target', Arguments.PLAYER.create(event))
             .executes(context => resetBeesExec(Arguments.PLAYER.getResult(context, 'target'))))
         )
+        .then(Commands.literal('set-max-slots').requires(source => source.hasPermission(2))
+        .then(Commands.argument('target', Arguments.PLAYER.create(event))
+        .then(Commands.argument('amount', Arguments.INTEGER.create(event))
+        .executes(context => setMaxSlotsExec(Arguments.PLAYER.getResult(context, 'target'), Arguments.INTEGER.getResult(context, 'amount')))))
+        )
+        .then(Commands.literal('add-slots').requires(source => source.hasPermission(2))
+        .then(Commands.argument('target', Arguments.PLAYER.create(event))
+        .then(Commands.argument('amount', Arguments.INTEGER.create(event))
+        .executes(context => addSlotsExec(Arguments.PLAYER.getResult(context, 'target'), Arguments.INTEGER.getResult(context, 'amount')))))
+    )
     );
 
     // Helper function
     /** @param {Internal.Player} player */
     let beeCountExec = (player) => {
-        // console.log(player)
-        // if (player.abilities.mayfly) {
-        // player.abilities.mayfly = false
-        // player.abilities.flying = false
-        // player.displayClientMessage(Component.gold('Flying: ').append(Component.red('disabled')), true)
-        // } else {
-        // player.abilities.mayfly = true
-        // player.displayClientMessage(Component.gold('Flying: ').append(Component.green('enabled')), true)
-        // }
-        // player.onUpdateAbilities()
-        // player.tell("Hello World " + player);
+        // player.displayClientMessage(Component.gold('Flying: ').append(Component.red('disabled')), true)        
         const playerRecord = player.server.persistentData.SoulboundBeeList[player.uuid];
         const playerBeeList = playerRecord["Bees"];
         player.tell(Text.of(`Your have used ${playerBeeList.size()} out of ${playerRecord["MaxBeeSlots"]} bee slots.`).color("gold"));
@@ -81,8 +86,23 @@ ServerEvents.commandRegistry(event => {
     }
 
     let resetBeesExec = (targetPlayer) => {
-        Utils.server.tell("Resetting bees for " + targetPlayer);
+        // Utils.server.tell("Resetting bees for " + targetPlayer);
         targetPlayer.server.persistentData.SoulboundBeeList[targetPlayer.uuid]["Bees"] = {};
+        return 1;
+    }
+
+    let setMaxSlotsExec = (targetPlayer, amount) => {
+        const SoulboundBeeList = targetPlayer.server.persistentData.SoulboundBeeList;
+        const playerRecord = SoulboundBeeList[targetPlayer.uuid];
+        playerRecord["MaxBeeSlots"] = amount;
+        return 1;
+    }
+
+    let addSlotsExec = (targetPlayer, amount) => {
+        const SoulboundBeeList = targetPlayer.server.persistentData.SoulboundBeeList;
+        const playerRecord = SoulboundBeeList[targetPlayer.uuid];
+        const prevSlots = playerRecord["MaxBeeSlots"];
+        playerRecord["MaxBeeSlots"] = amount + prevSlots;
         return 1;
     }
 });
@@ -90,51 +110,73 @@ ServerEvents.commandRegistry(event => {
 
 
 EntityEvents.spawned(["productivebees:configurable_bee", "minecraft:bee"], event => {
-    if (!event.entity.hasCustomName()) {
+    // First check if the bee even is a legal, (has a soulbound UUID) THEN check it is CUrRENTLY soulbound to a player. THEN check if it exists in the world already.
+    // Utils.server.tell("spawned bee tags: " + event.entity.tags);
+    let uuidStringFromTag;
+      for (const tag of event.entity.tags) { 
+        if (tag.startsWith("SoulBoundBeeUUID")) {
+          uuidStringFromTag = tag.split(':')[1];
+          // Utils.server.tell("Found the UUID: " + UUID.fromString(uuidStringFromTag));
+          break;
+        }
+    }
+
+    if (!uuidStringFromTag) {        
+        event.cancel("Bee does not have a soulbound UUID.");
         return;
     }
-    const stringUuid = event.entity.customName.getString();
 
-
-    // Utils.server.tell(" Hi bee UUID: " + event.entity.customName.getString());
-    
-    // event.entity.nbt.put("Passengers", NBT.toTagCollection(
-    //     [{id:ArmorStand,Invisible:true,Marker:true}]
-    // ));
-
-    // Cursed shit, caused a crash
-    // event.entity.nbt.merge(
-    //     NBT.toTagCompound(
-    //         {
-    //             Passengers:[{id:"minecraft:armor_stand", marker: true}]
-    //         }
-    //     )
-    // )
-
-    if (stringUuid) {
-        event.entity.setUUID(UUID.fromString(stringUuid));
+    if (event.entity.uuid != uuidStringFromTag) {
+        event.entity.setUUID(uuidStringFromTag);
     }
-    // Utils.server.tell("UUID: " + event.entity.getStringUuid());
-    
-    const uuid = event.entity.uuid;
-    // Utils.server.tell("UUID: " + uuid);
+
+    // Check if bee is souldbound to a player
+    const entityStringUuid = event.entity.getStringUuid();
+    let isSouldBoundBee = false;
+    const SoulboundBeeList = event.entity.server.persistentData.SoulboundBeeList;
+    let playerUuid;
+    for (const playerRecord in SoulboundBeeList) {
+        // Utils.server.tell("player record = " + playerRecord);
+        const nextRecordValue = SoulboundBeeList[playerRecord]
+        // Utils.server.tell("player record value = " + nextRecordValue);
+        const playerBeeList = nextRecordValue["Bees"];
+        // Utils.server.tell("player bees = " + playerBeeList);
+        for (const nextBeeUuid in playerBeeList) {
+            if (nextBeeUuid == entityStringUuid) {
+                isSouldBoundBee = true;
+                playerUuid = playerRecord;
+                // Utils.server.tell("bee = " + entityStringUuid + " playerBee = " + nextBeeUuid);
+                // Utils.server.tell("HI BUZZY BUDDY");
+                break;}
+        }
+    }
+
+    // Utils.server.tell("isSouldBoundBee = " + isSouldBoundBee);
+
+    if (!isSouldBoundBee) {
+        // Utils.server.tell("Bee is not soulbound to any player.");
+        event.cancel("Bee is not soulbound to any player, so it can't spawn.");
+        return;
+    }
+
+    const uuid = event.entity.uuid;    
     const s = Utils.server;
     const levelKeys = s.levelKeys()
     let foundBeeFlag = false;
     for (let i = 0; i <levelKeys.size(); i++) {
         const nextLevel = Utils.server.getLevel(levelKeys[i].location());
         const mob = nextLevel.getEntity(uuid);
-
         if (mob) {
             foundBeeFlag = true;
-            Utils.server.tell("Mob found in: " + levelKeys[i].location());
+            // Utils.server.tell("Mob found in: " + levelKeys[i].location());
             break;
         }
     }
 
     if (foundBeeFlag) {
-        Console.log("Bee tried to spawn with duplicate UUID of " + uuid + ". Cancelling spawn.");
-        event.cancel("Bee already exists");
+        // Console.log("Bee tried to spawn with duplicate UUID of " + uuid + ". Cancelling spawn.");
+        event.cancel("Bee already exists.");
+        return;
     }    
 });
 
@@ -222,28 +264,19 @@ ItemEvents.entityInteracted("minecraft:diamond", event => {
         return
     }
 
-    const entityUuid = event.target.getStringUuid();
-
+    const entityStringUuid = event.target.getStringUuid();
     // Make sure the right and matching bee is clicked and is babee.
-    if (entityUuid != essenceUuid.toString()) {
+    if (entityStringUuid != essenceUuid.toString()) {
         event.entity.tell(Text.of("This is the wrong bee. This item is only compatible with the original bee whose essence was extracted.").color("dark_purple"))
+        Utils.server.tell("essence dat: " + entityStringUuid.toString() + " " + essenceUuid.toString());
         return;
     }
 
     // Utils.server.tell("are equal: " + (entityUuid == essenceUuid.toString()));
-    // Utils.server.tell("essence dat: " + entityUuid.toString() + " " + essenceUuid.toString());
     const beeNbt = event.target.nbt;
     if (!beeNbt) {
         Console.log("Something is very wrong with a bee: " + event.target);
         return;
-    }
-
-    const isBabee = beeNbt.getInt("Age") < 0;
-
-    if (!isBabee) {
-        event.entity.tell(Text.of("This bee needs to be younger. An injection of Rejuvenation Serum should do the trick...").color("dark_purple"));
-        return;
-        // Utils.server.tell("essence dat: " + (isBabee < 0));
     }
 
     // Registration, last step.
@@ -269,27 +302,33 @@ function registerSoulboundBee(player, bee) {
     const playerRecord = player.server.persistentData.SoulboundBeeList[player.uuid];
     const playerBeeList = playerRecord["Bees"];
     
+    
+    if (playerBeeList.size() >= playerRecord["MaxBeeSlots"]) {
+        player.tell(Text.of("You do not have enough bee slots. Your slots are freed up when a soulbound bee dies. You can gain more slots by leveling up skills. Check your slots with '/bees count'").color("red"));
+        return false;
+    }
+
+    const isBabee = bee.nbt.getInt("Age") < 0;
+    if (!isBabee) {
+        player.tell(Text.of("This bee needs to be younger. An injection of Rejuvenation Serum should do the trick...").color("dark_purple"));
+        return false;
+        // Utils.server.tell("essence dat: " + (isBabee < 0));
+    }
+
     if (playerBeeList[beeUuid]) {
         player.tell(Text.of("Bee already exists in your list of soulbound bees. Cancelling bee attunement."));
         return false;
     }
-
-    // OVERRIDE!
-    // if (playerBeeList.size() >= playerRecord["MaxBeeSlots"]) {
-    //     player.tell(Text.of("You do not have enough bee slots. Your slots are freed up when a soulbound bee dies. You can gain more slots by leveling up skills. Check your slots with '/bees count'").color("red"));
-    //     return false;
-    // }
     
     // We must store the UUID of the bee on the bee itself using CustomName (caps can't be edited), because it is lost when the bee pops in and out of a beehive
 
     bee.setCustomName(Text.of(bee.getStringUuid()).darkGray());
-    Utils.server.tell("Custom name: " + bee.nbt.CustonName);
-    bee.addTag(bee.getStringUuid());
+    // Utils.server.tell("Custom name: " + bee.nbt.CustonName);
+    // bee.addTag(bee.getStringUuid());
 
-   
 
     playerBeeList[beeUuid] = {};
-    Utils.server.tell("playerRecord = " + playerBeeList);
+    // Utils.server.tell("playerRecord = " + playerBeeList);
 
     return true;
 }
@@ -297,30 +336,30 @@ function registerSoulboundBee(player, bee) {
 
 // Iterate through all players to find out whose bee it was.
 EntityEvents.death(["productivebees:configurable_bee", "minecraft:bee"], event => {
-    Utils.server.tell("RIP BUZZY BUDDY");
-
-    let wasPlayerBee = false;
+    // Utils.server.tell("RIP BUZZY BUDDY");
+    let isSouldBoundBee = false;
     let playerUuid;
 
     const entityUuid = event.entity.getStringUuid();
     // UUID.NBT
 
     const SoulboundBeeList = event.entity.server.persistentData.SoulboundBeeList;
-
     for (const playerRecord in SoulboundBeeList) {
         // Utils.server.tell("player record = " + playerRecord);
         const nextRecordValue = SoulboundBeeList[playerRecord]
         // Utils.server.tell("player record value = " + nextRecordValue);
         const playerBeeList = nextRecordValue["Bees"];
-        Utils.server.tell("player bees = " + playerBeeList);
+        // Utils.server.tell("player bees = " + playerBeeList);
         for (const nextBeeUuid in playerBeeList) {
-            wasPlayerBee = true;
-            playerUuid = playerRecord;
-            break;
+            if (nextBeeUuid == entityUuid) {
+                isSouldBoundBee = true;
+                playerUuid = playerRecord;
+                Utils.server.tell("RIP BUZZY BUDDY");
+                break;}
         }
     }
 
-    if (wasPlayerBee) {
+    if (isSouldBoundBee) {
         delete SoulboundBeeList[playerUuid]["Bees"][entityUuid];
         // Utils.server.getPlayer()
     }
