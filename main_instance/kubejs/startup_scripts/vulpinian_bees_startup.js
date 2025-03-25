@@ -1,22 +1,33 @@
+const $BiomancySoundTypes = Java.loadClass("com.github.elenterius.biomancy.init.ModSoundTypes");
+
 /** @param {Internal.BlockEntity} entity */
 global["beeChrysalisBlockServerTick"] = (entity) => {
     let data = entity.serializeNBT().data
     // Utils.server.tell("Block says helo: " + entity + " Countdown: " + data.Countdown);
+    Utils.server.tell("Ticking: " + data.Countdown);
     if (data.Countdown > 0) {
-      data.Countdown -= 1;
+      data.Countdown -= 3;
     } else {
-      
-      
       let reserializedNbt = NBT.toTagCompound(data);
+      const essenceData = reserializedNbt.getCompound("essence_data");
+
+      if (!essenceData) {
+        // console.log("Something went very wrong with a Bee egg");
+        entity.level.destroyBlock(entity.blockPos, false);
+        return;
+      }
+
+      // Utils.server.tell("reserializedNbt = " + reserializedNbt.getCompound("essence_data").getUUID("entity_uuid"));
 
       // Utils.server.tell("Popped! " + reserializedNbt.getCompound("essence_data").getCompound("essence_data").getUUID("entity_uuid"));
       // Utils.server.tell("Popped! " + data.essence_data.essence_data.entity_uuid);
       // Utils.server.tell("Popped! " + UUID.toString(data.essence_data.essence_data.entity_uuid));
 
-      const stringUuidFromBlock = reserializedNbt.getCompound("essence_data").getCompound("essence_data").getUUID("entity_uuid")
+      const stringUuidFromBlock = essenceData.getUUID("entity_uuid");
 
       // Verify that the bee is legal, soulbound to a player. This check also happens on the bee's own spawn.
       let isSouldBoundBee = false;
+      let playerUuid;
       const SoulboundBeeList = Utils.server.persistentData.SoulboundBeeList;
       for (const playerRecord in SoulboundBeeList) {
         // Utils.server.tell("player record = " + playerRecord);
@@ -25,10 +36,10 @@ global["beeChrysalisBlockServerTick"] = (entity) => {
         const playerBeeList = nextRecordValue["Bees"];
         // Utils.server.tell("player bees = " + playerBeeList);
         for (const nextBeeUuid in playerBeeList) {
-            if (nextBeeUuid == entityUuid) {
+            if (nextBeeUuid == stringUuidFromBlock) {
               isSouldBoundBee = true;
               playerUuid = playerRecord;
-              Utils.server.tell("RIP BUZZY BUDDY");
+              // Utils.server.tell("Bee already exists");
               break;}
         }
       }
@@ -39,11 +50,21 @@ global["beeChrysalisBlockServerTick"] = (entity) => {
         // return;
       }
 
-      const newBee = entity.level.createEntity("minecraft:bee");
+      const newBee = entity.level.createEntity("productivebees:configurable_bee");
       // newBee.setCustomName(Text.of(stringUuidFromBlock).darkGray());
       newBee.addTag("SoulBoundBeeUUID:" + stringUuidFromBlock);
       // newBee.addTag("randomtag");
       // newBee.addTag("randomtag2");
+
+      const beeNbtToMerge = NBT.toTagCompound(
+        {
+          type: essenceData.getString("bee_type")
+        }
+      );
+
+      newBee.mergeNbt(beeNbtToMerge);
+
+      // newBee.nbt.putString("type", "productivebees:iron");
       let uuidStringFromTag;
       for (const tag of newBee.tags) { 
         if (tag.startsWith("SoulBoundBeeUUID")) {
@@ -62,13 +83,22 @@ global["beeChrysalisBlockServerTick"] = (entity) => {
       newBee.setUUID(stringUuidFromBlock);      
       newBee.position = entity.blockPos;
       newBee.setAge(-24000);
+
+      // Utils.server.tell("Bee NBT: " + newBee.nbt);
       newBee.spawn();
+
+      // entity.setRemoved());
+      // entity.level.setBlock(entity.blockPos, Blocks.AIR.defaultBlockState(), 3);
+      entity.level.destroyBlock(entity.blockPos, false);
+      // entity.clearRemoved()
+      // entity.setBlock('minecraft:air');
     }
 }
 
 
 StartupEvents.registry('block', event => {
-    event.create('vulpinian_skies:example_block').blockEntity(be => {
+  const chrysalisBlockBulider = event.create('vulpinian_skies:configurable_bee_chrysalis').blockEntity(be => {
+      
         be.initialData(NBT.toTagCompound(
             {
                 Countdown:5,
@@ -76,22 +106,32 @@ StartupEvents.registry('block', event => {
             }
         ));
         be.serverTick(20, 0, entity => {
-            // let countdown 
-            // Utils.server.tell("Block says helo: " + entity);
-            global["beeChrysalisBlockServerTick"](entity);
+          global["beeChrysalisBlockServerTick"](entity);
         })
     }) // Create a new block
       .item(blockItem => {
-        blockItem.displayName(Text.of("TEEEST").color("dark_purple"))        
+        // blockItem.displayName(Text.of("TEEEST").color("dark_purple"));
+        blockItem.unstackable();
       })
+      .soundType($BiomancySoundTypes.FLESH_BLOCK)
+      .box(4, 0, 4, 12, 12, 12)
       .displayName('My Custom Block') // Set a custom name
-      .soundType('wool') // Set a material (affects the sounds and some properties)
-      .hardness(1.0) // Set hardness (affects mining time)
-      .resistance(1.0) // Set resistance (to explosions, etc)
+      // .soundType('wool') // Set a material (affects the sounds and some properties)
+      .hardness(0.2) // Set hardness (affects mining time)
+      .resistance(0.3) // Set resistance (to explosions, etc)
     //   .tagBlock('my_custom_tag') // Tag the block with `#minecraft:my_custom_tag` (can have multiple tags)
-      .requiresTool(true) // Requires a tool or it won't drop (see tags below)
+      // .requiresTool(true) // Requires a tool or it won't drop (see tags below)
     //   .tagBlock('my_namespace:my_other_tag') // Tag the block with `#my_namespace:my_other_tag`
-      .tagBlock('minecraft:mineable/axe') //can be mined faster with an axe
-      .tagBlock('minecraft:mineable/pickaxe') // or a pickaxe
-      .tagBlock('minecraft:needs_iron_tool') // the tool tier must be at least iron
+      // .tagBlock('minecraft:mineable/axe') //can be mined faster with an axe
+      // .tagBlock('minecraft:mineable/pickaxe') // or a pickaxe
+      // .tagBlock('minecraft:needs_iron_tool') // the tool tier must be at least iron
+      .notSolid()
+      .fullBlock(false)
+      .viewBlocking(false)
+
+      // .defaultTranslucent()
+
   })
+
+  // StartupEvents.registry('item', event =>
+  //   {})
