@@ -6,10 +6,13 @@ ServerEvents.loaded(event => {
         event.server.persistentData.SoulboundBeeList = {};
     }
 
-    Utils.server.runCommand("kill b51a5590-c639-45ee-8cea-88ded49cc5b8");
+    event.server.scheduleInTicks(60, () => {
+        event.server.runCommandSilent("kill b51a5590-c639-45ee-8cea-88ded49cc5b8");
+    });
+
     // event.server.scheduleRepeatingInTicks(21600, () => {
     //     // Routine cleanup of dummy
-    //     Utils.server.runCommand("kill b51a5590-c639-45ee-8cea-88ded49cc5b8");
+    //     Utils.server.runCommandSilent("kill b51a5590-c639-45ee-8cea-88ded49cc5b8");
     // });
 });
 
@@ -18,7 +21,7 @@ PlayerEvents.loggedIn(event => {
         Utils.server.tell("CLIENT SIDE");
         return;
     }
-    Utils.server.tell("LOGGED IN")
+    // Utils.server.tell("BEE SCRRIPT: LOGGED IN")
     let serverSoulboundBeeList = Utils.server.persistentData.SoulboundBeeList;
     if (!serverSoulboundBeeList[event.player.uuid]) {
         serverSoulboundBeeList[event.player.uuid] = {};
@@ -50,18 +53,70 @@ ServerEvents.commandRegistry(event => {
         .then(Commands.literal('count')
             .executes(context => beeCountExec(context.source.player))
         )
-        .then(Commands.literal('recall')
-            .executes(context => {context.source.player.tell("Not implemented yet. Will teleport bees to you."); return 1;})
-             // Toggle flight for the player that ran the command if the `target` argument isn't included
-        // .then(Commands.argument('target', Arguments.PLAYER.create(event))
-        // .executes(context => beeCountExec(Arguments.PLAYER.getResult(context, 'target'))) // Toggle flight for the player included in the `target` argument
-        )
+        // .then(Commands.literal('recall')
+        //     .executes(context => {context.source.player.tell("Not implemented yet. Will teleport bees to you."); return 1;})
+        //      // Toggle flight for the player that ran the command if the `target` argument isn't included
+        // // .then(Commands.argument('target', Arguments.PLAYER.create(event))
+        // // .executes(context => beeCountExec(Arguments.PLAYER.getResult(context, 'target'))) // Toggle flight for the player included in the `target` argument
+        // )
         .then(Commands.literal('see-all').requires(source => source.hasPermission(2))
             .executes(context => seeAllExec(context))
         )
         .then(Commands.literal('reset-bees').requires(source => source.hasPermission(2))
-            .then(Commands.argument('target', Arguments.PLAYER.create(event))
-            .executes(context => resetBeesExec(Arguments.PLAYER.getResult(context, 'target'))))
+        .then(Commands.argument('target', Arguments.PLAYER.create(event))
+        .executes(context => resetBeesExec(Arguments.PLAYER.getResult(context, 'target'))))
+        )
+        .then(Commands.literal('recover')
+            .then(Commands.argument('target-bee', Arguments.STRING.create(event))
+            .suggests((context, builder) => {
+                const SoulboundBeeList = Utils.server.persistentData.SoulboundBeeList;
+                const playerRecord = SoulboundBeeList[context.source.player.getStringUuid()];
+                // Utils.server.tell("log in suggestion = " + playerRecord);
+
+                const beeList = playerRecord["Bees"];
+                // Utils.server.tell("COMMAND BEE LIST: = " + beeList)
+                for (const beeUUID in beeList) {
+                    let beeRecord = beeList[beeUUID];
+                    let customName = beeRecord["CustomNameString"];
+                    // Utils.server.tell("COMMAND = " + beeUUID)
+                    if (customName) {
+                        // builder.suggest(`\"${customName}\"`);
+                        // Utils.server.tell("custom name: " + customName)
+                        builder.suggest(`\"${customName} - UUID:${beeUUID}\"`);
+                    } else {                        
+                        builder.suggest(`\"Unnamed ${beeRecord["BeeType"].split(':')[1].replace(/_/g, " ")} Bee - UUID:${beeUUID}\"`);
+                    }
+                }
+                // builder.suggest(`\"bla bla bla\"`);                
+                return builder.buildFuture();
+            })
+            .executes(context => recoverBeeExec(context, Arguments.STRING.getResult(context, 'target-bee'))))
+        )
+        .then(Commands.literal('unbind')
+            .then(Commands.argument('target-bee', Arguments.STRING.create(event))
+            .suggests((context, builder) => {
+                const SoulboundBeeList = Utils.server.persistentData.SoulboundBeeList;
+                const playerRecord = SoulboundBeeList[context.source.player.getStringUuid()];
+                // Utils.server.tell("log in suggestion = " + playerRecord);
+
+                const beeList = playerRecord["Bees"];
+                // Utils.server.tell("COMMAND BEE LIST: = " + beeList)
+                for (const beeUUID in beeList) {
+                    let beeRecord = beeList[beeUUID];
+                    let customName = beeRecord["CustomNameString"];
+                    // Utils.server.tell("COMMAND = " + beeUUID)
+                    if (customName) {
+                        // builder.suggest(`\"${customName}\"`);
+                        // Utils.server.tell("custom name: " + customName)
+                        builder.suggest(`\"${customName} - UUID:${beeUUID}\"`);
+                    } else {                        
+                        builder.suggest(`\"Unnamed ${beeRecord["BeeType"].split(':')[1].replace(/_/g, " ")} Bee - UUID:${beeUUID}\"`);
+                    }
+                }                
+                // builder.suggest(`\"bla bla bla\"`);
+                return builder.buildFuture();
+            })
+            .executes(context => unbindBeeExec(context, Arguments.STRING.getResult(context, 'target-bee'))))
         )
         .then(Commands.literal('set-max-slots').requires(source => source.hasPermission(2))
         .then(Commands.argument('target', Arguments.PLAYER.create(event))
@@ -94,6 +149,216 @@ ServerEvents.commandRegistry(event => {
         Utils.server.tell(context.source.player.name.getString());
         context.source.player.tell("ALL Soulbound Bee List: " + context.source.server.persistentData.SoulboundBeeList);
         return 1;
+    };
+
+    /** @param {Internal.CommandContext<Internal.CommandSourceStack>} context */
+    let recoverBeeExec = (context, beeUUIDOrName) => {
+        // const acceptableBeePotionItems = ["potionofbees:splash_potion_of_bees", ]
+        let potionOfBeesItemStack;
+        const player = context.source.player;
+
+        if (player.mainHandItem.id == "potionofbees:potion_of_bees") {
+            // player.mainHandItem.count -= 1;
+            potionOfBeesItemStack = player.mainHandItem;
+        }
+
+
+        if (!potionOfBeesItemStack) {
+            player.tell(Text.of("You must be holding a Potion of Bees in your hand in order to use this command.").color("gold"));
+            return 0;
+        }
+
+        // Utils.server.tell("item: " + context.source.player.mainHandItem.id);
+
+        const SoulboundBeeList = Utils.server.persistentData.SoulboundBeeList;
+        const playerRecord = SoulboundBeeList[context.source.player.getStringUuid()];
+
+        if (!playerRecord) {
+            console.log("No player Bee record found. Make sure command is run as a player.");
+            return 0;
+        }
+
+        const beeList = playerRecord["Bees"];
+        let beeRecord = null;
+
+        // let indexOfUuid = beeUUIDOrName.indexOf("UUID:");
+        let isolatedUuidString = beeUUIDOrName.split("UUID:")[1];
+        // Utils.server.tell("full string :" + beeUUIDOrName);
+        // Utils.server.tell("isolatedUuidString :" + isolatedUuidString);
+        let beeUuid = UUID.fromString(isolatedUuidString);
+        if (!beeUuid) {
+            player.tell(Text.of("Bee UUID is not valid").color("red"));
+            return 0;
+        }
+
+        
+        // if (!beeUuid) {
+        //     // Need to manually find it because a name was given instead (or it might still be invalid)
+        //     Utils.server.tell("log = " + playerRecord);
+        //     for (const beeUuidKey in beeList) {
+        //         const beeRecord = beeList[beeUuidKey];
+        //         const beeCustomName = beeRecord["CustomNameString"];
+        //         // Utils.server.tell("beeCustomName = " + beeCustomName);
+        //         // Utils.server.tell("beeUUIDOrName = " + beeUUIDOrName);
+        //         // Utils.server.tell(beeUUIDOrName == beeCustomName);
+        //         // Utils.server.tell("beeList = " + beeList);
+        //         if (beeCustomName == beeUUIDOrName) {
+        //             beeUuid = beeUuidKey;
+        //             Utils.server.tell("key = " + beeUuidKey);
+        //             break;
+        //         }
+        //     }
+        // }
+
+        beeRecord = beeList[beeUuid];
+        // Utils.server.tell("beeRecord = " + beeRecord);
+
+
+        if (!beeRecord) {
+            // By this point, both UUID or name have failed to find the Bee.
+            context.source.player.tell(Text.of("The Bee was not found. Use a Bee's name (e.g. the one given with a Name Tag) or their UUID.").color("red"));
+            return 0;
+        }
+
+        potionOfBeesItemStack.count -= 1;
+        player.give("minecraft:glass_bottle");
+
+        
+        let beeEntity;
+        const s = context.source.server;    
+        const levelKeys = s.levelKeys().toArray();
+        const levelCount = s.levelKeys().size();
+        // Utils.server.tell("Levelleys: " +levelKeys);    
+        for (let i = 0; i < levelCount; i++) {
+            let resourceLocation = levelKeys[i].location();
+            let nextLevel = s.getLevel(resourceLocation);
+            beeEntity = nextLevel.getEntity(beeUuid);
+            // Utils.server.tell("Checked dimension: " + resourceLocation);
+            // Utils.server.tell("TEST dimension: " + s.getLevel("minecraft:the_end").name);
+            if (beeEntity) {            
+                break;
+            }
+        }
+
+        if (beeEntity) {        
+            beeEntity.setPos(context.source.player.x, context.source.player.y, context.source.player.z);
+            player.displayClientMessage(Text.of("Bee was teleported to you"), true);
+            beeEntity.potionEffects.add("minecraft:glowing", 400, 0, true, false);
+        } else {
+            player.tell(Text.of("Bee was not found in a loaded chunk. You have received a chrysalis to rehatch your Bee.").color("gold"));
+            player.tell(Text.of("WARNING: Your Bee's progress and stats will be lost when rehatched. Duplicates of your Bee will be removed.").color("gold"));
+            const beeType = beeRecord["BeeType"];
+            Utils.server.tell("bee type: " + beeType)
+
+
+            /** @type {Internal.CompoundTag} */
+            let rehatchNBT =   NBT.toTagCompound(   {
+                essence_data: {
+                    name: "entity.minecraft.bee",
+                    // entity_uuid: UUID.fromString(beeUuid), // Must use specialized method.
+                    entity_type: "minecraft:bee",
+                    bee_type: beeType
+                },
+                sounds: {
+                    death: "minecraft:entity.bee.death",
+                    hurt: "minecraft:entity.bee.hurt"
+                },
+                essence_tier: 3,
+                colors: [15582019, 4400155],
+                display: {
+                    Name: `{"text":"Soulbound Bee Rehatch Chrysalis","color":"dark_purple"}`
+                }
+            });        
+
+            rehatchNBT.getCompound("essence_data").putUUID("entity_uuid", beeUuid);
+            
+            // Utils.server.tell("Rehatch nbt: " + rehatchNBT.getCompound("essence_data: "));
+            // Utils.server.tell("Rehatch nbt: " + rehatchNBT.getCompound("essence_data"));
+
+            const rehatchItem = Item.of("vulpinian_skies:configurable_bee_chrysalis", rehatchNBT);
+
+            player.give(rehatchItem);
+        }
+
+
+
+        // context.source.player.tell(Text.of("Found the bee!").color("gold"));
+        
+        return 1;     
+    }
+
+    /** @param {Internal.CommandContext<Internal.CommandSourceStack>} context */
+    let unbindBeeExec = (context, beeUUIDOrName) => {                
+        let isolatedUuidString = beeUUIDOrName.split("UUID:")[1];        
+        let beeUuid = UUID.fromString(isolatedUuidString);
+        if (!beeUuid) {
+            player.tell(Text.of("Bee UUID is not valid").color("red"));
+            return 0;
+        }
+
+        const player = context.source.player;
+        const SoulboundBeeList = player.server.persistentData.SoulboundBeeList;
+        const playerRecord = SoulboundBeeList[player.getStringUuid()];
+        const playerBeeList = playerRecord["Bees"];
+        // let beeRecord = null;
+        let isSouldBoundBee = false;
+        for (const nextBeeUuid in playerBeeList) {
+            if (nextBeeUuid == beeUuid) {
+                isSouldBoundBee = true;                                
+                // beeRecord = playerBeeList[nextBeeUuid];
+                break;
+            }
+        }
+
+        if (!isSouldBoundBee) {
+            player.tell(Text.of("Bee to unbind was not found.").color("red"));
+            return 0;
+        }
+
+        delete SoulboundBeeList[player.getStringUuid()]["Bees"][beeUuid];
+        player.tell(Text.of("Bee has been unbinded! You have regained a Bee slot.").color("gold"));
+
+        const s = player.server;    
+        const levelKeys = s.levelKeys().toArray();
+        const levelCount = s.levelKeys().size();
+        // Utils.server.tell("Levelleys: " +levelKeys);
+        // let foundBeeFlag = false;
+        for (let i = 0; i < levelCount; i++) {
+            let resourceLocation = levelKeys[i].location();
+            let nextLevel = s.getLevel(resourceLocation);
+            /** @type {Internal.Entity} */
+            let mob = nextLevel.getEntity(beeUuid);            
+            if (mob) {
+                // const dummyUUID = "b51a5590-c639-45ee-8cea-88ded49cc5b8";
+                // mob.setUUID(dummyUUID);
+
+                // Effectively gets rid of the now-unbinded bee.            
+                mob.mergeNbt(NBT.toTagCompound(
+                    {
+                        type:"",
+                        Silent:true,                    
+                        Tags:[]
+                    }
+                ));
+                
+
+                const newBee = mob.level.createEntity("minecraft:bee");                
+                // newBee.x = mob.x;
+                // newBee.y = mob.y;
+                // newBee.z = mob.z;
+                newBee.position = mob.position();
+                newBee.setAge(-24000);
+                // mob.level.addParticle("minecraft:cloud", mob.x, mob.y, mob.z, 1, 1, 1);
+                Utils.server.runCommandSilent(`execute in ${mob.level.getName().getString()} run particle minecraft:cloud ${mob.x} ${mob.y} ${mob.z} 0.5 0.5 0.5 0.1 64 force`);
+                mob.y -= 512;                
+                mob.discard();
+
+                newBee.spawn();
+                newBee.setUUID(beeUuid);
+                break;
+            }
+        }
+        return 1;
     }
 
     let resetBeesExec = (targetPlayer) => {
@@ -124,7 +389,6 @@ ServerEvents.commandRegistry(event => {
         return 1;
     }
 });
-
 
 
 EntityEvents.spawned(["productivebees:configurable_bee"], event => {
@@ -196,7 +460,7 @@ EntityEvents.spawned(["productivebees:configurable_bee"], event => {
         // Utils.server.tell("TEST dimension: " + s.getLevel("minecraft:the_end").name);
         if (mob) {
             foundBeeFlag = true;
-            Utils.server.tell("Mob found in: " + levelKeys[i].location());
+            // Utils.server.tell("Mob found in: " + levelKeys[i].location());
             const dummyUUID = "b51a5590-c639-45ee-8cea-88ded49cc5b8";
             event.entity.setUUID(dummyUUID);
 
@@ -214,6 +478,8 @@ EntityEvents.spawned(["productivebees:configurable_bee"], event => {
                     Tags:[]
                 }
             ));            
+            // console.log(`A Productive Bee tried to spawn illegally at ${event.entity.position}`);
+            console.log(`A Productive Bee tried to spawn illegally at ${event.entity.position()}`);
             event.entity.y -= 512;
             event.success("Fake sucess");
             return;
@@ -400,7 +666,17 @@ function chrysalisOne(event, auxiliaryItem, rawItem, beeType, nameTransKey) {
         
         
         // Utils.server.tell("translated name: " + translated_name);   
-        nbt.merge(NBT.toTagCompound({display:{Name:`{"text":"(empty) Attuned ${translatedName} Chrysalis","color":"dark_purple"}`}}));
+        // Utils.server.tell("nbt: " + essence_data.getUUID("entity_uuid"));   
+        nbt.merge(NBT.toTagCompound(
+            {
+                display:
+                {
+                    Name:`{"text":"(empty) Attuned ${translatedName} Chrysalis","color":"dark_purple"}`,
+                    // Lore: `[{"text":"UUID: ${(essence_data.getUUID("entity_uuid"))}","italic":false}]`
+                    // Lore: `{"text":"TEST","italic":false}` // idk how to do this
+                }
+            }
+        ));
         return result.withNBT(nbt);
         // return Item.of("vulpinian_skies:chrysalis_arrow", nbt).strongNBT();
       }).id(`vulpinian_skies:${beeTypeNameOnly}_bee_chrysalis_manual_only`);
@@ -467,8 +743,46 @@ const interactableBees = [
     "productivebees:configurable_bee"
 ];
 
+ItemEvents.rightClicked(["minecraft:diamond", "minecraft:emerald"], event => {
+    event.player.addItemCooldown("minecraft:emerald", 35);
+    const itemNbt = event.item.nbt;
+    // Utils.server.tell("itemnbt = " + itemNbt.getCompound("essence_data").getString("bee_type"));
+    const uuid = itemNbt.getCompound("essence_data").getUUID("entity_uuid");
+    const s = event.server;    
+    const levelKeys = s.levelKeys().toArray();
+    const levelCount = s.levelKeys().size();
+    // Utils.server.tell("Levelleys: " +levelKeys);
+    let foundBeeFlag = false;
+    for (let i = 0; i < levelCount; i++) {
+        let resourceLocation = levelKeys[i].location();
+        let nextLevel = s.getLevel(resourceLocation);
+        let mob = nextLevel.getEntity(uuid);
+        // Utils.server.tell("Checked dimension: " + resourceLocation);
+        // Utils.server.tell("Checked uuid: " + uuid);
+        // Utils.server.tell("TEST dimension: " + s.getLevel("minecraft:the_end").name);
+        if (mob) {
+            foundBeeFlag = true;
+            // Utils.server.tell("Mob found in: " + levelKeys[i].location());            
+            mob.potionEffects.add("minecraft:glowing", 400, 1, true, false);
+            event.player.displayClientMessage(Text.of(`Bee is located at (${Math.floor(mob.x)}, ${Math.floor(mob.y)}, ${Math.floor(mob.z)}) in ${nextLevel.name.getString().split(':')[1].replace(/_/g, " ")}`), true);
+            // event.player.displayClientMessage(Text.of(`Bee is located at (${Math.floor(mob.x)}, ${Math.floor(mob.y)}, ${Math.floor(mob.z)}) in ${"bruh_test_t_2".replace(/_/g, " ")}`), true);
+            break;
+        }
+    }
+
+    if (!foundBeeFlag) {
+        event.player.displayClientMessage(Text.of(`Bee was not found in a loaded chunk`), true);
+    }
+
+});
+
 // Gives the placeable egg!
 ItemEvents.entityInteracted(["minecraft:diamond", "minecraft:emerald"], event => {
+
+    // Utils.server.tell(event.target.nbt.getString("type"));
+
+
+
     // Utils.server.tell("index = " + (interactableBees.indexOf(event.target.type) != -1))
     if (interactableBees.indexOf(event.target.type) == -1) {
         // Utils.server.tell("not interactable");
@@ -498,7 +812,7 @@ ItemEvents.entityInteracted(["minecraft:diamond", "minecraft:emerald"], event =>
     // Make sure the right and matching bee is clicked and is babee.
     if (entityStringUuid != essenceUuid.toString()) {
         event.entity.tell(Text.of("This is the wrong bee. This item is only compatible with the original bee whose essence was extracted.").color("dark_purple"))
-        Utils.server.tell("essence dat: " + entityStringUuid.toString() + " " + essenceUuid.toString());
+        // Utils.server.tell("essence data: " + entityStringUuid.toString() + " " + essenceUuid.toString());
         return;
     }
 
@@ -512,7 +826,7 @@ ItemEvents.entityInteracted(["minecraft:diamond", "minecraft:emerald"], event =>
     // Registration, last step.
     /** @type {Internal.Player} */
     const player = event.entity;
-    const result = registerSoulboundBee(player, event.target);
+    const result = registerSoulboundBee(player, event.target, event);
 
     if (!result) {
         return;
@@ -527,7 +841,7 @@ ItemEvents.entityInteracted(["minecraft:diamond", "minecraft:emerald"], event =>
 
     Utils.server.runCommandSilent(`execute as ${event.entity.getStringUuid()} run playsound minecraft:block.beehive.enter master @p ${event.target.x} ${event.target.y} ${event.target.z} 4 1.8 1`);
     Utils.server.runCommandSilent(`execute in ${event.entity.level.getName().getString()} run particle minecraft:cloud ${event.target.x} ${event.target.y} ${event.target.z} 0.5 0.5 0.5 0.1 64 force`);
-    event.level.addParticle("minecraft:cloud", event.target.x, event.target.y, event.target.z, 1, 1, 1);
+    // event.level.addParticle("minecraft:cloud", event.target.x, event.target.y, event.target.z, 1, 1, 1); // Does not work
 
     // Clean up original Bee entity.
     event.target.discard();
@@ -536,9 +850,34 @@ ItemEvents.entityInteracted(["minecraft:diamond", "minecraft:emerald"], event =>
 });
 
 
+ItemEvents.entityInteracted("minecraft:name_tag", event => {
+    if (event.target.type != "productivebees:configurable_bee") {
+        return;
+    }
+
+    
+    const SoulboundBeeList = event.server.persistentData.SoulboundBeeList;
+    const playerRecord = SoulboundBeeList[event.entity.uuid];
+    
+    if (!playerRecord["Bees"][event.target.getStringUuid()]) {
+        return;
+    }
+    
+    const beeRecord = playerRecord["Bees"][event.target.getStringUuid()];
+
+    event.server.scheduleInTicks(20, () => {
+        beeRecord["CustomNameString"] = event.target.customName.getString();
+        // Utils.server.tell("debug: " + beeRecord)
+    })
+    
+    // beeRecord["CustomNameString"] = event.item.displayName.contents;
+    
+
+});
+
 /** Returns true if the bee was succesfully registered. */
-/** @param {Internal.Player} player @param {Internal.Entity} bee @returns {boolean} */
-function registerSoulboundBee(player, bee) {
+/** @param {Internal.Player} player @param {Internal.Entity} bee @param { Internal.ItemEntityInteractedEventJS} event @returns {boolean} */
+function registerSoulboundBee(player, bee, event) {
     const beeUuid = bee.getStringUuid();
     const playerRecord = player.server.persistentData.SoulboundBeeList[player.uuid];
     const playerBeeList = playerRecord["Bees"];
@@ -562,7 +901,8 @@ function registerSoulboundBee(player, bee) {
         player.tell(Text.of("This Bee is already soulbound to you and will use the same slot.").color("gold"));
         // return false;
     } else {
-        player.tell(Text.of("A new Bee has been soulbond to you! This lasts until the Bee dies. Check your available slots with '/bees count'").color("gold"));
+        // player.tell(Text.of("A new Bee has been soulbond to you! This lasts until the Bee dies. Check your available slots with '/bees count'").color("gold"));
+        player.tell(Text.of("A new Bee has been soulbond to you! This lasts until you unbind the bee with '/bees unbind'. Check your available slots with '/bees count'").color("gold"));
     }
     
     // We must store the UUID of the bee on the bee itself using CustomName (caps can't be edited), because it is lost when the bee pops in and out of a beehive
@@ -572,7 +912,13 @@ function registerSoulboundBee(player, bee) {
     // bee.addTag(bee.getStringUuid());
 
 
-    playerBeeList[beeUuid] = {};
+
+    playerBeeList[beeUuid] = {
+        CustomNameString: "",
+        BeeType: event.item.nbt.getCompound("essence_data").getString("bee_type"), //bee.nbt.getString("type")
+        HasDoneFirstHatch: false
+
+    };
     // Utils.server.tell("playerRecord = " + playerBeeList);
 
     return true;
@@ -606,7 +952,7 @@ EntityEvents.death(["productivebees:configurable_bee", "minecraft:bee"], event =
             if (nextBeeUuid == entityUuid) {
                 isSouldBoundBee = true;
                 playerUuid = playerRecord;
-                Utils.server.tell("RIP BUZZY BUDDY");
+                // Utils.server.tell("RIP BUZZY BUDDY");
                 break;}
         }
     }

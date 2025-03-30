@@ -28,18 +28,22 @@ global["beeChrysalisBlockServerTick"] = (entity) => {
       // Verify that the bee is legal, soulbound to a player. This check also happens on the bee's own spawn.
       let isSouldBoundBee = false;
       let playerUuid;
+
+      /** @type {Internal.CompoundTag} */
+      let beeRecord;
       const SoulboundBeeList = Utils.server.persistentData.SoulboundBeeList;
-      for (const playerRecord in SoulboundBeeList) {
+      for (const playerRecordUuid in SoulboundBeeList) {
         // Utils.server.tell("player record = " + playerRecord);
-        const nextRecordValue = SoulboundBeeList[playerRecord]
+        const nextRecordValue = SoulboundBeeList[playerRecordUuid]
         // Utils.server.tell("player record value = " + nextRecordValue);
         const playerBeeList = nextRecordValue["Bees"];
         // Utils.server.tell("player bees = " + playerBeeList);
         for (const nextBeeUuid in playerBeeList) {
             if (nextBeeUuid == stringUuidFromBlock) {
               isSouldBoundBee = true;
-              playerUuid = playerRecord;
-              // Utils.server.tell("Bee already exists");
+              playerUuid = playerRecordUuid;
+              beeRecord = playerBeeList[nextBeeUuid]
+              // Utils.server.tell("Bee is legally soulbound to a player.");
               break;}
         }
       }
@@ -47,14 +51,14 @@ global["beeChrysalisBlockServerTick"] = (entity) => {
       // Safeguard against potential cheese.
       if (!isSouldBoundBee) {
         // Utils.server.tell("Bee is not soulbound, and so cannot spawn from block");
-        // return;
+        console.log(`Bee is not soulbound, and so cannot spawn from block at ${entity.blockPos}`);
+        entity.level.destroyBlock(entity.blockPos, false);
+        return;
       }
 
       const newBee = entity.level.createEntity("productivebees:configurable_bee");
       // newBee.setCustomName(Text.of(stringUuidFromBlock).darkGray());
       newBee.addTag("SoulBoundBeeUUID:" + stringUuidFromBlock);
-      // newBee.addTag("randomtag");
-      // newBee.addTag("randomtag2");
 
       const beeNbtToMerge = NBT.toTagCompound(
         {
@@ -77,6 +81,7 @@ global["beeChrysalisBlockServerTick"] = (entity) => {
       if (!uuidStringFromTag) {
         // Something went wrong with Tags.
         newBee.discard();
+        entity.level.destroyBlock(entity.blockPos, false);
         return;
       }
 
@@ -84,9 +89,21 @@ global["beeChrysalisBlockServerTick"] = (entity) => {
       newBee.position = entity.blockPos;
       newBee.setAge(-24000);
 
+      const customBeeName = beeRecord["CustomNameString"];
+      if (customBeeName) {
+        newBee.setCustomName(Text.of(customBeeName));
+      }
+
+      newBee.potionEffects.add("minecraft:glowing", 400, 0, true, false);
+
       // Utils.server.tell("Bee NBT: " + newBee.nbt);
       newBee.spawn();
 
+      // const playerFromUuuid = Utils.server.getPlayer(playerUuid);
+      if (!beeRecord["HasDoneFirstHatch"]) {
+        Utils.server.tell(Text.of(`${SoulboundBeeList[playerUuid]["PlayerName"]} has hatched a new ${newBee.name.getString()}!`).color("gold"));
+        beeRecord["HasDoneFirstHatch"] = true;
+      }
       // entity.setRemoved());
       // entity.level.setBlock(entity.blockPos, Blocks.AIR.defaultBlockState(), 3);
       entity.level.destroyBlock(entity.blockPos, false);
