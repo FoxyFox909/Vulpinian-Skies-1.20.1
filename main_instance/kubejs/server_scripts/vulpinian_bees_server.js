@@ -180,8 +180,7 @@ ServerEvents.commandRegistry(event => {
 
         const beeList = playerRecord["Bees"];
         let beeRecord = null;
-
-        // let indexOfUuid = beeUUIDOrName.indexOf("UUID:");
+        
         let isolatedUuidString = beeUUIDOrName.split("UUID:")[1];
         // Utils.server.tell("full string :" + beeUUIDOrName);
         // Utils.server.tell("isolatedUuidString :" + isolatedUuidString);
@@ -191,28 +190,8 @@ ServerEvents.commandRegistry(event => {
             return 0;
         }
 
-        
-        // if (!beeUuid) {
-        //     // Need to manually find it because a name was given instead (or it might still be invalid)
-        //     Utils.server.tell("log = " + playerRecord);
-        //     for (const beeUuidKey in beeList) {
-        //         const beeRecord = beeList[beeUuidKey];
-        //         const beeCustomName = beeRecord["CustomNameString"];
-        //         // Utils.server.tell("beeCustomName = " + beeCustomName);
-        //         // Utils.server.tell("beeUUIDOrName = " + beeUUIDOrName);
-        //         // Utils.server.tell(beeUUIDOrName == beeCustomName);
-        //         // Utils.server.tell("beeList = " + beeList);
-        //         if (beeCustomName == beeUUIDOrName) {
-        //             beeUuid = beeUuidKey;
-        //             Utils.server.tell("key = " + beeUuidKey);
-        //             break;
-        //         }
-        //     }
-        // }
-
         beeRecord = beeList[beeUuid];
         // Utils.server.tell("beeRecord = " + beeRecord);
-
 
         if (!beeRecord) {
             // By this point, both UUID or name have failed to find the Bee.
@@ -241,15 +220,16 @@ ServerEvents.commandRegistry(event => {
         }
 
         if (beeEntity) {        
-            beeEntity.setPos(context.source.player.x, context.source.player.y, context.source.player.z);
+            // beeEntity.setLevel(player.level);
+            // beeEntity.setPos(player.x, player.y, player.z);            
+            player.server.runCommandSilent(`execute in ${player.level.name.getString()} run tp ${beeUuid} ${player.x} ${player.y} ${player.z}`);            
             player.displayClientMessage(Text.of("Bee was teleported to you"), true);
             beeEntity.potionEffects.add("minecraft:glowing", 400, 0, true, false);
         } else {
             player.tell(Text.of("Bee was not found in a loaded chunk. You have received a chrysalis to rehatch your Bee.").color("gold"));
             player.tell(Text.of("WARNING: Your Bee's progress and stats will be lost when rehatched. Duplicates of your Bee will be removed.").color("gold"));
             const beeType = beeRecord["BeeType"];
-            Utils.server.tell("bee type: " + beeType)
-
+            // Utils.server.tell("bee type: " + beeType)
 
             /** @type {Internal.CompoundTag} */
             let rehatchNBT =   NBT.toTagCompound(   {
@@ -279,9 +259,6 @@ ServerEvents.commandRegistry(event => {
 
             player.give(rehatchItem);
         }
-
-
-
         // context.source.player.tell(Text.of("Found the bee!").color("gold"));
         
         return 1;     
@@ -341,7 +318,6 @@ ServerEvents.commandRegistry(event => {
                     }
                 ));
                 
-
                 const newBee = mob.level.createEntity("minecraft:bee");                
                 // newBee.x = mob.x;
                 // newBee.y = mob.y;
@@ -354,7 +330,7 @@ ServerEvents.commandRegistry(event => {
                 mob.discard();
 
                 newBee.spawn();
-                newBee.setUUID(beeUuid);
+                // newBee.setUUID(beeUuid);
                 break;
             }
         }
@@ -537,74 +513,8 @@ EntityEvents.spawned(["productivebees:configurable_bee"], event => {
 });
 
 ServerEvents.recipes(event => {
-//     event.shapeless(
-//         Item.of('minecraft:diamond', 3), // arg 1: output
-//         [
-//           'minecraft:bone_meal',
-//           'minecraft:yellow_dye', 	       // arg 2: the array of inputs
-//           '3x minecraft:ender_pearl'
-//         ]
-//       );
-
-//     event.shaped(
-//         Item.of("minecraft:diamond", 1),
-//         [
-//             'RAR',
-//             'RER',
-//             'RCR'
-//         ],
-//         {
-//             A: Item.of("mna:rune_earth"),
-//             E: Item.of("biomancy:essence").withNBT(NBT.toTagCompound(
-//                 `{
-//                     colors: [I; 15582019, 4400155],
-//                     essence_data: {
-//                         entity_type: "minecraft:bee",
-//                         name: "entity.minecraft.bee"
-//                     },
-//                     essence_tier: 3,
-//                     sounds: {
-//                         death: "minecraft:entity.bee.death",
-//                         hurt: "minecraft:entity.bee.hurt"
-//                     }
-//                 }`
-//             )),
-//             C: Item.of("biomancy:chrysalis"),
-//             R: Item.of("minecraft:iron_block")
-//         }
-//       ).modifyResult((grid, result) => {
-//         let bio_essence_item = grid.findAll().find(item => (item.id == 'biomancy:essence'));
-
-//         /** @type {Internal.CompoundTag} */
-//         const nbt = bio_essence_item.nbt;
-//         // Utils.server.tell("nbt = " + nbt);
-//         // return result.withNBT(nbt);
-//         // return Item.of('minectaft:diamond', nbt)
-//         if (!nbt) {
-//           return Item.of("minecraft:air");
-//         }
-            
-//         const essence_data = nbt.getCompound("essence_data");
-//         // Utils.server.tell("essence: " + essence_data);
-
-//         // Validation
-//         if (!essence_data || !essence_data.getString("name")) {            
-//             return Item.of("minecraft:air");
-//         } 
-
-//         essence_data.putString("bee_type","productivebees:iron");
-//         // const entity_type = essence_data.getString("entity_type");
-//         // Utils.server.tell("entity_type = " + entity_type);
-        
-
-//         const translated_name = Text.translate(essence_data.getString("name")).string;
-//         // Utils.server.tell("translated name: " + translated_name);   
-//         nbt.merge(NBT.toTagCompound({display:{Name:`{"text":"Attuned ${translated_name} Chrysalis (empty)","color":"dark_purple"}`}}));
-//         return result.withNBT(nbt);
-//         // return Item.of("vulpinian_skies:chrysalis_arrow", nbt).strongNBT();
-//       }).id("vulpinian_skies:iron_bee_chrysalis_manual_only");
-
       chrysalisOne(event, Item.of("mna:rune_earth"), Item.of("minecraft:diamond_block"), "productivebees:diamond", "entity.productivebees.diamond_bee");
+      chrysalisOne(event, Item.of("mna:rune_earth"), Item.of("minecraft:emerald_block"), "productivebees:emerald", "entity.productivebees.emerald_bee");
 });
 
 
@@ -618,7 +528,7 @@ function chrysalisOne(event, auxiliaryItem, rawItem, beeType, nameTransKey) {
     const translatedName = Text.translate(nameTransKey).string;
 
     event.shaped(
-        Item.of("minecraft:emerald", 1, NBT.toTagCompound({display:{Name:`{"text":"(empty) Attuned ${translatedName} Chrysalis","color":"dark_purple"}`}})),
+        Item.of("vulpinian_skies:empty_configurable_bee_chrysalis", 1, NBT.toTagCompound({display:{Name:`{"text":"(empty) Attuned ${translatedName} Chrysalis","color":"dark_purple"}`}})).strongNBT(),
         [
             'RAR',
             'RER',
@@ -684,67 +594,14 @@ function chrysalisOne(event, auxiliaryItem, rawItem, beeType, nameTransKey) {
     
 }
 
-// // Simple recipe with one shell of items around the essence and one auxiliary
-// /**  @param {Internal.RecipesEventJS} event @param {Internal.ItemStack[]} auxiliaryItems @param {string} beeType */
-// function createEggChrysalisRecipeOne(event, auxiliaryItems, beeType) {
-//     event.shapeless(
-//         Item.of("minecraft:diamond", 1),
-//         [
-//             Item.of("biomancy:chrysalis"),
-//             Item.of("biomancy:essence").withNBT(NBT.toTagCompound(
-//                 `{
-//                     colors: [I; 15582019, 4400155],
-//                     essence_data: {
-//                         entity_type: "minecraft:bee",
-//                         name: "entity.minecraft.bee"
-//                     },
-//                     essence_tier: 3,
-//                     sounds: {
-//                         death: "minecraft:entity.bee.death",
-//                         hurt: "minecraft:entity.bee.hurt"
-//                     }
-//                 }`
-//             ))
-//         ]
-//       ).modifyResult((grid, result) => {
-//         let bio_essence_item = grid.findAll().find(item => (item.id == 'biomancy:essence'));
-
-//         /** @type {Internal.CompoundTag} */
-//         const nbt = bio_essence_item.nbt;
-//         // Utils.server.tell("nbt = " + nbt);
-//         // return result.withNBT(nbt);
-//         // return Item.of('minectaft:diamond', nbt)
-//         if (!nbt) {
-//           return Item.of("minecraft:air");
-//         }
-            
-//         const essence_data = nbt.getCompound("essence_data");
-//         // Utils.server.tell("essence: " + essence_data);
-
-//         if (!essence_data || !essence_data.getString("name")) {            
-//             return Item.of("minecraft:air");
-//         } 
-
-//         // Validation
-//         const entity_type = essence_data.getString("entity_type");
-//         Utils.server.tell("entity_type = " + entity_type);
-
-//         const translated_name = Text.translate(essence_data.getString("name")).string;
-//         Utils.server.tell("translated name: " + translated_name);        
-//         nbt.merge(NBT.toTagCompound({display:{Name:`{"text":"Attuned ${translated_name} Chrysalis (empty)","color":"dark_purple"}`}}));
-//         return result.withNBT(nbt);
-//         // return Item.of("vulpinian_skies:chrysalis_arrow", nbt).strongNBT();
-//       }).id(`vulpinian_skies:attuned_${beeType}_chrysalis_manual_only`);
-// }
-
 
 const interactableBees = [
     "minecraft:bee",
     "productivebees:configurable_bee"
 ];
 
-ItemEvents.rightClicked(["minecraft:diamond", "minecraft:emerald"], event => {
-    event.player.addItemCooldown("minecraft:emerald", 35);
+ItemEvents.rightClicked("vulpinian_skies:empty_configurable_bee_chrysalis", event => {
+    event.player.addItemCooldown("vulpinian_skies:empty_configurable_bee_chrysalis", 35);
     const itemNbt = event.item.nbt;
     // Utils.server.tell("itemnbt = " + itemNbt.getCompound("essence_data").getString("bee_type"));
     const uuid = itemNbt.getCompound("essence_data").getUUID("entity_uuid");
@@ -774,15 +631,13 @@ ItemEvents.rightClicked(["minecraft:diamond", "minecraft:emerald"], event => {
         event.player.displayClientMessage(Text.of(`Bee was not found in a loaded chunk`), true);
     }
 
+    // Utils.server.tell("debug nbt: " + itemNbt.getCompound("display").getString("Name").replace("(empty) ", ""));
+
 });
 
 // Gives the placeable egg!
-ItemEvents.entityInteracted(["minecraft:diamond", "minecraft:emerald"], event => {
-
+ItemEvents.entityInteracted("vulpinian_skies:empty_configurable_bee_chrysalis", event => {
     // Utils.server.tell(event.target.nbt.getString("type"));
-
-
-
     // Utils.server.tell("index = " + (interactableBees.indexOf(event.target.type) != -1))
     if (interactableBees.indexOf(event.target.type) == -1) {
         // Utils.server.tell("not interactable");
@@ -834,6 +689,23 @@ ItemEvents.entityInteracted(["minecraft:diamond", "minecraft:emerald"], event =>
     
     // Success!
     const NbtCopy = event.item.nbt.copy()
+
+    let nameString = NbtCopy.getCompound("display").getString("Name");
+    nameString = nameString.replace("(empty) ", "");
+    nameString = nameString.replace("Attuned", "Soulbound");
+    NbtCopy.getCompound("display").putString("Name", nameString);
+    
+    // nbt.merge(NBT.toTagCompound(
+    //     {
+    //         display:
+    //         {
+    //             Name:`{"text":"(empty) Attuned ${translatedName} Chrysalis","color":"dark_purple"}`,
+    //             // Lore: `[{"text":"UUID: ${(essence_data.getUUID("entity_uuid"))}","italic":false}]`
+    //             // Lore: `{"text":"TEST","italic":false}` // idk how to do this
+    //         }
+    //     }
+    // ));
+
     event.item.count -= 1;
     player.giveInHand(Item.of("vulpinian_skies:configurable_bee_chrysalis", NbtCopy));
 
@@ -854,7 +726,6 @@ ItemEvents.entityInteracted("minecraft:name_tag", event => {
     if (event.target.type != "productivebees:configurable_bee") {
         return;
     }
-
     
     const SoulboundBeeList = event.server.persistentData.SoulboundBeeList;
     const playerRecord = SoulboundBeeList[event.entity.uuid];
@@ -871,9 +742,8 @@ ItemEvents.entityInteracted("minecraft:name_tag", event => {
     })
     
     // beeRecord["CustomNameString"] = event.item.displayName.contents;
-    
-
 });
+
 
 /** Returns true if the bee was succesfully registered. */
 /** @param {Internal.Player} player @param {Internal.Entity} bee @param { Internal.ItemEntityInteractedEventJS} event @returns {boolean} */
@@ -895,26 +765,31 @@ function registerSoulboundBee(player, bee, event) {
         // Utils.server.tell("essence dat: " + (isBabee < 0));
     }
 
+
+    let newCustomNameString = "";
+
     // Overwrite Bee.
-    if (playerBeeList[beeUuid]) {
-        // player.tell(Text.of("Bee already exists in your list of soulbound bees. Cancelling bee attunement."));
-        player.tell(Text.of("This Bee is already soulbound to you and will use the same slot.").color("gold"));
-        // return false;
+    if (playerBeeList[beeUuid]) {        
+        player.tell(Text.of("This Bee is already soulbound to you and will use the same slot.").color("gold"));        
+        const beeRecord = playerBeeList[beeUuid];
+        newCustomNameString = beeRecord.getString("CustomNameString");
     } else {
         // player.tell(Text.of("A new Bee has been soulbond to you! This lasts until the Bee dies. Check your available slots with '/bees count'").color("gold"));
         player.tell(Text.of("A new Bee has been soulbond to you! This lasts until you unbind the bee with '/bees unbind'. Check your available slots with '/bees count'").color("gold"));
     }
     
-    // We must store the UUID of the bee on the bee itself using CustomName (caps can't be edited), because it is lost when the bee pops in and out of a beehive
+    
+    // We must store the UUID of the bee on the bee itself using the mob's Tags (caps can't be edited), because it is lost when the bee pops in and out of a beehive
 
-    bee.setCustomName(Text.of(bee.getStringUuid()).darkGray());
+    // bee.setCustomName(Text.of(bee.getStringUuid()).darkGray());
     // Utils.server.tell("Custom name: " + bee.nbt.CustonName);
     // bee.addTag(bee.getStringUuid());
 
+    
 
-
+    // Keep relevant data of old bee record but refresh type, or initialize new data if new bee.
     playerBeeList[beeUuid] = {
-        CustomNameString: "",
+        CustomNameString: newCustomNameString,
         BeeType: event.item.nbt.getCompound("essence_data").getString("bee_type"), //bee.nbt.getString("type")
         HasDoneFirstHatch: false
 
@@ -926,10 +801,8 @@ function registerSoulboundBee(player, bee, event) {
 
 
 // Iterate through all players to find out whose bee it was.
-EntityEvents.death(["productivebees:configurable_bee", "minecraft:bee"], event => {
-    // return;
+EntityEvents.death("productivebees:configurable_bee", event => {    
     // Utils.server.tell("RIIIIP BUZZY BUDDY");
-
     if (event.entity.getStringUuid() == "b51a5590-c639-45ee-8cea-88ded49cc5b8") {
         // Utils.server.tell("Dummy");
         return;
@@ -938,31 +811,32 @@ EntityEvents.death(["productivebees:configurable_bee", "minecraft:bee"], event =
     let isSouldBoundBee = false;
     let playerUuid;
 
-    const entityUuid = event.entity.getStringUuid();
-    // UUID.NBT
+    const entityUuid = event.entity.getStringUuid();    
 
     const SoulboundBeeList = event.entity.server.persistentData.SoulboundBeeList;
-    for (const playerRecord in SoulboundBeeList) {
+    for (const playerRecordUuid in SoulboundBeeList) {
         // Utils.server.tell("player record = " + playerRecord);
-        const nextRecordValue = SoulboundBeeList[playerRecord]
+        const nextRecordValue = SoulboundBeeList[playerRecordUuid]
         // Utils.server.tell("player record value = " + nextRecordValue);
         const playerBeeList = nextRecordValue["Bees"];
         // Utils.server.tell("player bees = " + playerBeeList);
         for (const nextBeeUuid in playerBeeList) {
             if (nextBeeUuid == entityUuid) {
                 isSouldBoundBee = true;
-                playerUuid = playerRecord;
+                playerUuid = playerRecordUuid;
                 // Utils.server.tell("RIP BUZZY BUDDY");
                 break;}
         }
     }
 
     if (isSouldBoundBee) {
-        delete SoulboundBeeList[playerUuid]["Bees"][entityUuid];
+        let player = Utils.server.getPlayer(playerUuid);
+        if (player) {
+            player.tell(Text.of(`One of your Soulbound Bees (${event.entity.name.getString()}) has died! You can use '/bees recover' to bring them back`).color("gold"));
+        }
+        // delete SoulboundBeeList[playerUuid]["Bees"][entityUuid];
         // Utils.server.getPlayer()
     }
-
-
 });
 
 
@@ -991,8 +865,6 @@ BlockEvents.placed("vulpinian_skies:configurable_bee_chrysalis", event => {
     }
 
     const blockItemEssenceData = blockItemNbt.getCompound("essence_data");
-
-    
 
     if (!blockItemEssenceData) {
         event.cancel();

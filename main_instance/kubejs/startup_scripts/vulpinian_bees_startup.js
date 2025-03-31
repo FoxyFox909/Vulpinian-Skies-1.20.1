@@ -152,3 +152,8 @@ StartupEvents.registry('block', event => {
 
   // StartupEvents.registry('item', event =>
   //   {})
+
+  StartupEvents.registry('item', event => {
+    event.create("vulpinian_skies:empty_configurable_bee_chrysalis");
+
+  });
