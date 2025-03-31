@@ -120,6 +120,7 @@
 -  [Gateways to Eternity](https://www.curseforge.com/minecraft/mc-mods/gateways-to-eternity/)
 -  [The Graveyard](https://www.curseforge.com/minecraft/mc-mods/the-graveyard-forge)
 -  [NFF: Girls](https://www.curseforge.com/minecraft/mc-mods/nff-girls/)
+-  (With extra trans bees and overhauled mechanics via KubeJS) [Productive Bees](https://www.curseforge.com/minecraft/mc-mods/productivebees)
 -  [Zombie Players]( https://www.curseforge.com/minecraft/mc-mods/zombie-players)
 
 # Food, Drink, and Slice of Life
