@@ -1,13 +1,26 @@
 https://www.curseforge.com/minecraft/mc-mods/sinytra-connector Incredibly powerful, run Fabric mods on Forge, but do not abuse. Use wisely, only for a couple fabric mods.
 
 
+# Confirmed Adding next version
+https://www.curseforge.com/minecraft/mc-mods/potion-of-bees **NUKE the lingering potion of bees good lord that's TOO MANY BEES**
+
+# Need to Tet, but on queue be Added
+https://modrinth.com/mod/exposure/
+https://www.curseforge.com/minecraft/mc-mods/sushigocrafting
+https://modrinth.com/mod/vegan-delight
+https://www.curseforge.com/minecraft/mc-mods/create-bitterballen/
+https://www.curseforge.com/minecraft/mc-mods/create-deepfried
+https://www.curseforge.com/minecraft/mc-mods/garnished
+https://www.curseforge.com/minecraft/mc-mods/create-food/gallery
+https://legacy.curseforge.com/minecraft/mc-mods/create-kart
+https://www.curseforge.com/minecraft/mc-mods/better-advancements
+https://modrinth.com/mod/brainier-bees
 
 # Celestial Waiting Room
 https://www.curseforge.com/minecraft/mc-mods/fog-overrides
 https://modrinth.com/mod/better-clouds/gallery
 https://www.curseforge.com/minecraft/mc-mods/better-clouds-reforged
 https://www.curseforge.com/minecraft/mc-mods/simple-clouds
-
 
 # Test Deeply for Incompat
 https://www.curseforge.com/minecraft/mc-mods/parcool
@@ -30,7 +43,8 @@ https://www.curseforge.com/minecraft/texture-packs/create-waystones-texture-gui 
 https://modrinth.com/mod/copycats ** 
 https://www.curseforge.com/minecraft/mc-mods/more-create-burners
 https://modrinth.com/mod/create-deep-dark eh
-https://modrinth.com/mod/create-kryeit for dev/KubeJS
+https://modrinth.com/mod/create-kryeit for dev/KubeJS 
+https://www.curseforge.com/minecraft/mc-mods/geckojs Geckolib + KubeJS
 https://modrinth.com/mod/create-sweets-and-treats/gallery keep an eye on this one
 https://modrinth.com/mod/create-let-the-adventure-begin structures
 https://modrinth.com/datapack/create-structures structures
@@ -172,6 +186,7 @@ https://modrinth.com/mod/no-mans-land (not compatible with current overworld)
 https://modrinth.com/mod/c2me-fabric (fabric)
 https://modrinth.com/mod/tidal-waves (fabric)
 https://modrinth.com/mod/colorful-azaleas-updated/versions (fabric AND off version)
+https://modrinth.com/mod/extinction-z/gallery
 
 # For Fantasy
 Does not fit Vulp Skies, but makes a great fantasy-themed pack.
@@ -193,3 +208,17 @@ https://www.curseforge.com/minecraft/mc-mods/aquaticamod/gallery
 https://www.curseforge.com/minecraft/mc-mods/the-abandoned-world
 https://www.youtube.com/watch?v=IhK2PJNyc7w
 https://modrinth.com/mod/armistice/gallery
+
+# Cute but unlikely
+https://www.curseforge.com/minecraft/mc-mods/placeables/gallery
+https://modrinth.com/mod/hold-my-items
+https://www.curseforge.com/minecraft/mc-mods/crock-pot
+https://www.curseforge.com/minecraft/mc-mods/butchercraft
+https://www.curseforge.com/minecraft/texture-packs/crops-3d vanilla+
+https://www.curseforge.com/minecraft/mc-mods/dragns-livestock-overhaul vanilla+
+https://legacy.curseforge.com/minecraft/mc-mods/hamtastic-hamsters
+https://www.curseforge.com/minecraft/mc-mods/totemic
+
+# Potentially useful for dev
+https://www.curseforge.com/minecraft/mc-mods/vanishmod
+
