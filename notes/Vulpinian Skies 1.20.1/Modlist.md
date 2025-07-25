@@ -47,27 +47,28 @@
 -  [x] [Pufferfish's Attributes](https://www.curseforge.com/minecraft/mc-mods/puffish-attributes)
 
 # Modpack-defining
--  [Valkyrien Skies](https://www.curseforge.com/minecraft/mc-mods/valkyrien-skies)
--  [Clockwork](https://www.curseforge.com/minecraft/mc-mods/create-clockwork/files/all?page=1&pageSize=20&version=1.18.2&gameVersionTypeId=1)
--  [Eureka](https://www.curseforge.com/minecraft/mc-mods/eureka-ships) (Temporary till Clockwork is stable KEKW)
--  [Create](https://www.curseforge.com/minecraft/mc-mods/create)
+-  [x] [Valkyrien Skies](https://www.curseforge.com/minecraft/mc-mods/valkyrien-skies)
+-  [x] [Clockwork](https://www.curseforge.com/minecraft/mc-mods/create-clockwork/files/all?page=1&pageSize=20&version=1.18.2&gameVersionTypeId=1)
+-  [x] [Eureka](https://www.curseforge.com/minecraft/mc-mods/eureka-ships) (Temporary till Clockwork is stable KEKW)
+-  [x] [Create](https://www.curseforge.com/minecraft/mc-mods/create)
 
 # Building
--  [FramedBlocks](https://www.curseforge.com/minecraft/mc-mods/framedblocks)
--  [Fairy Lights](https://www.curseforge.com/minecraft/mc-mods/fairy-lights)
--  [Builders Crafts & Additions](https://www.curseforge.com/minecraft/mc-mods/buildersaddition)
--  [Create: Crystal Clear](https://www.curseforge.com/minecraft/mc-mods/create-crystal-clear)
--  [Create Deco](https://www.curseforge.com/minecraft/mc-mods/create-deco)
--  [Torchmaster](https://www.curseforge.com/minecraft/mc-mods/torchmaster )
--  [Botany Pots](https://www.curseforge.com/minecraft/mc-mods/botany-pots)
--  [Botany Trees](https://legacy.curseforge.com/minecraft/mc-mods/botany-trees/)
--  [Infinity Buttons](https://www.curseforge.com/minecraft/mc-mods/infinity-buttons)
--  [Mosaic Carpentry](https://www.curseforge.com/minecraft/mc-mods/mosaic-carpentry/)
--  [Dramatic Doors](https://www.curseforge.com/minecraft/mc-mods/dramatic-doors)
--  [Truly Modular](https://www.curseforge.com/minecraft/mc-mods/modular-item-api)
--  [Truly Modular: Archery](https://www.curseforge.com/minecraft/mc-mods/truly-modular-archery)
--  [Truly Modular: Arsenal](https://www.curseforge.com/minecraft/mc-mods/truly-modular-arsenal)
--  [Truly Modular: Armory](https://www.curseforge.com/minecraft/mc-mods/truly-modular-armory)
+-  [x] [FramedBlocks](https://www.curseforge.com/minecraft/mc-mods/framedblocks) ([Port](https://modrinth.com/mod/reframed))
+-  [x] [Fairy Lights](https://www.curseforge.com/minecraft/mc-mods/fairy-lights) ([Port](https://modrinth.com/mod/fairy-lights-fabric))
+-  [ ] [Builders Crafts & Additions](https://www.curseforge.com/minecraft/mc-mods/buildersaddition)
+-  [x] [Create: Crystal Clear](https://www.curseforge.com/minecraft/mc-mods/create-crystal-clear)
+-  [x] [Create Deco](https://www.curseforge.com/minecraft/mc-mods/create-deco)
+-  [ ] [Torchmaster](https://www.curseforge.com/minecraft/mc-mods/torchmaster) (Fabric is 1.21+)
+-  [x] [Botany Pots](https://www.curseforge.com/minecraft/mc-mods/botany-pots)
+-  [x] [Botany Trees](https://legacy.curseforge.com/minecraft/mc-mods/botany-trees/)
+-  [x] [Infinity Buttons](https://www.curseforge.com/minecraft/mc-mods/infinity-buttons)
+-  [ ] [Mosaic Carpentry](https://www.curseforge.com/minecraft/mc-mods/mosaic-carpentry/)
+-  [x] [Dramatic Doors](https://www.curseforge.com/minecraft/mc-mods/dramatic-doors)
+-  [x] [Truly Modular](https://www.curseforge.com/minecraft/mc-mods/modular-item-api)
+-  [x] [Truly Modular: Archery](https://www.curseforge.com/minecraft/mc-mods/truly-modular-archery)
+-  [x] [Truly Modular: Arsenal](https://www.curseforge.com/minecraft/mc-mods/truly-modular-arsenal)
+-  [x] [Truly Modular: Armory](https://www.curseforge.com/minecraft/mc-mods/truly-modular-armory)
+-  [x] [Create: Truely Modular](https://modrinth.com/mod/create-truly-modular)
 
 # Technology  
 -  [CC: Tweaked](https://www.curseforge.com/minecraft/mc-mods/cc-tweaked)
@@ -196,7 +197,8 @@
 -  [Alternate Current](https://www.curseforge.com/minecraft/mc-mods/alternate-current)
 -  [Lightspeed - Launch optimizations](https://www.curseforge.com/minecraft/mc-mods/lightspeedmod/)
 -  [CullLessLeaves Reforged](https://www.curseforge.com/minecraft/mc-mods/culllessleaves-reforged)
- - [Not Enough Recipe Book (NERB)](https://www.curseforge.com/minecraft/mc-mods/notenoughrecipebook)
+- [Not Enough Recipe Book (NERB)](https://www.curseforge.com/minecraft/mc-mods/notenoughrecipebook)
+- [x] [Sodium](https://modrinth.com/mod/sodium)
 
 # Miscellaneous
 Mods that are either incredibly specific, or the inverse where they cover too many random things.
