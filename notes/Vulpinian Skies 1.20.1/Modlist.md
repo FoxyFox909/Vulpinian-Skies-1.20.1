@@ -98,14 +98,14 @@
 -  [ ] [Capsule](https://www.curseforge.com/minecraft/mc-mods/capsule)
 
 # Magic
--  [Hexcasting](https://www.curseforge.com/minecraft/mc-mods/hexcasting)
--  [Ars Nouveau](https://www.curseforge.com/minecraft/mc-mods/ars-nouveau)
--  [Ars Elemental](https://www.curseforge.com/minecraft/mc-mods/ars-elemental)
--  [Ars Creo](https://www.curseforge.com/minecraft/mc-mods/ars-creo)
--  [Too Many Glyphs](https://www.curseforge.com/minecraft/mc-mods/too-many-glyphs)
--  [Biomancy](https://www.curseforge.com/minecraft/mc-mods/biomancy)
--  [Potion Bundles](https://www.curseforge.com/minecraft/mc-mods/potion-bundles)
-- [MargleGate's Exotic Enchantment: Flowing Agony](https://www.curseforge.com/minecraft/mc-mods/marblegates-exotic-enchantment-flowing-agony)
+-  [x] [Hexcasting](https://www.curseforge.com/minecraft/mc-mods/hexcasting)
+-  [ ] [Ars Nouveau](https://www.curseforge.com/minecraft/mc-mods/ars-nouveau)
+-  [ ] [Ars Elemental](https://www.curseforge.com/minecraft/mc-mods/ars-elemental)
+-  [ ] [Ars Creo](https://www.curseforge.com/minecraft/mc-mods/ars-creo)
+-  [ ] [Too Many Glyphs](https://www.curseforge.com/minecraft/mc-mods/too-many-glyphs)
+-  [ ] [Biomancy](https://www.curseforge.com/minecraft/mc-mods/biomancy)
+-  [ ] [Potion Bundles](https://www.curseforge.com/minecraft/mc-mods/potion-bundles)
+-  [ ] [MargleGate's Exotic Enchantment: Flowing Agony](https://www.curseforge.com/minecraft/mc-mods/marblegates-exotic-enchantment-flowing-agony)
 
 # Creatures, Monsters, Bossess
 -  [Alex's Mobs](https://www.curseforge.com/minecraft/mc-mods/alexs-mobs)
