@@ -226,15 +226,15 @@ Mods that are either incredibly specific, or the inverse where they cover too ma
 
 # Server
 Server-side-only mods in the official Vulpinian Skies server BUT NOT INCLUDED in modpack releases!
- -  [Chunk-Pregenerator](https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator)
- -  [Mc2Discord](https://www.curseforge.com/minecraft/mc-mods/mc2discord)
+ -  [x] [Chunk-Pregenerator](https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator) (Replaced by [Chunky](https://modrinth.com/mod/chunky))
+ -  [x] [Mc2Discord](https://www.curseforge.com/minecraft/mc-mods/mc2discord) ([Port](https://modrinth.com/mod/dcintegration))
 
 
 
 ---
 # Resource packs
 -  [YUNG's Better Dungeons Resource Pack](https://www.curseforge.com/minecraft/texture-packs/yungs-better-dungeons-resource-pack)
--  [Create Guns](https://www.curseforge.com/minecraft/texture-packs/create-guns)
--  [Crate Guns: Scorched](https://www.curseforge.com/minecraft/texture-packs/create-guns-a-scorched-addon)
+-  ~~[Create Guns](https://www.curseforge.com/minecraft/texture-packs/create-guns)~~
+-  ~~[Crate Guns: Scorched](https://www.curseforge.com/minecraft/texture-packs/create-guns-a-scorched-addon)~~
 
 
