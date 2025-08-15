@@ -87,7 +87,7 @@
 -  [ ] [Create: Metallurgy](https://www.curseforge.com/minecraft/mc-mods/create-metallurgy)
 -  [ ] [Create: Optical](https://www.curseforge.com/minecraft/mc-mods/create-optical)
 -  [x] [Create: New Age](https://www.curseforge.com/minecraft/mc-mods/create-new-age)
--  [ ] [Create: Destroy](https://www.curseforge.com/minecraft/mc-mods/destroy-chemistry/) ([Partial Replacement, ported myself lolol](https://modrinth.com/mod/create-coggle-woggle))
+-  [x] [Create: Destroy](https://www.curseforge.com/minecraft/mc-mods/destroy-chemistry/) ([Partial Replacement, ported myself lolol](https://modrinth.com/mod/create-coggle-woggle))
 -  [ ] [Petrol's Parts](https://www.curseforge.com/minecraft/mc-mods/petrols-parts)
 -  [ ] [pquality](https://www.curseforge.com/minecraft/mc-mods/pquality)
 
@@ -203,65 +203,26 @@
 
 # Miscellaneous
 Mods that are either incredibly specific, or the inverse where they cover too many random things.
--  [Traveler's Titles](https://www.curseforge.com/minecraft/mc-mods/travelers-titles)
--  [Do a Barrel Roll](https://www.curseforge.com/minecraft/mc-mods/do-a-barrel-roll)
--  [Etched](https://www.curseforge.com/minecraft/mc-mods/etched)
--  [Immersive Paintings](https://www.curseforge.com/minecraft/mc-mods/immersive-paintings)
--  [Joy of Painting](https://www.curseforge.com/minecraft/mc-mods/joy-of-painting)
--  [Quark](https://www.curseforge.com/minecraft/mc-mods/quark)
--  [Quark Oddities](https://www.curseforge.com/minecraft/mc-mods/quark-oddities)
--  [Gems & Jewels](https://www.curseforge.com/minecraft/mc-mods/gems-jewels)
--  [Soul fire'd](https://www.curseforge.com/minecraft/mc-mods/soul-fired)
--  [Better Combat](https://www.curseforge.com/minecraft/mc-mods/better-combat-by-daedelus)
--  [MmmMmmMmmMmm (Target Dummy)](https://www.curseforge.com/minecraft/mc-mods/mmmmmmmmmmmm)
--  [Additional Banners](https://www.curseforge.com/minecraft/mc-mods/additional-banners/)
--  [Bedspreads](https://www.curseforge.com/minecraft/mc-mods/bedspreads)
--  [Level Text Fix](https://legacy.curseforge.com/minecraft/mc-mods/level-text-fix/)
--  [CrashAssistant](https://www.curseforge.com/minecraft/mc-mods/crash-assistant)
--  [Just Enough Resources](https://www.curseforge.com/minecraft/mc-mods/just-enough-resources-jer/)
--  [No Chat Reports](https://www.curseforge.com/minecraft/mc-mods/no-chat-reports)
-- 
+-  [x] [Traveler's Titles](https://www.curseforge.com/minecraft/mc-mods/travelers-titles)
+-  [x] [Do a Barrel Roll](https://www.curseforge.com/minecraft/mc-mods/do-a-barrel-roll)
+-  [x] [Etched](https://www.curseforge.com/minecraft/mc-mods/etched) ([Port](https://modrinth.com/mod/etched-fabric))
+-  [ ] [Immersive Paintings](https://www.curseforge.com/minecraft/mc-mods/immersive-paintings)
+-  [ ] [Joy of Painting](https://www.curseforge.com/minecraft/mc-mods/joy-of-painting)
+-  [ ] [Quark](https://www.curseforge.com/minecraft/mc-mods/quark) (Replace with carpet?)
+-  [ ] [Quark Oddities](https://www.curseforge.com/minecraft/mc-mods/quark-oddities)
+-  [ ] [Gems & Jewels](https://www.curseforge.com/minecraft/mc-mods/gems-jewels)
+-  [x] [Soul fire'd](https://www.curseforge.com/minecraft/mc-mods/soul-fired)
+-  [x] [Better Combat](https://www.curseforge.com/minecraft/mc-mods/better-combat-by-daedelus)
+-  [x] [MmmMmmMmmMmm (Target Dummy)](https://www.curseforge.com/minecraft/mc-mods/mmmmmmmmmmmm)
+-  [ ] [Additional Banners](https://www.curseforge.com/minecraft/mc-mods/additional-banners/)
+-  [x] [Bedspreads](https://www.curseforge.com/minecraft/mc-mods/bedspreads)
+-  [x] [Level Text Fix](https://legacy.curseforge.com/minecraft/mc-mods/level-text-fix/)
+-  [x] [CrashAssistant](https://www.curseforge.com/minecraft/mc-mods/crash-assistant) (Replaced by [Not Enough Crashes](https://modrinth.com/mod/notenoughcrashes))
+-  [x] [Just Enough Resources](https://www.curseforge.com/minecraft/mc-mods/just-enough-resources-jer/)
+-  [x] [No Chat Reports](https://www.curseforge.com/minecraft/mc-mods/no-chat-reports)
 
 # Libraries
-The mods after the arrow are the dependents of the library.
--  [AutoRegLib](https://www.curseforge.com/minecraft/mc-mods/autoreglib)
--  [Architectury](https://www.curseforge.com/minecraft/mc-mods/architectury-api/)
--  [Apothic Attributes (AttributesLib)](https://www.curseforge.com/minecraft/mc-mods/apothic-attributes) -> Gateways to Eternity
--  [Bookshelf](https://www.curseforge.com/minecraft/mc-mods/bookshelf)
--  [Botarium](https://www.curseforge.com/minecraft/mc-mods/botarium) Useful for tech mods -> Create: New Age
--  [Balm](https://www.curseforge.com/minecraft/mc-mods/balm) -> Cooking for Blockheads
--  [Caelus](https://www.curseforge.com/minecraft/mc-mods/caelus/) Elytra mechanics -> Hexcasting, Modular Item API
--  [Citadel](https://www.curseforge.com/minecraft/mc-mods/citadel)  -> Alex's Mobs, Alex's Caves
--  [Cristel Lib](https://www.curseforge.com/minecraft/mc-mods/cristel-lib/) Enables config of structures -> Towns and Towers
--  [Cobweb](https://www.curseforge.com/minecraft/mc-mods/cobweb) -> Soul Fire'd
--  [CorgiLib](https://www.curseforge.com/minecraft/mc-mods/corgilib) -> Oh The Biomes We've Gone
--  [Inline](https://www.curseforge.com/minecraft/mc-mods/inline/) -> Hexcasting
--  [Kotlin for Forge](https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge)
--  [Rhino](https://www.curseforge.com/minecraft/mc-mods/rhino) -> KubeJS
--  [PAUCAL](https://www.curseforge.com/minecraft/mc-mods/paucal) -> Hexcasting
--  [YUNG's API](https://www.curseforge.com/minecraft/mc-mods/yungs-api)
--  [ExpandAbility](https://www.curseforge.com/minecraft/mc-mods/expandability)
--  [Placebo](https://www.curseforge.com/minecraft/mc-mods/placebo) -> FastFurnace
--  [CoroUtil](https://www.curseforge.com/minecraft/mc-mods/coroutil) -> Weather
--  [GeckoLib](https://www.curseforge.com/minecraft/mc-mods/geckolib/) -> Biomancy, EntityJS
--  [Collective](https://beta.curseforge.com/minecraft/mc-mods/collective) -> GUI Clock, GUI Compass
--  [Curios API](https://www.curseforge.com/minecraft/mc-mods/curios)
--  [Lithostiched](https://www.curseforge.com/minecraft/mc-mods/lithostitched/)
--  [Lionfish API](https://www.curseforge.com/minecraft/mc-mods/lionfish-api) -> L_Ender's Catacylsm
--  [Lucent](https://www.curseforge.com/minecraft/mc-mods/lucent) Dynamic lighting -> Midnight
--  [Framework](https://www.curseforge.com/minecraft/mc-mods/framework/) -> Goblin Traders
--  [Sophisticated Core](https://www.curseforge.com/minecraft/mc-mods/sophisticated-core) -> Sophisticated Backpacks
--  [SmartBrainLib](https://www.curseforge.com/minecraft/mc-mods/smartbrainlib) Advanced mob behavior tools -> Midnight
--  [Melody](https://www.curseforge.com/minecraft/mc-mods/melody)
--  [OctoLib](https://www.curseforge.com/minecraft/mc-mods/octo-lib) -> Not Enough Recipe Book
--  [Oh The Trees You'll Grow](https://www.curseforge.com/minecraft/mc-mods/oh-the-trees-youll-grow/) -> Oh The Biomes We've Gone
--  [Moonlight Lib (Selene)](https://www.curseforge.com/minecraft/mc-mods/selene/)
--  [Pollen](https://www.curseforge.com/minecraft/mc-mods/pollen)
--  [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config)
--  [PlayerAnimator](https://www.curseforge.com/minecraft/mc-mods/playeranimator)
--  [Konkrete](https://www.curseforge.com/minecraft/mc-mods/konkrete/)
--  [Obscure API](https://www.curseforge.com/minecraft/mc-mods/obscure-api/) -> Aquamirae
--   [Zeta](https://www.curseforge.com/minecraft/mc-mods/zeta/) -> Quark
+(Use Prism's built in dependency handler)
 
 # Server
 Server-side-only mods in the official Vulpinian Skies server BUT NOT INCLUDED in modpack releases!
