@@ -102,7 +102,7 @@
 -  [Too Many Glyphs](https://www.curseforge.com/minecraft/mc-mods/too-many-glyphs)
 -  [Biomancy](https://www.curseforge.com/minecraft/mc-mods/biomancy)
 -  [Potion Bundles](https://www.curseforge.com/minecraft/mc-mods/potion-bundles)
-- [MargleGate's Exotic Enchantment: Flowing Agony](https://www.curseforge.com/minecraft/mc-mods/marblegates-exotic-enchantment-flowing-agony)
+- ~~[MargleGate's Exotic Enchantment: Flowing Agony](https://www.curseforge.com/minecraft/mc-mods/marblegates-exotic-enchantment-flowing-agony)~~ Not in 1.20.1. TODO: Replace with [MarbleGate's Exotic Enchantment: Reborn](https://www.curseforge.com/minecraft/mc-mods/marblegates-exotic-enchantment-reborn)
 
 # Creatures, Monsters, Bossess
 -  [Alex's Mobs](https://www.curseforge.com/minecraft/mc-mods/alexs-mobs)
