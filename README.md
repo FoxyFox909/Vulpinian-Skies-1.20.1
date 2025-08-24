@@ -1,3 +1,5 @@
+README IS WIP
+
 Vulpinian Skies - A Create-centered pack about Exploration, Engineering, and Magic
 
 # Why this modpack? Isn't it just yet another Create pack?
