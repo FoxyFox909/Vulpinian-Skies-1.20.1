@@ -7,7 +7,6 @@
 -  [Nyctophobia (The Graveyard Biomes)](https://www.curseforge.com/minecraft/mc-mods/the-graveyard-biomes-forge)
 -  [Amplified Nether]( https://www.curseforge.com/minecraft/mc-mods/amplified-nether)
 -  [Enlightend](https://www.curseforge.com/minecraft/mc-mods/enlightened-end)
-- [ ]  [Apple Trees Revived](https://www.curseforge.com/minecraft/mc-mods/apple-trees-revived) 
 -  [Weather, Storms & Tornadoes](https://www.curseforge.com/minecraft/mc-mods/weather-storms-tornadoes)
 -  [The Undergarden](https://www.curseforge.com/minecraft/mc-mods/the-undergarden)
 
@@ -264,6 +263,7 @@ The mods after the arrow are the dependents of the library.
 Server-side-only mods in the official Vulpinian Skies server BUT NOT INCLUDED in modpack releases!
  -  [Chunk-Pregenerator](https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator)
  -  [Mc2Discord](https://www.curseforge.com/minecraft/mc-mods/mc2discord)
+ -  Simple Backups
 
 
 
