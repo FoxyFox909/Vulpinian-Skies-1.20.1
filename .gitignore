@@ -4,3 +4,5 @@ notes/Vulpinian Skies 1.20.1/Vulpinian Skies 1.20.1/.obsidian/app.json
 # Ignore modpack exports.
 main_instance/Vulpinian Skies*.zip
 main_instance/Vulpinian Skies*.mrpack
+
+/builds
