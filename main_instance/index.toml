@@ -5,8 +5,48 @@ file = "config/bettercombat/server.json5"
 hash = "26fbf3d1b28f6e15a034c330d37eb4402aeb24386627b6d790b6c6790dc93da0"
 
 [[files]]
+file = "config/fancymenu/custom_gui_screens.txt"
+hash = "ff492043eaf454c46e949d5eef32ece90cc5a19feb50a161dd29a43b5732c880"
+
+[[files]]
+file = "config/fancymenu/customizablemenus.txt"
+hash = "535db450a125a856472e38d6c9cd7ed94961e83a9c19fcaab25c6b6ccb515c60"
+
+[[files]]
+file = "config/fancymenu/legacy_checklist.txt"
+hash = "9a25d3dc708e43eabafce5479a13c02dae15bc7f673afb2745b8b2ba48a97dc0"
+
+[[files]]
+file = "config/fancymenu/options.txt"
+hash = "106b496255e8a733b079011ecd8dddb5e8880cc38f6fdc62fc029da14e71bc01"
+
+[[files]]
+file = "config/fancymenu/ui_themes/dark.json"
+hash = "43ac9bee88f1a4c9b66fee0d4b6fcec14a52feab46bf803928aabed96f510cc9"
+
+[[files]]
+file = "config/fancymenu/ui_themes/light.json"
+hash = "6954379d658fdf496f162792a3244f0f08635858ed4b0553a718a7ef63b8a620"
+
+[[files]]
+file = "config/fancymenu/user_variables.db"
+hash = "3d7d4cda73d6bde134a568ccbe4e8d2e7fbe701570012b71fa45acdb2258c823"
+
+[[files]]
 file = "config/quark-common.toml"
 hash = "31f7dbb1aa9c589106b073c2116518db09120c550b7f86ba822724d2f6efefd5"
+
+[[files]]
+file = "config/surveyor.toml"
+hash = "0251cf93bb2e4038d040cdb086a4bea627364deb0b7ab79ebdd0cc301bd2aabb"
+
+[[files]]
+file = "kubejs/server_scripts/vulpinian_bees_server.js"
+hash = "87073704cb489f02147a998d33f6ee84d4be3d6580612931c16b42679f25342e"
+
+[[files]]
+file = "kubejs/startup_scripts/vulpinian_bees_startup.js"
+hash = "bc0cb8d1f7c143344d9e42bbf6fd7e01a94e3a28af6706d20ddeaea3c620bc21"
 
 [[files]]
 file = "mods/additional-banners.pw.toml"
@@ -36,11 +76,6 @@ metafile = true
 [[files]]
 file = "mods/amplified-nether.pw.toml"
 hash = "03fa352715705a0354e049b4fe0b3fab7772476134cd3393e343811c2862d13b"
-metafile = true
-
-[[files]]
-file = "mods/antique-atlas-4.pw.toml"
-hash = "5d748b1c75efdc9b4220ff47d73a08e5a8fac22af7ecdad377035433b94dd725"
 metafile = true
 
 [[files]]
@@ -344,11 +379,6 @@ hash = "5cfbd830d079c44cd2f06c0f2e00c1585d01c7fd7cd4a896d531953c3a9e5fe4"
 metafile = true
 
 [[files]]
-file = "mods/destroy-chemistry.pw.toml"
-hash = "134c3c72a12acb9928af1123e82acbca16527170f323b9562ae7d7c1788a12d6"
-metafile = true
-
-[[files]]
 file = "mods/do-a-barrel-roll.pw.toml"
 hash = "400396918f6581f7157a25c5dda75fd620d16fd8565201a5e7aee30f6c7df8b0"
 metafile = true
@@ -376,11 +406,6 @@ metafile = true
 [[files]]
 file = "mods/ends-delight.pw.toml"
 hash = "63a9fdacf232df08a520fb1f25d2d1e878551fef4d18722c075e04d6291f5ed1"
-metafile = true
-
-[[files]]
-file = "mods/enlightend.pw.toml"
-hash = "bd3ba2a82d5b80be3ccc187ad50a1aec11f53956c2a20cd9a0ad70b8cd932c1d"
 metafile = true
 
 [[files]]
@@ -680,7 +705,7 @@ metafile = true
 
 [[files]]
 file = "mods/mowzies-mobs.pw.toml"
-hash = "228298c93c15dcb43963e78deb243072cd72c65bb705718577aaeed213231a5a"
+hash = "6ff4dfc30b3df634c6a2e587742ad381aa5988a50a646003369331749882c0a9"
 metafile = true
 
 [[files]]
@@ -764,16 +789,6 @@ hash = "d545e2d90446465d26dfef1c6777edde1fa9d2b873674834dd761342a40088bf"
 metafile = true
 
 [[files]]
-file = "mods/petrolpark.pw.toml"
-hash = "81bc3646f21a68ddd04d76154f7c1aafe100df082a7831a0fe5a76c78aa90e2d"
-metafile = true
-
-[[files]]
-file = "mods/petrols-parts.pw.toml"
-hash = "011b50dc8a193c1452ecb520bd19ebfc7145051e8d12edd22c7518c2dedce834"
-metafile = true
-
-[[files]]
 file = "mods/placebo.pw.toml"
 hash = "0f807372e11d5a8a28266ab214fd243fa7558fe3f5a0cc6505090faede8c2dd6"
 metafile = true
@@ -791,11 +806,6 @@ metafile = true
 [[files]]
 file = "mods/potion-bundles.pw.toml"
 hash = "4f133409881fc26ed1a4a6ea997602d7f3fbbc619c32f0b43988ce6a9125f391"
-metafile = true
-
-[[files]]
-file = "mods/pquality.pw.toml"
-hash = "26880a261e72799992aee58a5b2ee80a4bbd0a25f192d08df62aeaed608e3ca0"
 metafile = true
 
 [[files]]
@@ -901,11 +911,6 @@ metafile = true
 [[files]]
 file = "mods/spice-of-life-carrot-edition.pw.toml"
 hash = "08faa8239705d280e41d353888bf717906fe71b1d5b9278bac9f5cd87b07efb3"
-metafile = true
-
-[[files]]
-file = "mods/surveyor.pw.toml"
-hash = "f05a1d7a46d6844e139a23b46be8fa214f0029a1a9c202689e98e9f7fb67ac05"
 metafile = true
 
 [[files]]
@@ -1077,3 +1082,7 @@ metafile = true
 file = "mods/zombified-player.pw.toml"
 hash = "645e94ded3ca18638e5396bb6f78a578eb413a5c2a0bfe8d76befef9ac0eeec0"
 metafile = true
+
+[[files]]
+file = "servers.dat"
+hash = "bf6ad8cefeca227b10175c915d74394de3df9724f27669914de251e557d29425"

@@ -1,10 +1,21 @@
+
+https://www.curseforge.com/minecraft/mc-mods/gears-n-kinetics
+https://modrinth.com/mod/vs-safe-and-sound
+https://modrinth.com/datapack/truly-material/versions
+
+https://www.curseforge.com/minecraft/mc-mods/tinyfoes
+
+
 https://www.curseforge.com/minecraft/mc-mods/sinytra-connector Incredibly powerful, run Fabric mods on Forge, but do not abuse. Use wisely, only for a couple fabric mods.
 
 
 # Confirmed Adding next version
 https://www.curseforge.com/minecraft/mc-mods/potion-of-bees **NUKE the lingering potion of bees good lord that's TOO MANY BEES**
+https://www.curseforge.com/minecraft/mc-mods/spice-of-life-ringo-pie-edition
 
 # Need to Tet, but on queue be Added
+https://modrinth.com/mod/ponder
+https://www.curseforge.com/minecraft/mc-mods/connected-glass
 https://modrinth.com/mod/exposure/
 https://www.curseforge.com/minecraft/mc-mods/sushigocrafting
 https://modrinth.com/mod/vegan-delight
@@ -14,7 +25,10 @@ https://www.curseforge.com/minecraft/mc-mods/garnished
 https://www.curseforge.com/minecraft/mc-mods/create-food/gallery
 https://legacy.curseforge.com/minecraft/mc-mods/create-kart
 https://www.curseforge.com/minecraft/mc-mods/better-advancements
-https://modrinth.com/mod/brainier-bees
+https://modrinth.com/mod/brainier-bees ** Compat concern
+https://www.curseforge.com/minecraft/mc-mods/large-meals-an-add-on-for-farmers-delight/gallery
+https://www.curseforge.com/minecraft/mc-mods/create-cardboarded-conveynience
+https://www.curseforge.com/minecraft/mc-mods/some-assembly-required
 
 # Celestial Waiting Room
 https://www.curseforge.com/minecraft/mc-mods/fog-overrides
@@ -36,6 +50,8 @@ https://www.curseforge.com/minecraft/mc-mods/atmosfera/files/all?page=1&pageSize
 
 # Create
 Mechano
+https://www.curseforge.com/minecraft/mc-mods/hypertubes
+https://www.curseforge.com/minecraft/mc-mods/create-songs-and-speakers-iam-music-player-fork
 https://www.curseforge.com/minecraft/mc-mods/garnished **
 Create Food
 https://modrinth.com/mod/create-waystones-recipes **
@@ -83,6 +99,7 @@ https://www.curseforge.com/minecraft/mc-mods/starlance
 https://www.curseforge.com/minecraft/mc-mods/create-optical/gallery
 https://www.curseforge.com/minecraft/mc-mods/create-enchantable-machinery
 https://www.curseforge.com/minecraft/customization/kinetic-pixel/gallery prob not
+https://www.curseforge.com/minecraft/mc-mods/create-kart/comments
 
 
 ## Create Structures
@@ -123,6 +140,10 @@ https://modrinth.com/mod/tt20 lag symtoms fixer
 
 For better Error-reporting, specifically with Worldgen Datapack https://www.curseforge.com/minecraft/mc-mods/cyanide
 
+
+https://www.curseforge.com/minecraft/mc-mods/leaky
+
+
 # Other
 https://www.curseforge.com/minecraft/mc-mods/the-midnight/gallery
 
@@ -143,6 +164,8 @@ https://www.curseforge.com/minecraft/mc-mods/warlerys-hq
 https://modrinth.com/mod/e4mc LOCAL server hosting!
 
 https://www.curseforge.com/minecraft/mc-mods/heracles/gallery questing
+
+https://www.curseforge.com/minecraft/mc-mods/creature-compendium/gallery
 
 # Gen
 https://www.curseforge.com/minecraft/mc-mods/lukis-grand-capitals/gallery
@@ -170,6 +193,15 @@ https://modrinth.com/mod/exposure maybe replaces Immersive Paintings?
 
 # Crazy
 https://www.curseforge.com/minecraft/mc-mods/cosmic-horizons
+https://www.curseforge.com/minecraft/mc-mods/starlance
+https://www.curseforge.com/minecraft/mc-mods/the-immortal-snail-by-alaincraftyt/
+https://modrinth.com/mod/f-tech-robots/
+https://modrinth.com/resourcepack/cubeishbuckets
+https://www.curseforge.com/minecraft/mc-mods/rustic-engineer/gallery
+https://www.curseforge.com/minecraft/mc-mods/the-flesh-that-hates
+https://modrinth.com/mod/neepmeat/
+https://modrinth.com/mod/brainium
+https://www.curseforge.com/minecraft/mc-mods/mobstein-upgrade-useless-animals/gallery
 
 # For Making Custom Blocks
 https://www.curseforge.com/minecraft/mc-mods/multiblocked2
@@ -197,6 +229,8 @@ https://www.curseforge.com/minecraft/mc-mods/embers-rekindled
 https://www.curseforge.com/minecraft/mc-mods/wonderful-enchantments **
 https://www.curseforge.com/minecraft/mc-mods/arcanus
 https://www.curseforge.com/minecraft/mc-mods/feywild
+https://www.curseforge.com/minecraft/mc-mods/luckys-armory
+https://www.curseforge.com/minecraft/mc-mods/enchanted-witchcraft
 
 # Wild/Corruption
 https://www.curseforge.com/minecraft/mc-mods/sculk-horde/gallery
@@ -208,8 +242,10 @@ https://www.curseforge.com/minecraft/mc-mods/aquaticamod/gallery
 https://www.curseforge.com/minecraft/mc-mods/the-abandoned-world
 https://www.youtube.com/watch?v=IhK2PJNyc7w
 https://modrinth.com/mod/armistice/gallery
+Create Robotics
 
 # Cute but unlikely
+https://www.curseforge.com/minecraft/mc-mods/ribbits
 https://www.curseforge.com/minecraft/mc-mods/placeables/gallery
 https://modrinth.com/mod/hold-my-items
 https://www.curseforge.com/minecraft/mc-mods/crock-pot
@@ -219,6 +255,20 @@ https://www.curseforge.com/minecraft/mc-mods/dragns-livestock-overhaul vanilla+
 https://legacy.curseforge.com/minecraft/mc-mods/hamtastic-hamsters
 https://www.curseforge.com/minecraft/mc-mods/totemic
 
+https://www.curseforge.com/minecraft/mc-mods/reboot-lovelyrobot
+https://www.curseforge.com/minecraft/mc-mods/monsters-girls
+https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2 for jetpack source code with [this ](https://github.com/PssbleTrngle/CreateJetpack/blob/1.20.x/src/main/kotlin/com/possible_triangle/create_jetpack/item/JetpackItem.kt)
+
+https://www.curseforge.com/minecraft/mc-mods/sandwichable
+
+https://www.curseforge.com/minecraft/texture-packs/extraalchemycanvas-extra-alchemy-guide
+https://modrinth.com/resourcepack/kats-create-ui/gallery
+https://www.curseforge.com/minecraft/mc-mods/rediscovered
+https://www.curseforge.com/minecraft/mc-mods/improved-mobs has diffculty scaling
 # Potentially useful for dev
 https://www.curseforge.com/minecraft/mc-mods/vanishmod
+https://www.curseforge.com/minecraft/mc-mods/tell-me-my-items
 
+
+# Backports
+https://www.curseforge.com/minecraft/mc-mods/happy-ghast-dried-ghast-ghastling/gallery

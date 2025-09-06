@@ -49,3 +49,39 @@ Deep Mob Learning: Refrabicated - broken rendering of ships
 Vanilla server jar - unable to move
 Paladin's furniture - ships crashing AND splitting on assembly
 Embeddium (Rubidium) Extras - Lag when ships are made (Use Embeddium++ instead)??? Not reproducable
+
+
+https://github.com/0rc1nus/GoodEnding/wiki/Blocks-and-Items-%F0%9F%93%A6
+https://www.curseforge.com/minecraft/mc-mods/good-ending
+https://github.com/AverageAnime/create-metalwork/wiki#mod-recommendations
+https://www.curseforge.com/minecraft/mc-mods/structurify
+https://www.curseforge.com/minecraft/mc-mods/just-enough-resources-jer/files/5057220
+https://www.curseforge.com/minecraft/mc-mods/spelunkery
+https://legacy.curseforge.com/minecraft/mc-mods/destructive-spelunking
+https://modrinth.com/mod/create-food
+https://www.curseforge.com/minecraft/mc-mods/galosphere/gallery
+https://www.curseforge.com/minecraft/mc-mods/spawn-mod
+https://www.curseforge.com/minecraft/mc-mods/oreganized
+https://modrinth.com/mod/vintage-kubejs
+https://modrinth.com/mod/create-new-age-alexs-caves-integration
+https://www.youtube.com/watch?v=X7Ah-SJ0vBc
+https://www.youtube.com/watch?v=tUJfNtNrbbQ
+https://www.youtube.com/watch?v=j4FhmFdeObg
+https://www.curseforge.com/minecraft/texture-packs/spice-of-life-picnic
+https://github.com/zabi94/ExtraAlchemy/wiki/Potions#potion-of-return
+https://www.curseforge.com/minecraft/mc-mods/easters-delight/gallery
+https://modrinth.com/mod/accurate-food-expansion/gallery
+https://modrinth.com/mod/kasugalib
+https://modrinth.com/mod/the-beer-craft
+https://modrinth.com/mod/brainier-bees
+https://modrinth.com/mod/beebuddy
+https://www.curseforge.com/minecraft/mc-mods/creeper-overhaul
+https://modrinth.com/mod/particular/gallery **
+https://www.curseforge.com/minecraft/mc-mods/snowy-spirit
+https://www.curseforge.com/minecraft/mc-mods/stellarview
+https://www.curseforge.com/minecraft/mc-mods/chipped
+https://www.reddit.com/r/feedthebeast/comments/1j0bj63/comment/mfw4ah6/
+https://www.curseforge.com/minecraft/mc-mods/truly-modular-create-compatibility/files/6409609
+https://www.curseforge.com/minecraft/mc-mods/guard-villagers
+https://www.curseforge.com/minecraft/mc-mods/kobolds/gallery
+https://www.curseforge.com/minecraft/mc-mods/preciouspiles#follow
