@@ -1,5 +1,6 @@
-const $RemovalReason = Java.loadClass("net.minecraft.world.entity.Entity$RemovalReason");
+// const $RemovalReason = Java.loadClass("net.minecraft.world.entity.Entity$RemovalReason");
 
+// Slimes are subtracted from a player's active slimes as they are unloaded or killed.
 EntityJSEvents.modifyEntity(event => {
     event.modify("splendid_slimes:splendid_slime", modifyBuilder => {
         modifyBuilder.onRemovedFromWorld(entity => {
@@ -16,18 +17,7 @@ EntityJSEvents.modifyEntity(event => {
                 // Utils.server.tell("Slime does not have an owner.");
                 return
             }
-            const rawOwnerUUID = entity.nbt.getUUID("Owner");
-            // Utils.server.tell("Raw Slime Owner UUID: ");
-            // Utils.server.tell(rawOwnerUUID);
-
-            // const ownerUUID = UUID.toString(rawOwnerUUID);
-            // Utils.server.tell("Processed Slime Owner UUID: " + ownerUUID)
-
-            // if (!ownerUUID) {
-            //     Utils.server.tell("Slime does not have an owner.");
-            //     return;
-            // }
-            
+            const rawOwnerUUID = entity.nbt.getUUID("Owner");            
             const SlimeCountList = entity.server.persistentData.SlimeCountList;
             const playerRecord = SlimeCountList[rawOwnerUUID];
             playerRecord.CurrentSlimeCount -= 1;
@@ -35,13 +25,8 @@ EntityJSEvents.modifyEntity(event => {
                 playerRecord.CurrentSlimeCount = 0;
             }
 
-            Utils.server.tell("playerRecord: " + playerRecord.CurrentSlimeCount)
-
-            // Utils.server.tell("Slime Removed: " + entity.getRemovalReason() + " UUID:" + entity.getUuid());
-            // Utils.server.tell("Slime Removed: " + entity.getRemovalReason() + " UUID:" + entity.getUuid());
-            // Utils.server.tell("Slime Changed Dimension2: " + (entity.getRemovalReason() == "CHANGED_DIMENSION"))            
             // Utils.server.tell("Slime Loaded: " + entity.isAlive());
-            Utils.server.tell("Slime Unloaded")            
+            // Utils.server.tell("Slime Unloaded")            
         });
     });
 });
