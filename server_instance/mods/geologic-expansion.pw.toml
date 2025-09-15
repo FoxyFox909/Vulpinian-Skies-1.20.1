@@ -1,0 +1,13 @@
+name = "Geologic Expansion"
+filename = "geologicexpansion-Forge-1.20.1-1.0.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "fc884580b994908594be9a4c1b7d6e3907caa28f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6081827
+project-id = 547397

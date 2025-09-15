@@ -1,0 +1,13 @@
+name = "MarbleGate's Exotic Enchantment: Flowing Agony: Reborn"
+filename = "FlowingAgonyReborn-1.20.1-1.1.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/nTa4l6xw/versions/qt53KDeX/FlowingAgonyReborn-1.20.1-1.1.0.jar"
+hash-format = "sha512"
+hash = "ca22ade9cc7fb6a8f904a2fe810c6f0850ec2a2b5e0cd194cf3f0f423e027543ba453e27a3c54294bb57f6042cd60ddb97d9fda61fae5c137b13900dbb05faf3"
+
+[update]
+[update.modrinth]
+mod-id = "nTa4l6xw"
+version = "qt53KDeX"

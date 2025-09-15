@@ -1,0 +1,13 @@
+name = "Splendid Slimes"
+filename = "splendid_slimes-0.14.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/RptnuYO9/versions/o2EDQHwc/splendid_slimes-0.14.4.jar"
+hash-format = "sha512"
+hash = "7296bcca1c94b029fd677592130b2e7dc0ff7eda253ffb83331b0f73a74158f319162a4c288c5e8bd36c95aa30c55602170d6fc58a2097b68a819c7ce5d3ac76"
+
+[update]
+[update.modrinth]
+mod-id = "RptnuYO9"
+version = "o2EDQHwc"

@@ -1,3 +1,6 @@
+Unless stated otherwise, all mods except those under the Server header are both client and server-side.
+The mods under the Server header are exclusive to the official Vulpinian Skies server, and largely are probably optional when setting up your own server.
+
 # World Terrain Generation, Biomes, Nature
 
 -  [TerraBlender](https://www.curseforge.com/minecraft/mc-mods/terrablender)
@@ -17,8 +20,8 @@
 -  [It Takes a Pillage](https://www.curseforge.com/minecraft/mc-mods/it-takes-a-pillage)
 -  [Towns and Towers](https://www.curseforge.com/minecraft/mc-mods/towns-and-towers)
 -  [ChoiceTheorem's Overhauled Village](https://www.curseforge.com/minecraft/mc-mods/choicetheorems-overhauled-village)
--  [GUI Compass](https://www.curseforge.com/minecraft/mc-mods/gui-compass)
--  [GUI Clock](https://www.curseforge.com/minecraft/mc-mods/gui-clock)
+-  [GUI Compass](https://www.curseforge.com/minecraft/mc-mods/gui-compass) (Client-side Only)
+-  [GUI Clock](https://www.curseforge.com/minecraft/mc-mods/gui-clock) (Client-side Only)
 -  [Additional Structures](https://www.curseforge.com/minecraft/mc-mods/additional-structures)
 -  [YUNG's Better Desert Temples](https://www.curseforge.com/minecraft/mc-mods/yungs-better-desert-temples)
 -  [YUNG's Better Dungeons](https://www.curseforge.com/minecraft/mc-mods/yungs-better-dungeons)
@@ -42,6 +45,8 @@
 -  [Alex's Caves](https://www.curseforge.com/minecraft/mc-mods/alexs-caves)
 -  [The Midnight](https://www.curseforge.com/minecraft/mc-mods/the-midnight)
 -  [Nullscape](https://www.curseforge.com/minecraft/mc-mods/nullscape)
+-  [Geologic Expansion](https://www.curseforge.com/minecraft/mc-mods/geologic-expansion)
+-  [The Bumblezone](https://www.curseforge.com/minecraft/mc-mods/the-bumblezone-forge)
 -  [Pufferfish's Skills](https://www.curseforge.com/minecraft/mc-mods/puffish-skills)
 -  [Pufferfish's Attributes](https://www.curseforge.com/minecraft/mc-mods/puffish-attributes)
 
@@ -55,7 +60,7 @@
 -  [FramedBlocks](https://www.curseforge.com/minecraft/mc-mods/framedblocks)
 -  [Fairy Lights](https://www.curseforge.com/minecraft/mc-mods/fairy-lights)
 -  [Builders Crafts & Additions](https://www.curseforge.com/minecraft/mc-mods/buildersaddition)
--  [Create: Crystal Clear](https://www.curseforge.com/minecraft/mc-mods/create-crystal-clear)
+-  ~~[Create: Crystal Clear](https://www.curseforge.com/minecraft/mc-mods/create-crystal-clear)~~ Waiting for Create 6 support
 -  [Create Deco](https://www.curseforge.com/minecraft/mc-mods/create-deco)
 -  [Torchmaster](https://www.curseforge.com/minecraft/mc-mods/torchmaster )
 -  [Botany Pots](https://www.curseforge.com/minecraft/mc-mods/botany-pots)
@@ -80,13 +85,14 @@
 -  [Create: Misc & Things](https://www.curseforge.com/minecraft/mc-mods/create-misc-and-things)
 -  [\~SCORCHED GUNS 2\~](https://beta.curseforge.com/minecraft/mc-mods/scorched-guns)
 -  [Create: Diesel Generators](https://www.curseforge.com/minecraft/mc-mods/create-diesel-generators)
--  [Create: Extended Cogwheels](https://www.curseforge.com/minecraft/mc-mods/create-extended-cogs)
+-  ~~[Create: Extended Cogwheels](https://www.curseforge.com/minecraft/mc-mods/create-extended-cogs)~~ Waiting for Create 6 support
 -  [Create: Metallurgy](https://www.curseforge.com/minecraft/mc-mods/create-metallurgy)
--  [Create: Optical](https://www.curseforge.com/minecraft/mc-mods/create-optical)
+-  [Create: Optical](https://www.curseforge.com/minecraft/mc-mods/create-optical) 
 -  [Create: New Age](https://www.curseforge.com/minecraft/mc-mods/create-new-age)
 -  [Create: Destroy](https://www.curseforge.com/minecraft/mc-mods/destroy-chemistry/)
 -  [Petrol's Parts](https://www.curseforge.com/minecraft/mc-mods/petrols-parts)
 -  [pquality](https://www.curseforge.com/minecraft/mc-mods/pquality)
+-  [Create: Escalated](https://www.curseforge.com/minecraft/mc-mods/create-escalated/download/6663749)
 
 # Storage and Logistics
 -  [Sophisticated Backpacks](https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks)
@@ -102,7 +108,8 @@
 -  [Too Many Glyphs](https://www.curseforge.com/minecraft/mc-mods/too-many-glyphs)
 -  [Biomancy](https://www.curseforge.com/minecraft/mc-mods/biomancy)
 -  [Potion Bundles](https://www.curseforge.com/minecraft/mc-mods/potion-bundles)
-- ~~[MargleGate's Exotic Enchantment: Flowing Agony](https://www.curseforge.com/minecraft/mc-mods/marblegates-exotic-enchantment-flowing-agony)~~ Not in 1.20.1. TODO: Replace with [MarbleGate's Exotic Enchantment: Reborn](https://www.curseforge.com/minecraft/mc-mods/marblegates-exotic-enchantment-reborn)
+- [MarbleGate's Exotic Enchantment: Reborn](https://modrinth.com/mod/marblegates-exotic-enchantment-flowing-agony-reborn)
+- [Potion of Bees](https://www.curseforge.com/minecraft/mc-mods/potion-of-bees)
 
 # Creatures, Monsters, Bossess
 -  [Alex's Mobs](https://www.curseforge.com/minecraft/mc-mods/alexs-mobs)
@@ -119,7 +126,8 @@
 -  [Gateways to Eternity](https://www.curseforge.com/minecraft/mc-mods/gateways-to-eternity/)
 -  [The Graveyard](https://www.curseforge.com/minecraft/mc-mods/the-graveyard-forge)
 -  [NFF: Girls](https://www.curseforge.com/minecraft/mc-mods/nff-girls/)
--  (With extra trans bees and overhauled mechanics via KubeJS) [Productive Bees](https://www.curseforge.com/minecraft/mc-mods/productivebees)
+-  [Critters And Companions](https://www.curseforge.com/minecraft/mc-mods/critters-and-companions)
+-  [Splendid Slimes](https://modrinth.com/mod/splendid-slimes/version/0.14.4)
 -  [Zombie Players]( https://www.curseforge.com/minecraft/mc-mods/zombie-players)
 
 # Food, Drink, and Slice of Life
@@ -149,7 +157,8 @@
 -  [Extended Item Information](https://www.curseforge.com/minecraft/mc-mods/extended-item-information)(ONLY used for debug, not on main pack)
 -  [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei)
 -  [JEI Integration](https://www.curseforge.com/minecraft/mc-mods/jei-integration)
-- [Antique Atlas 4](https://modrinth.com/mod/antique-atlas-4/)
+- ~~[Antique Atlas 4](https://modrinth.com/mod/antique-atlas-4/)~~ Causing severe server issues along with Surveyor
+- [Xaero's Minimap](https://modrinth.com/mod/xaeros-minimap)
 -  [Mouse Tweaks](https://www.curseforge.com/minecraft/mc-mods/mouse-tweaks)
 -  [NetherPortalFix](https://www.curseforge.com/minecraft/mc-mods/netherportalfix)
 -  [Polymorph](https://www.curseforge.com/minecraft/mc-mods/polymorph)
@@ -167,6 +176,7 @@
 -  [My Server Is Compatible](https://www.curseforge.com/minecraft/mc-mods/my-server-is-compatible) (Client-side Only)
 -  [Experimental Settings Disabler](https://modrinth.com/mod/experimental-settings-disabler/)
 - [Load My F**\*ing Tags](https://www.curseforge.com/minecraft/mc-mods/lmft)
+- [Simple Backups](https://www.curseforge.com/minecraft/mc-mods/simple-backups)
 
 # Utilities (Dev Only)
 -  [KubeJS](https://www.curseforge.com/minecraft/mc-mods/kubejs)
@@ -174,10 +184,7 @@
 -  [KubeJS Additions](https://www.curseforge.com/minecraft/mc-mods/kubejs-additions)
 -  [EntityJS](https://www.curseforge.com/minecraft/mc-mods/entityjs)
 -  [LootJS](https://www.curseforge.com/minecraft/mc-mods/lootjs)
--  [Spark](https://www.curseforge.com/minecraft/mc-mods/spark) (Dev Only, not in main pack, used to profile perormance)
 -  [TellMe](https://www.curseforge.com/minecraft/mc-mods/tellme ) (Client/Dev Only, not in main pack, used for debugging)
--  [Simple Backups](https://www.curseforge.com/minecraft/mc-mods/simple-backups)
--  [WorldEdit](https://www.curseforge.com/minecraft/mc-mods/worldedit)
 -  [Spawn Balance Utility (SBU)](https://www.curseforge.com/minecraft/mc-mods/spawn-balance-utility)
 -  [FancyMenu](https://www.curseforge.com/minecraft/mc-mods/fancymenu-forge/) (Client-side Only)
 -  [Yet Another World Protector (YAWP)](https://www.curseforge.com/minecraft/mc-mods/yawp)
@@ -190,19 +197,20 @@
 -  [FerriteCore](https://legacy.curseforge.com/minecraft/mc-mods/ferritecore)
 -  [Get It Together, Drops!](https://www.curseforge.com/minecraft/mc-mods/get-it-together-drops)
 -  https://www.curseforge.com/minecraft/mc-mods/lazydfu **TO TEST**
--  [Rubidium](https://www.curseforge.com/minecraft/mc-mods/rubidium)
+-  [Rubidium](https://www.curseforge.com/minecraft/mc-mods/rubidium) (Client-side Only)
 -  [Clumps](https://www.curseforge.com/minecraft/mc-mods/clumps)
 -  [Alternate Current](https://www.curseforge.com/minecraft/mc-mods/alternate-current)
 -  [Lightspeed - Launch optimizations](https://www.curseforge.com/minecraft/mc-mods/lightspeedmod/)
--  [CullLessLeaves Reforged](https://www.curseforge.com/minecraft/mc-mods/culllessleaves-reforged)
+-  [CullLessLeaves Reforged](https://www.curseforge.com/minecraft/mc-mods/culllessleaves-reforged) (Client-side Only)
  - [Not Enough Recipe Book (NERB)](https://www.curseforge.com/minecraft/mc-mods/notenoughrecipebook)
+ - [Bocchium](https://www.curseforge.com/minecraft/mc-mods/bocchium/) (Client-side Only)
 
 # Miscellaneous
 Mods that are either incredibly specific, or the inverse where they cover too many random things.
 -  [Traveler's Titles](https://www.curseforge.com/minecraft/mc-mods/travelers-titles)
 -  [Do a Barrel Roll](https://www.curseforge.com/minecraft/mc-mods/do-a-barrel-roll)
 -  [Etched](https://www.curseforge.com/minecraft/mc-mods/etched)
--  [Immersive Paintings](https://www.curseforge.com/minecraft/mc-mods/immersive-paintings)
+-  [Exposure](https://modrinth.com/mod/exposure)
 -  [Joy of Painting](https://www.curseforge.com/minecraft/mc-mods/joy-of-painting)
 -  [Quark](https://www.curseforge.com/minecraft/mc-mods/quark)
 -  [Quark Oddities](https://www.curseforge.com/minecraft/mc-mods/quark-oddities)
@@ -216,7 +224,8 @@ Mods that are either incredibly specific, or the inverse where they cover too ma
 -  [CrashAssistant](https://www.curseforge.com/minecraft/mc-mods/crash-assistant)
 -  [Just Enough Resources](https://www.curseforge.com/minecraft/mc-mods/just-enough-resources-jer/)
 -  [No Chat Reports](https://www.curseforge.com/minecraft/mc-mods/no-chat-reports)
-- 
+-  [Raw's Visual Keybinder](https://www.curseforge.com/minecraft/mc-mods/raws-visual-keybinder) (Client-side ONly)
+-  [What Are They Up To](https://www.curseforge.com/minecraft/mc-mods/what-are-they-up-to)
 
 # Libraries
 The mods after the arrow are the dependents of the library.
@@ -234,18 +243,22 @@ The mods after the arrow are the dependents of the library.
 -  [Inline](https://www.curseforge.com/minecraft/mc-mods/inline/) -> Hexcasting
 -  [Kotlin for Forge](https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge)
 -  [Rhino](https://www.curseforge.com/minecraft/mc-mods/rhino) -> KubeJS
+-  [Ritchie's Projectile Library](https://modrinth.com/mod/rpl -> Create: Big Cannons
 -  [PAUCAL](https://www.curseforge.com/minecraft/mc-mods/paucal) -> Hexcasting
 -  [YUNG's API](https://www.curseforge.com/minecraft/mc-mods/yungs-api)
 -  [ExpandAbility](https://www.curseforge.com/minecraft/mc-mods/expandability)
--  [Placebo](https://www.curseforge.com/minecraft/mc-mods/placebo) -> FastFurnace
--  [CoroUtil](https://www.curseforge.com/minecraft/mc-mods/coroutil) -> Weather
--  [GeckoLib](https://www.curseforge.com/minecraft/mc-mods/geckolib/) -> Biomancy, EntityJS
+-  [Placebo](https://www.curseforge.com/minecraft/mc-mods/placebo) -> FastFurnace, Splendid Slimes
+-  [CoroUtil](https://www.curseforge.com/minecraft/mc-mods/coroutil) -> Weather, What Are They Up TO
+-  [GeckoLib](https://www.curseforge.com/minecraft/mc-mods/geckolib/) -> Biomancy, EntityJS, Critters And Companions (+probably others...)
 -  [Collective](https://beta.curseforge.com/minecraft/mc-mods/collective) -> GUI Clock, GUI Compass
 -  [Curios API](https://www.curseforge.com/minecraft/mc-mods/curios)
 -  [Lithostiched](https://www.curseforge.com/minecraft/mc-mods/lithostitched/)
 -  [Lionfish API](https://www.curseforge.com/minecraft/mc-mods/lionfish-api) -> L_Ender's Catacylsm
 -  [Lucent](https://www.curseforge.com/minecraft/mc-mods/lucent) Dynamic lighting -> Midnight
 -  [Framework](https://www.curseforge.com/minecraft/mc-mods/framework/) -> Goblin Traders
+-  [Fusion (Connected Textures)](https://modrinth.com/mod/fusion-connected-textures/) (Client-side Only) -> Connected Glass
+-  [Searchables)](https://www.curseforge.com/minecraft/mc-mods/searchables) -> Controlling
+-  [SuperMartijn642's Core Lib](https://modrinth.com/mod/supermartijn642s-core-lib) -> Connected Glass
 -  [Sophisticated Core](https://www.curseforge.com/minecraft/mc-mods/sophisticated-core) -> Sophisticated Backpacks
 -  [SmartBrainLib](https://www.curseforge.com/minecraft/mc-mods/smartbrainlib) Advanced mob behavior tools -> Midnight
 -  [Melody](https://www.curseforge.com/minecraft/mc-mods/melody)
@@ -260,14 +273,16 @@ The mods after the arrow are the dependents of the library.
 -   [Zeta](https://www.curseforge.com/minecraft/mc-mods/zeta/) -> Quark
 
 # Server
-Server-side-only mods in the official Vulpinian Skies server BUT NOT INCLUDED in modpack releases!
- -  [Chunk-Pregenerator](https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator)
- -  [Mc2Discord](https://www.curseforge.com/minecraft/mc-mods/mc2discord)
- -  Simple Backups
-
-
+Server-side-only mods in the official Vulpinian Skies server and the server instance BUT NOT INCLUDED in client modpack releases!
+Naturally, no mods that are client-side only will be included here.
+-  [Chunk-Pregenerator](https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator)
+-  [Mc2Discord](https://www.curseforge.com/minecraft/mc-mods/mc2discord)
+-  [Open Parties and Claims](https://modrinth.com/mod/open-parties-and-claims/)
+-  [Spark](https://www.curseforge.com/minecraft/mc-mods/spark)
+-  [WorldEdit](https://www.curseforge.com/minecraft/mc-mods/worldedit)
 
 ---
+
 # Resource packs
 -  [YUNG's Better Dungeons Resource Pack](https://www.curseforge.com/minecraft/texture-packs/yungs-better-dungeons-resource-pack)
 -  [Create Guns](https://www.curseforge.com/minecraft/texture-packs/create-guns)

@@ -1,0 +1,13 @@
+name = "Truly Modular: Archery"
+filename = "Truly-Modular-archery-archery-forge-1.6-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "030d425e9a42db5f5910d8b54d53d815c5e7d531"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6056193
+project-id = 929835

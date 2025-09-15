@@ -48,7 +48,7 @@ Vulpinian Skies has taken its first steps to being updated to 1.20.1. The decisi
  
  The result of testing is that 100+ fps can be steadily reached in my machine, and the modpack loads in about 1 minute 15 seconds (before Modern Fix, it wa about 2 minutes 45 seconds, a significant performance increase),
  
- # 0.03b Modlist Enhancement
+ # 0.0.3b Modlist Enhancement
  
  ## Overview 📝
  
@@ -125,3 +125,461 @@ Vulpinian Skies has taken its first steps to being updated to 1.20.1. The decisi
 	 - Also made it so the aoe damage is reduced less, relative to the number of entities struck (more damage to more entities will be dealt now).
 	 - Buffed movespeed multiplier while attacking from 0.5 to 0.85.
 	 
+# 0.0.4 Create 6, Slimes, Bees, Other Additions and Major Updates
+
+This major update brings some lovely new mods, such as Bumblezone but also an up-and-coming mod: Splendid Slimes, with mechanics overhauled via KubeJS.
+A large portion of the modlist has received updates, some with major content. Create 6 is now online, and the vast majority of add-ons have caught up to it.
+
+**Forge has been updated to 47.4.8.**
+
+A recent data corruption after attemping to manually update thet server instanc has inspired me to streamline server operations: 
+- Server now has its own Packwiz instance with a separate modlist that omits client-only mods and has a few extra server-only ones.
+- .bat file has been written to mirror KubeJS scripts, data, and configs. Server can still have exclusive files here.
+- It will be tracked in this same repo.
+
+## Mod Updates
+
+### Create
+Way too much to list here. This video does a nice documentation of it, however: https://www.youtube.com/watch?v=FGVkC8ZVHHw
+This is basically the reason why I took a break from the  modpack last time; because I was waiting for add-ons and stuff to catch up to Create 6.
+
+### Zombified Players:
+- Zombified players are now immune to fire and lava,
+- fixed inventory not being saved correctly	 
+- Now supports Curios API (zombies with accessories?)
+
+### Target Dummy:
+- Bugfixes
+- Renaming a dummy with a number will give the dummy that max health.
+
+### Born in Chaos
+- Tweaks
+- QoL
+- Small Additions
+
+### CC:C Bridge
+- Now supports Create 6.
+
+### Delightful
+- New foods, new pie!
+- New food effects
+- Other tweaks and recipe changes.
+
+### FramedBlocks
+- Now supports Create 6
+- Bugfixes and smal QoL
+
+### ChoiceTheorem's Overhauled Village
+- Scorched Guns compat
+- Oh the Biomes We've Gone compat
+- Create: Dynamic Village compat
+- Let's do Vinery compat
+
+### Collective
+- Refactoring and extensions to this library.
+
+### Create: Diesel Engines
+- Create 6 support
+- Major content additions and polish.
+- Bulk Fermenters
+- Chemical Turrets
+- Burners
+- KubeJS support
+- Bugfixes
+
+### Create: New Age
+- Create 6 support
+- Bugfixes and QoL
+
+### Create: Big Cannons
+- Create 6 Support
+- Polish
+- Now requires a new Ritchie's Projectile library.
+
+### Create: Steam 'n' Rails
+- Create 6 support
+- Bugfixes
+
+### Create: Central Kitchen
+- Create 6 support
+- More compat with other mods
+- Bugfixes
+
+### Create: Slice & Dice
+- Create 6 support
+- Polish
+- Slicer recipes can be part of sequenced assembly
+
+### Create Deco
+- Create 6 support
+- Texture updates
+- Bugfixes
+
+### Create: Crafts and Additions
+- Create 6 support
+- Mod compat with Enchantment Industry
+- Polish
+
+### Create: Enchantment Industry
+- Create 6 support
+- Bugfixes
+
+### Create Optical
+- Create 6 support
+
+### Create: Metallurgy
+- Create 6 support
+- QoL and Bugfixes
+- Streams of molten material now do the ouchie ouchies
+
+### KueJS Create
+- Create 6 support
+
+### LootJS
+- Bugfix
+
+### EntityJS
+- Bugfixes
+- More entity-bulding utilities, including ability to copy/create entities based on existing ones, including modded ones.
+- Now adds dispenser behavior to trident and other projectiel entities.
+
+### Just Enough Items
+- Many, many Bugfixes
+- Refactoring, optimizations
+- Probably QoL?
+
+### Jade
+- Bugfixes and QoL
+
+### Jade Addons
+- Create 6 Support.
+
+### Scorched Guns 2
+- A lot of new content (including more guns!!)
+- Many tweks
+- QoL
+- More configs
+- Bugfixes
+- Polish
+
+### CC: Tweaked
+- Create 6 support
+- New functions
+- Bugfixes
+- Is now installed via Modrinth, as CF page is no longer updated.
+
+### Advanced Peripherals
+- Create 6 support
+- Bugfixes and QoL
+
+### Octolib
+- Backported bhanges from 1.21.1
+
+### Framework
+- Library Bugfixes and QoL
+
+### Oh The Biomes We've Gone
+- Major content update: The Village Update. New biomes, biome revamps, structures, pumpkin warden
+- Now requires Forge 47.4.0+ so Forge is updated
+
+### Oh the Tress You'll Grow
+- Logic rewrites and bugfixes
+
+
+### L_Ender's Cataclysm
+- Major content update
+- Many Bugfixes
+
+### Mowzie's Mobs
+- Small content
+- Bugfixes
+- Polish
+
+### The Midnight
+- Bugfixes
+- Is now downloaded via Modrinth
+
+### Dramatic Doors
+- Create 6 support
+- Better mod compat including with Create Deco, Biomancy, Ars Nouveau
+- Polish
+- Bugfixes
+
+### Goblin Traders
+- QoL and Bugfixes
+- Polish
+
+### Collectibles
+- Small content
+- QoL and Bugfixes
+
+### Balm
+- Library bugfixes and backports.
+
+### CorgiLib
+- Library bugfixes and backports.
+
+### Lithostiched
+- Library bugfixes and extensions
+- Utility to check if a block is in a structure?
+
+### Curios API
+- Bugfixes
+
+### Forgified API
+- Library extensions and bugfixes
+
+### GUI Compass
+- Logic improvements
+
+### GeckoLib
+- Library Additions
+- Bugfixes
+
+### ModernFix
+- Numerous new performance improvements
+
+### Fastsuite
+- Better safety with its optimizations
+
+### Simple Backups
+- Can exclude files/directories
+- Better config
+- Bugfixes
+
+### Botany Pots
+- Polish
+
+### Waystones
+- More configs
+- Bugfixes
+
+### Zeta
+- Library refactoring and bugfixes
+
+### GUI Clock
+- Logic improvement
+
+### Infinity Buttons
+- More buttons, more compat!
+
+### Pufferfish's Skills
+- New experience sources, such as enchanting items
+- Has level limit option, required exclusions
+- Now supports animated backgrounds
+- Comparison operators to expressions
+- Team-shared experience
+- Other QoL and Bugfixes
+
+### Pufferfish's Attributes
+- New attributes
+- Bugfixes
+
+### Truly Modular API
+- Bugfixes and QoL
+
+### Truly Modular: Arsenal
+- Added medium shields
+- Safety and Bugfixes
+
+### Polymorph
+- Bugfixes
+
+### Artifacts
+- Toomfoolery
+- Bugfixes
+
+### Reliquary Reincarnations
+- Bugfixes adn QoL
+- New tag to alllow mobs to ignore Interdiction Torch.
+
+### Citadel
+- Library bugfixes
+
+### Inline
+- Functionality extensions
+- Refactoring
+- Bugfixes
+
+### Sophisticated Core
+- Bugfixes, many Bugfixes
+- Better compat with Create
+- More configs
+- New Alchemy upgrades to automatically drink potions or eat food with effects, with configurable options
+
+### Sophisticated Backpacks
+- Same improvements from Sophisticated Core but additional stuff just for backpacks.
+- Backpack templates, might use for starter backpacks?
+- Configurable effect for carrying too many backpacks.
+
+### Separated Leaves
+- Removed biomes.json and now works when a namespace has rules for Separated Leaves.
+
+### Ars Nouveau
+- Bugfixes
+
+### Ars Creo
+- Now supports Create 6.
+- Potion Jars can now be piped from/into Create fuild tanks, and other QoL
+- Starbuncle config
+
+# Ars Elemental
+- Bugfixes
+
+### FancyMenu
+- Fancy goodies
+
+### Gems & Jewels
+- Features such as tool leveling of gemmed tools
+- Other content
+
+### TerraBlender
+- Bugfixes
+- Reverts of reverst? (supports End and Nether)
+
+### Ecologics
+- Bugfixes
+
+### NFF: Girls
+- Content Additions
+- Bugfixes
+
+### Farmer's Delight
+- Tag Additions
+- QoL
+- Bugfixes
+
+### Vinery
+- QoL
+- JEI Compat
+- Bugfixes
+
+### Unusual End
+- Polish and Bugfixes
+- Pinned to non-Blueprint version
+
+### Friends&Foes
+- More configs
+- Bugfixes
+
+### Hostile Mobs and Girls
+- Mod compat
+- QoL
+- BUgfixes
+
+### Quark
+- Mod compat
+- Bugfixes
+
+### Amplified Nether
+- ???
+- Weirdly named, but datapack-oriented so it's still for 1.20.1
+
+### Crash Assistant
+- QoL and Improvements
+- Somehow, Create 6 support
+
+### Placebo
+- Library refactoring
+
+### Moonlight Lib
+- Library refactoring
+
+## Every Compat (Wood Good)
+- More good wood
+- More config
+
+### Aquaculture 2
+- Bugfixes
+
+### Bedspreads
+- Bugfix
+
+## Mod Removals ➖
+
+### Immersive Paintings
+- Essentially replaced with Exposure mod.
+
+### Create: Crystal Clear
+- Has not received Create 6 support sadge
+- Will be re-added when it receives support.
+
+### Extended Cogwheels
+- Same as above.
+
+### Antique Atlas
+- Has been found to cause extreme lag, to the point of causing the server to crash by tick watchdog.
+- Has been replaed with Xaero's.
+
+### Surveyor
+- Dependency of Antique Atlas and likely the real culprit of the lag.
+
+## Mod Additions ➕
+
+### Splendid Slimes
+- Slime Rancher but in Minecraft!
+- Extremely configurable, fully data-driven. Custom slimes will be made!
+- Slime acquisition behavior has been fully overhauled via KubeJS Scripts
+
+### The Bumblezone
+- Extremely high-quality mod with a lovely, super well-crafted buzzy dimension.
+- Has wide mod compat and config and data-driven behavior
+- Other mods from this author will be added in future updates.
+
+### Potion of Bees
+- Buzzy friend goodness (weaponizable too)
+- Has compat with Bumblezone, can be used to revive brood blocks.
+
+### Critters And Companions
+- Has some adorable creatures
+- Has JUMPING SPIDERS that can be tamed! <3
+- GeckoLib dependency, which we already have.
+
+### Xaero's Minimap
+- Replaces Antique Atlas.
+
+### MarbleGate's Exotic Enchantment: Flowing Agony: Reborn
+- This mod was in the 1.18.2 version of the modpack, and it recently has been ported to 1.20.1, as suggested by its second "Reborn" sub-title!
+
+### Create: Escalated
+- Funny little new Create add-on, by the same maker of Create: Big Cannons
+
+### Geologic Expansion
+- An addition to the Exploration category, has some small but quite nice biomes, particularly the Prismatic Caldera serving as a very colorful sea-side biome
+- Also has ducks.
+
+### (TEMPORARY/DEV-ONLY) Nature's Compass
+- Only for debugging purposes, Nature's Compass has been added.
+- Will only be available for Admins/Creative players or for testing purposes.
+
+### Bocchium
+- Simple performance mod that culls the top or bottom of a dimenson's blocks
+
+### What Are They Up To
+- Neat little mod showing what other players are doing.
+
+### Exposure
+- A mod about film photography
+- Essentially a more immersive "Immersive Paintings".
+- Fabric mod running through Connector, so eyes on this one for stability.
+
+### Raw's Visual Keybinder
+- It adds an extra way to manage keybinds. It provides an extra screen which will be accessible  by the button next to the default edit 'keybind button' in the options menu.
+- The screen has a layout like a keyboard with all conflicting and used buttons highlighted. This way players have a great overview of which keys are still available and which ones need attention.
+
+### Ritchie's Projectile LIbrary
+- New dependency of Create: Big Cannons
+
+### Connected Glass
+- I thought we had clear glass somewhere in the pack but apparently we don't, oops.
+
+### Fusion (Connected Textures)
+- Library that Connected Glass uses. Has cool features, might us for other stuff.
+
+### SuperMartijn642's Core Lib
+- Library that Connected Glass uses.
+
+## Configs ⚙
+
+### Crash Assistant
+- Added config with names and links to Vulpinian Skies discord etc.

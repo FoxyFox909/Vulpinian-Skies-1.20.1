@@ -5,6 +5,8 @@ https://modrinth.com/datapack/truly-material/versions
 
 https://www.curseforge.com/minecraft/mc-mods/tinyfoes
 
+quark ponders
+
 
 https://www.curseforge.com/minecraft/mc-mods/sinytra-connector Incredibly powerful, run Fabric mods on Forge, but do not abuse. Use wisely, only for a couple fabric mods.
 
@@ -121,7 +123,7 @@ https://www.curseforge.com/minecraft/mc-mods/kiwi-boi ** lmao
 https://modrinth.com/mod/wildlife-fabric
 https://www.curseforge.com/minecraft/mc-mods/aurorasdecorations ** 
 https://www.curseforge.com/minecraft/mc-mods/lovely-snails/files/all?page=1&pageSize=20&version=1.20.1
-
+https://www.curseforge.com/minecraft/mc-mods/tameable-beasts
 
 # Performance
 https://www.curseforge.com/minecraft/mc-mods/bocchium **
@@ -142,7 +144,7 @@ For better Error-reporting, specifically with Worldgen Datapack https://www.curs
 
 
 https://www.curseforge.com/minecraft/mc-mods/leaky
-
+https://www.curseforge.com/minecraft/mc-mods/zetryfine ?
 
 # Other
 https://www.curseforge.com/minecraft/mc-mods/the-midnight/gallery
@@ -174,6 +176,7 @@ https://www.curseforge.com/minecraft/mc-mods/subterrestrial/gallery **
 https://www.curseforge.com/minecraft/mc-mods/nears
 https://www.curseforge.com/minecraft/mc-mods/forsaken-corpses
 https://www.curseforge.com/minecraft/mc-mods/gardens-of-the-dead
+https://www.curseforge.com/minecraft/mc-mods/ruins/gallery
 
 https://www.curseforge.com/minecraft/mc-mods/world-expansion-light-and-dark/gallery
 https://www.curseforge.com/minecraft/mc-mods/newworld
@@ -231,6 +234,7 @@ https://www.curseforge.com/minecraft/mc-mods/arcanus
 https://www.curseforge.com/minecraft/mc-mods/feywild
 https://www.curseforge.com/minecraft/mc-mods/luckys-armory
 https://www.curseforge.com/minecraft/mc-mods/enchanted-witchcraft
+https://modrinth.com/mod/smidgeon-o-bliss sadly needs brewing and chewing
 
 # Wild/Corruption
 https://www.curseforge.com/minecraft/mc-mods/sculk-horde/gallery

@@ -1,0 +1,13 @@
+name = "Truly Modular: Armory"
+filename = "Truly-Modular-armory-armory-forge-1.11-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "0199a9749a8ac3fae37acbb2dfc2972976296a94"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6043598
+project-id = 929840
