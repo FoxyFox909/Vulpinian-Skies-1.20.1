@@ -41,6 +41,10 @@ file = "config/quark-common.toml"
 hash = "31f7dbb1aa9c589106b073c2116518db09120c550b7f86ba822724d2f6efefd5"
 
 [[files]]
+file = "defaultconfigs/midnight-server.toml"
+hash = "48da6fcc0f940eeda80dba9d091fb260b7d6289858e5556aca46ef71c1e206d2"
+
+[[files]]
 file = "desktop.ini"
 hash = "5b75499bc8d4b3adabc8b46a56039efcd8bde48de42d14c512a679b4b096acf9"
 

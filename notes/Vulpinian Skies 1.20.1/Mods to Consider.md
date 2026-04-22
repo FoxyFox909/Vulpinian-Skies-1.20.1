@@ -1,16 +1,68 @@
-
+https://www.curseforge.com/minecraft/mc-mods/legendary-creatures/gallery **
 https://www.curseforge.com/minecraft/mc-mods/gears-n-kinetics
 https://modrinth.com/mod/vs-safe-and-sound
 https://modrinth.com/datapack/truly-material/versions
+https://www.curseforge.com/minecraft/mc-mods/vanimals
+
+https://github.com/hlysine/create_connected
+
+[Create: Mobile Packages - Files - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/create-mobile-packages/files/6763649)
+[Create: Bio-Factory - Gallery - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/bio-factory/gallery) \**\**
+The full works of TelepathicGrunt
 
 https://www.curseforge.com/minecraft/mc-mods/tinyfoes
 
+[Create: Spring Loaded - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/create-springs-loaded) ?
+[Create: Splendid Cogs - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/create-slime) **
+[Unusual Delight (Hostile Delight) - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/unusual-delight)
+[Dungeons Delight - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/dungeons-delight) **
+[Cave Stuff (UPDATE 5) - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/cave-stuff) **
+[Unusual Fish Mod - Gallery - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/unusual-fish-mod/gallery)
+Vanimals?
+[Neat - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/neat)
+[Bloo's Gacha Machine v.1.1 - Files - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/bloos-gacha-machine/files/all?page=1&pageSize=20)
+[Philip's Ruins - Gallery - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/ruins/gallery)
+[Tameable Beasts - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/tameable-beasts)
+[ZetryFine - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/zetryfine)
+[Confluence: Otherworld - Gallery - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/confluence/gallery)
+[AcademyCraft - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/academycraft)
+[Bloo's Gacha Machine v.1.1 - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/bloos-gacha-machine)
+[Compact Machines - Gallery - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/compact-machines/gallery)
+[Cyberspace - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/cyberspace)
+[Simple Clouds - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/simple-clouds) **
+[Zoe Isn't Cyberpunk - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/zoe-isnt-cyberpunk)
+[NTM: Space - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/ntm-space)
+[The Box of Horrors [Forge] - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/box-of-horrors)
+[Lapidarist - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/lapidarist)
+[Spare Change | Coins - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/spare-change)
+[Patchwork | Building Blocks - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/patchwork-blocks)
+[Simple Spears - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/simple-spears)
+[Consecration (Fabric/Forge/Quilt) - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/consecration)
+[Pastel - Gallery - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/pastel/gallery)
+[Mofu's better end / Mofu's Broken Constellation - Gallery - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/mofus-broken-constellation/gallery)
+[Create More: Pipe Bombs in Packages - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/create-more-pipe-bombs-in-packages)
+[Just Dire Things - Gallery - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/just-dire-things/gallery)
+[Companions! - Files - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/companions-mod/files/all?page=1&pageSize=20)
+[Umbramancy - Files - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/umbramancy/files/all?page=1&pageSize=20)
+[Under the Moon - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/under-the-moon)
+[Create Alchemist's Industry - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/create-alchemists-industry)
 quark ponders
-
-
+[Rustic Engineer - Gallery - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/rustic-engineer/gallery) ?
+[Ribbits - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/ribbits)
+[Biome Particle Weather - Files - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/biome-particle-weather/files/all?page=1&pageSize=20&gameVersionTypeId=1)
+[Leaky - Item Lag Fix[Forge/Fabric] - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/leaky)
+[AmbientSounds 6 - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/ambientsounds)
+[Atmospheric - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/atmospheric)
+[Create: Power Grid - Files - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/power-grid/files/6908172) ** 
+[Gensokyo Delight ~ Youkai's Homecoming - Files - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/youkais-homecoming/files/6927429) **
+[CasinoCraft - Gallery - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/casinocraft/gallery) Lmao **
+[Surveyor Atlases - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/surveyor-atlases) ?
 https://www.curseforge.com/minecraft/mc-mods/sinytra-connector Incredibly powerful, run Fabric mods on Forge, but do not abuse. Use wisely, only for a couple fabric mods.
-
-
+[Create: Gears n' Kinetics - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/gears-n-kinetics) ?
+[ChickenBlock - Minecraft Modpacks - CurseForge](https://www.curseforge.com/minecraft/modpacks/chickenblock) ?
+[PreciousPiles - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/preciouspiles#follow) ?
+[MiSiDe - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/miside) ?
+[MoreJS - Minecraft Mods - CurseForge](https://www.curseforge.com/minecraft/mc-mods/morejs) **
 # Confirmed Adding next version
 https://www.curseforge.com/minecraft/mc-mods/potion-of-bees **NUKE the lingering potion of bees good lord that's TOO MANY BEES**
 https://www.curseforge.com/minecraft/mc-mods/spice-of-life-ringo-pie-edition
@@ -262,6 +314,8 @@ https://www.curseforge.com/minecraft/mc-mods/totemic
 https://www.curseforge.com/minecraft/mc-mods/reboot-lovelyrobot
 https://www.curseforge.com/minecraft/mc-mods/monsters-girls
 https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2 for jetpack source code with [this ](https://github.com/PssbleTrngle/CreateJetpack/blob/1.20.x/src/main/kotlin/com/possible_triangle/create_jetpack/item/JetpackItem.kt)
+
+https://www.curseforge.com/minecraft/texture-packs/bibliophilia
 
 https://www.curseforge.com/minecraft/mc-mods/sandwichable
 
