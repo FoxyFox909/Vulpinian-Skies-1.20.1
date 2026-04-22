@@ -583,3 +583,614 @@ This is basically the reason why I took a break from the  modpack last time; bec
 
 ### Crash Assistant
 - Added config with names and links to Vulpinian Skies discord etc.
+
+
+# 0.0.5 Major Mod Updates & Polish ⚙️🦊⚙️
+
+## Overview 📝
+
+This update is primarily a **mod update pass** across nearly the entire modlist. Many  mods have received significant content updates, and the vast majority of Create add-ons have now caught up to Create 6.0.8. A few mods have also received major balance or compatibility-affecting changes.
+
+* 85+ mods updated.
+* Create 6.0.6 → 6.0.8, plus an avalanche of Create add-on updates to match.
+* Several mods received MAJOR content updates (Cataclysm "Howling Storm", Create: Metallurgy 1.0, Scorched Guns 2 0.5, Splendid Slimes 0.19, Aquamirae 6.3, Exposure 1.9, Biomancy 2.9, Oh The Biomes We've Gone 1.7).
+* Pay attention to the **Compatibility & Breaking Changes** section at the bottom of this entry before migrating worlds.
+
+## Mini Blog / Vulpinian Yapping 🗣
+
+We're back baby! The release of Aero has reignited the Minecraft spark. I gotta give this modpack some love once in a while.
+Sadly I do have a number of other projects that I do have to prioritize. To this end, I will start leveraging LLMs to automate time-consuming tasks, such as drafting this changelog of 85 mod updates.
+I have to disclose it, but also will say that LLMs are only going to be used as a tool to help me do more with my time. I will dutifully review and manually test anything it spits out. LLMs are a tool and not a replacement.
+Nonetheless, if managed and guided accordingly, there are definitely several uses I have in mind where it is actually a time-saving tool for modpack dev, since a lot of tasks are repetitive or "routine".
+
+Create: Metallurgy finally hitting 1.0 after a year of alpha is particularly exciting — Ladles, Labeling Stations, and proper molten fluid water interactions fill in a lot of the rough edges that made metallurgy feel like a placeholder. Similarly, Scorched Guns 2 has quietly transformed from a gun mod into a full-blown progression mod with raids, new bosses, and mech-style energy weapons. The modpack gets noticeably meatier without me adding a single new mod.
+
+
+## Mod Updates ⬆
+
+### Create Ecosystem
+
+#### Create (6.0.6 → 6.0.8)
+
+* **Content & Compat**
+  + ComputerCraft integration expanded to Update 6 blocks (stockkeepers, packagers, frogports, signals, etc.).
+  + Xaero's World Map compatibility for the Train Map feature — trains now show on Xaero's map.
+  + JEI support for the StockKeeperRequestScreen (uses/recipes lookups now work from inside the stock UI).
+  + Allow any wrench tagged as such to connect mechanical crafters (major mod compat win).
+  + Updated BOP, Atmospheric, BYG/BWG compat.
+  + Track tracks clearable by shift-clicking air. Same for logistically linked items (clear frequency by shift-click air).
+  + Chain riding allowed with a wrench in the offhand.
+  + Overstress animation for rotating visuals.
+* **Balance**
+  + Added config option to prevent block dropping when contraption is replacing blocks.
+  + Allow conditions on retrieve package instructions.
+  + Consolidate gauge inputs with the same item into a single request.
+* **Performance**
+  + Optimized basin recipe lookup, package address checking, TreeCutter, contraption sync limiting, vault comparator/inventory access.
+* **Bugfixes** — a MASSIVE bugfix sweep. Over 60 bugs fixed across contraptions, schematics, trains, signals, packagers, potato cannons, deployers, blaze burners, toolboxes, mechanical bearings, mechanical crafters, steam engines, display links, crushing wheels, and more.
+
+#### Create: Steam 'n' Rails (1.6.13 → 1.7.2)
+
+* Deployers can copy train names to/from nametags.
+* Moss carpets and snow can now encase tracks (new `railways:track_casing_whitelist` tag).
+* Snow now falls on tracks.
+* New `unlimitedCreativeRelocation` config option for infinite-range train relocation in creative.
+* Full Create 6.0.8 support.
+* Bugfixes (instanced carriage rendering, wide scotch yoke bogey model, etc.).
+
+#### Create: Big Cannons (5.9.1 → 5.11.2)
+
+* **MAJOR CONTENT**: Bronze and steel ingots/blocks are finally added (after 3 years 🎉).
+* Added view transparency config for molten metal fluids.
+* Added ability to top up cannon cast fluids in Creative.
+* **Propellant overhaul**: Can now combine different propellant types. By default, big cartridges must come before powder charges. Propellant datapack format changed (`maximum_amount` → `maximum_amount_ahead`).
+* **Balance**: Increased nethersteel screw breech max stress (8→10), steel screw breech max stress (6→8). Changed Impact Fuze and Delayed Impact Fuze trigger conditions.
+* Updated FramedBlocks compatibility for FramedBlocks 10.5.
+* Bugfixes (ram rod/worm item display, autocannon UI, etc.).
+
+#### Create: Metallurgy (0.0.7 → 1.0.1) 🎉 First Stable Release!
+
+* **MAJOR CONTENT UPDATE**: Creator Luc_Creeper74 finally released Metallurgy 1.0, ending the long alpha period.
+* Added **Ladles** (with random models from Community Contest winners RestingPhantom and Aaby).
+* Added **Ladle Filter** item.
+* Added **Labeling Station**.
+* Added **Slag blocks**.
+* Added **Refractory Mortar Ball**.
+* Added belt processing behaviour to Faucets.
+* Added Gauge attachment item description.
+* Added molten fluid/water interactions (splash, steam, etc.).
+* Added Industrial Crucible & Foundry Unit.
+* Added Obdurium Alloy.
+* Added Dutch translation.
+* Direct belt input behaviour for crucibles.
+* Merged Glassed Foundry lid with regular lid.
+* Faucet fluid streams now hurt entities (for `#minecraft:lava` or `#forge:molten_materials`).
+* Molten fluids can no longer be a bottomless source by default (configurable).
+* Many recipe and behavior bugfixes.
+
+#### Create: Diesel Generators (1.3.5 → 1.3.12)
+
+* Bugfixes and QoL.
+* Better Create 6.0.8 compatibility.
+
+#### Create: Factory (0.4b → 0.5a)
+
+* Create 6.0.8 support.
+* New food content additions and tweaks.
+* Bugfixes.
+
+#### Create: Misc & Things (4.0A → 4.1.0)
+
+* Content additions.
+* Create 6.0.8 support.
+* Bugfixes.
+
+#### Create: Escalated (1.1.0 → 1.2.1)
+
+* Create 6.0.8 support.
+* Content additions.
+* Polish and bugfixes.
+
+#### Create Slice & Dice (3.4.1 → 3.6.0)
+
+* Create 6.0.8 support.
+* Content additions.
+* Bugfixes.
+
+#### Create: New Age (1.1.4 → 1.1.7f)
+
+* Create 6.0.8 support.
+* Polish and bugfixes.
+
+#### Create Optical (0.3.1 → 0.4.1)
+
+* Create 6.0.8 support.
+* Content additions.
+* Bugfixes.
+
+#### Create Crafts & Additions (1.3.2 → 1.3.3)
+
+* Bugfixes.
+
+#### Create Cafe (1.2.4 → 1.3)
+
+* Content additions.
+* Polish and bugfixes.
+
+### Magic
+
+#### Biomancy (2.8.19 → 2.9.8.1)
+
+**⚠ Compatibility note**: Mod author now ships the 1.20.1 jar as a NeoForge build (`biomancy-neoforge-1.20.1-2.9.8.1-alpha.0.jar`). Runs fine on Forge via compatibility; see Breaking Changes section below.
+
+* **Content**
+  + New Biomancy keybinds with modifier key support.
+  + AlexMobs banana & peel and AlexCaves plants are now decomposable.
+  + Any `#forge:crops` can now be decomposed.
+  + New `fleshkin_ignores` entity tag for prey that Flesh Pigs and Hungry Flesh Blobs should ignore.
+  + Added NBT support to SerumContainers (compatible with fluids, potions, etc.).
+  + Storage Sac inventory is now compatible with loot table randomization.
+  + Added custom tooltip frames for the tooltip overhaul mod.
+* **Compat**
+  + Watergel is now a real water fluid (not fake water) — fixes compatibility with Farmer's Delight farmland!
+  + KubeJS integration with Biomancy recipes, serums, bio-forge tabs, nutrients fuel/repair.
+  + Pehkui integration with configurable enlargement/shrinking serum settings.
+  + Corrosive effect added to `is_acid` forge tag.
+* **Bugfixes**: membranes blocking pathfinding correctly, cradle advancements, injector damage order, Flesh Blob models, and many more.
+
+#### Hex Casting (0.11.2 → 0.11.3)
+
+* Bugfixes and polish.
+
+#### Ars Elemental (0.6.7.8 → 0.6.7.9)
+
+* Bugfixes.
+
+#### Reliquary Reincarnations (2.0.52 → 2.0.55)
+
+* Bugfixes.
+* Polish.
+
+### Mobs & Entities
+
+#### L_Ender's Cataclysm (3.16 → 3.27 — "Howling Storm" update) 🌩
+
+* **MAJOR CONTENT**: The Howling Storm update introduces **Scilla**, the resident of the Acropolis. Players will need to navigate to his lair and venture into the sky to defeat him. This is a new full boss fight with a new gear tier.
+* Version includes a laser-fix and enchant-fix patch (we're on 3.27-curios-fix, the latest stable).
+* Balance tweaks across existing bosses.
+* Many bugfixes and crash fixes across dungeons and bosses.
+
+#### Mowzie's Mobs (1.7.3 → 1.8.2)
+
+* Content additions.
+* Balance polish across existing mobs.
+* Bugfixes.
+
+#### Splendid Slimes (0.14.4 → 0.19.3) 🟢
+
+* **MAJOR CONTENT**: Tons of new traits and features added across 5 minor version bumps.
+  + New traits: **Friendly** (follows nearby players), **Diverse** (needs proximity to 3 unique breeds), **Inverse** (flips good/bad effects based on mood), **Nuclear** (furious slime bursts into block-breaking explosion), **Putrid** (strengthens + doubles effect duration), **Weeping** (cries water periodically).
+  + Added **hat to Ender Slime** (hehe).
+  + **Slime offline mode**: Slimes will no longer perform effects or get hungry when their owner is offline (configurable).
+  + Added **Largo Jamming** to Slime Vac: Largos get stuck in the vac when close to the player, so ranchers can drag them around without sneaking.
+  + Slime Vac now inserts slimes directly into the player's inventory.
+  + Added traits display to Slime in item form while pressing shift.
+* **Balance**
+  + Reduced Weeping trait radius (3 → 2) and time (30 → 2.6 minutes, 4x slime effect cooldown config option).
+* Bugfixes across traits, slime commands, and Plort Press.
+
+#### Born in Chaos (1.7.2 → 1.7.5)
+
+* Small content and balance tweaks.
+* Bugfixes.
+
+#### Hostile Mobs and Girls / HMaG (9.0.33 → 9.0.37)
+
+* Content tweaks.
+* Mod compat.
+* Bugfixes.
+
+#### NFF: Girls (0.2.30.6 → 0.2.32)
+
+* Content additions.
+* Bugfixes.
+
+#### Grimoire of Gaia (4.0.0-alpha.11 → 4.0.0-alpha.12)
+
+* Bugfixes.
+* Polish.
+
+#### Critters and Companions (2.3.2 → 2.3.5)
+
+* Small content updates.
+* Bugfixes.
+
+#### The Bumblezone (7.9.0 → 7.11.2)
+
+* Content additions.
+* Mod compat improvements.
+* Bugfixes.
+
+#### Aquamirae (6.API15 → 6.3.3) 🥶
+
+* **MAJOR CONTENT**: Complete overhaul of Ice Maze generation, backported from the upcoming Aquamirae 7. The dense wall-clusters that didn't feel maze-like are replaced with a multi-layered noise-based system. Exploration is more immersive AND significantly better-performing (fewer generated structures).
+* Weather inside the Ice Maze is adjusted — it now properly snows within the biome.
+* Added subtle ambient background loop to reinforce the atmosphere of the frozen wasteland.
+* Rune of the Storm can now be applied via the Smithing Table.
+* Removed procedurally generated loot armor from Creative tab.
+* Bugfixes (shelters flooding in underground water pockets, drowned from Dead Sea Scroll despawning, music discs interrupted, crystallization damage type, mixin apply error).
+
+### Worldgen
+
+#### Oh The Biomes We've Gone (1.6.5 → 1.7.5) 🌎
+
+* **⚠ BREAKING**: `skyrise_vale` was renamed to `skyris_vale` to fix a typo. Old chunks will display as "plains" in F3 and won't be findable via `/locate`, but the biome itself still generates correctly visually. New chunks will have the correct ID.
+* **⚠ BREAKING**: The `/bwg` villager upgrade command has been removed (was slated for 2.5.0 anyway).
+* Added Autumnity compat: when Autumnity is present, the Medium Pumpkin Feature is replaced with Autumnity's Pumpkin Feature.
+* Added PathBlockType to BlueBerry Bush and Desert Plants.
+* Barrel Cactus now gives Cactus Damage when collided with.
+* Bugfixes for BWG Chest Boats changing to Aspen type on server reload, Baby Villager → Pumpkin Warden transformation, and many more.
+
+#### Oh The Trees You'll Grow (1.3.13 → 1.6.0) 🌳
+
+* **MAJOR CONTENT**: Library rewrite with many new capabilities.
+* **Tree From Structure NBT v2** — new system for defining trees from NBT with blockstate providers.
+* Added ability to use blocks within the NBT to place Blockstates via Blockstate providers.
+* Allow specifying multiple leaf targets and multiple leaf block state providers.
+* Allow `BlockStateProperties.FACING` on `AttachedToLogsDecorator` with correct Direction setting.
+* Added sideways and upside-down tree config choices (!).
+* Added structure checks to tree growth during world generation.
+* Concurrency safety for random scheduled ticks.
+* Many, many bugfixes for trunks, canopies, log decorators, leaf placements, chunk-range crashes, etc.
+
+#### Amplified Nether (1.2.11 → 1.2.14)
+
+* Datapack-oriented tweaks.
+* Bugfixes.
+
+#### Ecologics (2.2.2 → 2.2.4)
+
+* Bugfixes.
+
+### Tools, Weapons & Equipment
+
+#### Scorched Guns 2 (0.4.6.5 → 0.5.5) 🔫
+
+* **MASSIVE CONTENT UPDATE across 5 versions.**
+* **New Guns added**: Minksy Laser Rifle, Mas Peddler, Teslock Rifle, Libertas, Jury Rigged Wrist Breaker, Whistler Sniper, Blooper Grenade Launcher, Triquetra Grenade Launcher, Hammer GL, Truant GL, Zilk 45, Hyperbaria.
+* **New Grenade Rounds**: High Explosive, Bouncy, Gas, Fire. Rebalanced blast radii.
+* **New Mobs**: Mother Ghast (rare Nether spawn, member of Piglin Raids), Praetor.
+* **New Items/Gear**: Mine Unit, Shock Coil, Metal Detector, Iron Mask, Bat Guano (bats occasionally poop it), Guano Candle (light source attracting bats), Frog Dart projectile.
+* **Ammo swap system** added — Thunderhead can now swap to Krahg rounds.
+* **Raid system overhaul**: Blueprints now require blueprint scraps (from structures and mob drops). Each tier of raid drops a required trophy item to craft the next tier's blueprint. Added Flare Gun for manually calling raids, and Flares.
+* **Enchantment rebalance**: Heavy Shot, Hyper Velocity, and Sharpshooter rebalanced to be in line with each other. New stat formulas for damage, fire rate, recoil, knockback, armor bypass, crit chance.
+* Reworked Turret Recipes so they can be obtained earlier.
+* Reworked Sculk Resonator.
+* Reworked Choke Bombs.
+* Overhauled Cog Minion (can wear helmets now).
+* Split creative menu into 3 tabs (items, blocks, guns).
+* Tons of new Asgharian Bricks and building blocks (thanks Albatroz).
+* New plasma shotgun sounds, new Dissident sounds.
+* Supply Scamp and Viventrum now use Repair Kits for healing.
+* Fixed Viventrum dupe bug.
+* Many, many balance tweaks, bugfixes, and texture improvements (huge thanks to JaDn for visual work).
+
+#### Dramatic Doors (3.3.1 → 3.3.3)
+
+* Bugfixes.
+* Compat improvements.
+
+#### Artifacts (9.5.16 → 9.5.19)
+
+* Small content tweaks.
+* Bugfixes.
+
+#### Truly Modular - Modular Item API (1.1.48 → 1.1.49)
+
+* Library bugfixes.
+
+#### Truly Modular: Armory (1.11 → 1.13)
+
+* Content additions.
+* Safety and bugfixes.
+
+### Food & Farming
+
+#### Farmer's Delight (1.2.9 → 1.2.11a)
+
+* Tag additions.
+* QoL.
+* Bugfixes.
+
+#### Delightful (3.7.6 → 3.7.8)
+
+* Small content tweaks.
+* Recipe changes.
+* Bugfixes.
+
+#### Aquaculture 2 (2.5.5 → 2.5.7)
+
+* Bugfixes.
+
+#### Botany Pots (13.0.41 → 13.0.43)
+
+* Polish.
+* Bugfixes.
+
+#### Botany Trees (9.0.18 → 9.0.20)
+
+* Bugfixes.
+
+### Creative / Aesthetic / Media
+
+#### Exposure (1.7.16 → 1.9.20) 📷
+
+* **MAJOR UPDATE across many versions.**
+* Camera interaction sounds are now audible for other players.
+* Reduced color photograph print time (10s → 8s).
+* Camera interaction animations — player moves their hand slightly when changing viewfinder settings or attachments.
+* New **background capture method**: no more screen flicker when taking a photo (old direct method still available, auto-used with Iris).
+* Added **Glass Photograph Frame**.
+* Added `/exposure export` command for exporting exposures to PNGs in `<world>/exposures` folder.
+* Added creative-mode tools in Photograph screen.
+* Added **Splitting the Photon** advancement for exposing a frame with R/G/B filter.
+* **Custom color palettes** can now be defined.
+* **Image loading from URL** supported in Projector.
+* Projector now breaks when loading fails (instead of being consumed).
+* Printing now requires light level 12+ above the Lightroom (no longer emits light).
+* Chromatic Printing now requires a Tinted Glass placed on top of the Lightroom (previously Amethyst Cluster).
+* Mundane, Awkward and Thick potions now have distinct colors during developing.
+* Color Film recipe now uses Gold instead of Iron; Camera recipe now uses only Iron Ingots instead of Iron Nuggets and Pressure Plate.
+* Tooltip on camera components and ability to view available Lenses/Filters.
+* Camera controls keybind can be remapped now.
+* Lightroom comparator output now based on output slot count rather than selected frame.
+* Many bugfixes.
+
+#### Joy of Painting (1.0.1 → 1.1.0)
+
+* Content additions.
+* Polish.
+* Bugfixes.
+
+#### FancyMenu (3.7.0 → 3.8.1)
+
+* New fancy goodies.
+* QoL.
+* Bugfixes.
+
+### Skills, Attributes & Progression
+
+#### Pufferfish's Skills (0.16.5 → 0.17.3)
+
+* Content additions.
+* Configurable improvements for skill trees.
+* Bugfixes and QoL.
+
+#### Pufferfish's Attributes (0.7.6 → 0.8.2)
+
+* New attributes.
+* Bugfixes.
+
+#### AttributeFix (21.0.4 → 21.0.5)
+
+* Bugfixes.
+
+### Storage & Inventory
+
+#### Sophisticated Core (1.2.89 → 1.3.21) 🎒
+
+* **Many iterative improvements across 30+ patch versions.**
+* Better compatibility with Create.
+* More configuration options.
+* New Alchemy upgrades to automatically drink potions or eat food with effects (with configurable options) — polish of the feature introduced in 0.0.4.
+* Many, many bugfixes and crash fixes.
+
+#### Sophisticated Backpacks (3.24.5 → 3.24.35)
+
+* All the improvements from Sophisticated Core.
+* Additional backpack-specific polish.
+* Backpack templates refinement.
+* Bugfixes.
+
+### Utility & QoL
+
+#### Just Enough Items / JEI (15.20.0.112 → 15.20.0.130)
+
+* Many, many bugfixes.
+* Performance improvements.
+* Refactoring and QoL.
+
+#### Collective (8.3 → 8.20)
+
+* **Many library versions bumped.**
+* Refactoring and extensions.
+* Used by a large chunk of the modpack's utility mods, so indirect bugfixes across many mods.
+
+#### Waystones (14.1.17 → 14.1.20)
+
+* More config options.
+* Bugfixes.
+
+#### Crash Assistant (1.9.15 → 1.11.8)
+
+* QoL improvements.
+* Better crash grouping and reporting.
+* Create 6 integration improvements.
+
+#### Tips (12.1.8 → 12.1.9)
+
+* Bugfixes.
+
+#### Enchantment Descriptions (17.1.19 → 17.1.21)
+
+* Bugfixes.
+
+#### Level Text Fix (7.0.2 → 7.0.3)
+
+* Bugfixes.
+
+#### Additional Banners (14.0.4 → 14.0.5)
+
+* Bugfixes.
+
+#### Raw's Visual Keybinder (0.1.7 → 0.1.12)
+
+* QoL improvements.
+* Bugfixes.
+
+### Libraries & Core
+
+#### GeckoLib (4.7.4 → 4.8.3)
+
+* Library additions.
+* Animation improvements.
+* Bugfixes.
+
+#### Moonlight Lib (2.16.10 → 2.16.30)
+
+* Library refactoring.
+* Bugfixes across all Moonlight-dependent mods.
+
+#### Citadel (2.6.2 → 2.6.3)
+
+* Library bugfixes.
+
+#### Balm (7.3.35 → 7.3.38)
+
+* Library bugfixes and backports.
+
+#### Framework (0.7.15 → 0.8.0)
+
+* Library extensions and bugfixes.
+
+#### Bookshelf (20.2.13 → 20.2.15)
+
+* Library bugfixes.
+
+#### Zeta (1.0-30 → 1.0-31)
+
+* Library refactoring.
+* Bugfixes.
+
+#### Obscure API (15 → 18)
+
+* Library extensions.
+* Bugfixes (Aquamirae dependency).
+
+#### Patchouli (84.1 → 85)
+
+* Library bugfixes and polish.
+
+#### FramedBlocks (9.4.2 → 9.4.3)
+
+* Bugfixes.
+
+#### Kotlin for Forge (4.11.0 → 4.12.0)
+
+* Library update.
+
+#### Lionfish API (2.4 → 2.7)
+
+* Library extensions.
+* Bugfixes.
+
+#### Ritchie's Projectile Library (2.1.0 → 2.1.1)
+
+* Bugfixes for Create: Big Cannons.
+
+#### SuperMartijn642's Core Lib (1.1.18 → 1.1.21)
+
+* Library bugfixes.
+
+#### LootJS: KubeJS Addon (2.13.0 → 2.13.1)
+
+* Bugfixes.
+
+#### EntityJS (0.6.3 → 0.6.7)
+
+* More entity-building utilities.
+* Bugfixes.
+
+### ComputerCraft / Automation
+
+#### CC: Tweaked (1.116.1 → 1.117.1)
+
+* Create 6.0.7/6.0.8 integration (via Create itself; see Create notes).
+* New functions.
+* Bugfixes.
+
+#### Advanced Peripherals (0.7.45r → 0.7.46r)
+
+* Create 6 support.
+* Bugfixes and QoL.
+
+### Performance
+
+#### ModernFix (5.24.4 → 5.27.8)
+
+* Numerous new performance improvements.
+* More bugfixes and safety.
+
+#### FastSuite (5.1.0 → 5.1.2)
+
+* Safer recipe-handling optimizations.
+* Bugfixes.
+
+### Compat / World-Touching
+
+#### Every Compat (Wood Good) (2.9.2 → 2.9.20)
+
+* Tons more wood/stone compat across mods.
+* More config options.
+* Bugfixes.
+
+#### Fusion (Connected Textures) (1.2.11a → 1.2.12)
+
+* Bugfixes.
+
+#### Sinytra Connector (beta.46 → beta.48)
+
+* **Critical compatibility mod update**. Continues to improve Fabric-mod support on Forge. We're still using it for Antique Atlas alternatives and now implicitly for Biomancy (which ships as NeoForge).
+* Bugfixes.
+
+### Server / Admin
+
+#### Simple Backups (3.1.16 → 3.1.24)
+
+* More config refinements.
+* Bugfixes.
+
+### Client / Map
+
+#### Xaero's Minimap (25.2.10 → 25.3.10)
+
+* Xaero updated to the newer Modrinth-distributed jar format.
+* **Compat**: Create 6.0.7+ Train Map feature now integrates with Xaero's World Map (see Create section).
+* Bugfixes.
+
+### Miscellaneous
+
+#### Zombified Player - Kill Your Inner Zombie (1.2.7 → 1.4.0)
+
+* Content additions.
+* Polish.
+* Bugfixes.
+
+## Pinned Mods (Skipped)
+
+* **Unusual End** — update skipped (pinned to non-Blueprint version, intentional).
+* **Lovely Snails** — Packwiz failed to find a valid 1.20.1 version; remains at current version. Not a blocking issue.
+* **The Midnight** — Modrinth has an inconsistency between the "latest version" number (1.20.1-0.6.2-beta.3) and the newest release date (0.6.7). Will monitor and bump manually once Modrinth resolves.
+
+equires Gold (was Iron). Camera now uses Iron Ingots only (no more nuggets + pressure plate). Old cameras still work fine, but fresh crafts use the new recipe.
+
+## Configs ⚙
+
+* Added Midnight config
+
+## KubeJS Scripts
+
+* Scripts should remain compatible. New KubeJS integrations available:
+  + **Biomancy KubeJS**: Serums, bio-forge tabs, nutrients fuel/repair. Will evaluate for use in future updates.
+  + **Create: Diesel Generators KubeJS**: Already in use from 0.0.4.
+  + **EntityJS**: New utilities for copying entities (including modded ones) — may be useful for custom Splendid Slimes or custom Biomancy creatures.
