@@ -1,13 +1,13 @@
 name = "NFF: Girls"
-filename = "nffgirls-1.20.1-0.2.30.6-full.jar"
+filename = "nffgirls-1.20.1-0.2.32-full.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "0dcd982cfe2f23eb27bed654a5c609ca57c4b949"
+hash = "81a46ef65b69dede1457e90c4f6a1d552c94254d"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 6918546
+file-id = 7800124
 project-id = 838733

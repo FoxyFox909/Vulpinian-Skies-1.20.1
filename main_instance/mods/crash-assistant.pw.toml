@@ -1,13 +1,13 @@
 name = "Crash Assistant"
-filename = "CrashAssistant-forge-1.19-1.20.1-1.9.15.jar"
+filename = "CrashAssistant-forge-1.19-1.20.1-1.11.8.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "3fb6497cfb71e3ac0197dcae00750e82ac227bd7"
+hash = "34e6786638b45ead327da1dbab237dfb23355cec"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 6801232
+file-id = 7913030
 project-id = 1154099

@@ -1,13 +1,13 @@
 name = "Zombified Player - Kill Your Inner Zombie"
-filename = "ZombifiedPlayer-1.2.7-Forge-mc1.20.1.jar"
+filename = "ZombifiedPlayer-1.4.0-Forge-mc1.20.1.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/Hacodf0d/versions/u3qG9Ct7/ZombifiedPlayer-1.2.7-Forge-mc1.20.1.jar"
+url = "https://cdn.modrinth.com/data/Hacodf0d/versions/6ZkYG0Oq/ZombifiedPlayer-1.4.0-Forge-mc1.20.1.jar"
 hash-format = "sha512"
-hash = "51d0d7a1ff79dfcac18e2e72b6bdaaeb18b8a713ca77883d9bdf28913295cb1a15ee9f3d33bdf1ba2223a27c23a31e893c60c2ea722a7ef96fb6f6153f70651f"
+hash = "f045329c8771e446c1e9c63abba9b11644432a14775d179dc70dcd5b58cc8141a7b1b21c98d22d1e59fa2c18389de80fc41451ecac6bd49bc539385ac0cb6621"
 
 [update]
 [update.modrinth]
 mod-id = "Hacodf0d"
-version = "u3qG9Ct7"
+version = "6ZkYG0Oq"

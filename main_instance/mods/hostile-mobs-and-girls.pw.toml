@@ -1,13 +1,13 @@
 name = "Hostile Mobs and Girls (HMaG)"
-filename = "hmag-forge-mc1.20.1-9.0.33.jar"
+filename = "hmag-forge-mc1.20.1-9.0.37.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "7c780ed0aba2d9836a86e865efdbc5e3eea4f6ee"
+hash = "1752840ba19c07f08f37fcc0e2305abc085de0a0"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 6921769
+file-id = 7608671
 project-id = 537613
